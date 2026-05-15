@@ -737,7 +737,7 @@ export default function Home() {
           category:"Pain Relief",
           price:210,
           image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
-        }
+        },
 
         {
         id:26,
@@ -977,7 +977,7 @@ export default function Home() {
         category:"Pain Relief",
         price:190,
         image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
-      }
+      },
       {
         id:56,
         name:"Gelusil MPS",
@@ -1216,7 +1216,7 @@ export default function Home() {
         category:"First Aid",
         price:70,
         image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
-      }
+      },
       {
         id:86,
         name:"Dermi Cool Powder",
