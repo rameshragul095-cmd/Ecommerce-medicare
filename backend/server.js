@@ -1,15 +1,13 @@
-const express = require("express");
-const cors = require("cors");
-
+const express = require('express');
+const cors = require('cors'); // 1. Import cors
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://ecommerce-medicare-p4c3.vercel.app",
-    methods: ["GET", "POST"],
-    credentials: true
-  })
-);
+// 2. Configure CORS
+app.use(cors({
+  origin: "https://ecommerce-medicare-p4c3.vercel.app", // Your Vercel URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.use(express.json());
 
