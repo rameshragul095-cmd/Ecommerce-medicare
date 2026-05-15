@@ -308,9 +308,11 @@ export default function VerifyOtp() {
   /* VERIFY OTP */
   const verifyOtp = async () => {
 
-  try {
+  const finalOtp = otp.join("").trim();
 
-    const finalOtp = otp.toString().replace(/,/g, "");
+  console.log("FINAL OTP:", finalOtp);
+
+  try {
 
     const response = await API.post(
       "/verify-otp",
@@ -319,12 +321,33 @@ export default function VerifyOtp() {
         otp: finalOtp
       }
     );
-   
-    console.log("VERIFY DATA:", {
-    phone,
-    otp,
-    finalOtp: otp.join("")
-  });
+
+    console.log(response.data);
+
+    if (response.data.token) {
+
+      localStorage.setItem(
+        "token",
+        response.data.token
+      );
+
+      navigate("/");
+
+    } else {
+
+      alert("Invalid OTP ❌");
+
+    }
+
+  } catch (error) {
+
+    console.log(error);
+
+    alert("Invalid OTP ❌");
+
+  }
+
+};
 
     // SUCCESS
 
