@@ -6,7 +6,7 @@ export default function Login() {
 
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   
   const sendOtp = async () => {
 
@@ -26,7 +26,7 @@ export default function Login() {
   try {
 
     const response = await API.post(
-      "/auth/send-otp",
+      "/send-otp",
       {
         phone: cleanPhone
       }

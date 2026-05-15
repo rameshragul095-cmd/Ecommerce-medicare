@@ -314,7 +314,7 @@ export default function VerifyOtp() {
       const finalOtp = otp.join("");
 
       await API.post(
-        "/auth/verify-otp",
+        "/verify-otp",
         {
           otp: finalOtp
         }

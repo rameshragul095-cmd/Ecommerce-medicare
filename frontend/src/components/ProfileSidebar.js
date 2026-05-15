@@ -7,7 +7,7 @@ import {
   FaCrown,
   FaMapMarkerAlt,
   FaTicketAlt,
-  FaQuestionCircle,
+  // FaQuestionCircle,
   FaSignOutAlt
 } from "react-icons/fa";
 
