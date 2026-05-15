@@ -313,12 +313,9 @@ export default function VerifyOtp() {
 
       const finalOtp = otp.join("");
 
-      await API.post(
-        "/verify-otp",
-        {
-          otp: finalOtp
-        }
-      );
+      await API.post("/verify-otp", {
+  otp: finalOtp
+});
 
       alert("Login Successful ✅");
 

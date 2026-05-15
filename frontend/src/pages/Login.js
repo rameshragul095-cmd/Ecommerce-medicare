@@ -25,12 +25,9 @@ export default function Login() {
 
   try {
 
-    const response = await API.post(
-      "/send-otp",
-      {
-        phone: cleanPhone
-      }
-    );
+    const response = await API.post("/send-otp", {
+  phone: cleanPhone
+});
 
     console.log(response.data);
 
