@@ -525,7 +525,7 @@ export default function Home() {
           category: "Fever Tablet",
           price: 20,
           image:
-            "https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+            "https://www.google.com/imgres?q=Crocin%20650&imgurl=https%3A%2F%2Fassets.truemeds.in%2FImages%2FProductImage%2FTM-TACR1-009893%2Fcrocin-650-tablet-15_crocin-650-tablet-15--TM-TACR1-009893_1.png&imgrefurl=https%3A%2F%2Fwww.truemeds.in%2Fmedicine%2Fcrocin-650-mg-tablet-15-tm-tacr1-009893&docid=699jcdPAuaPjzM&tbnid=-VD9SKy8qNsBfM&vet=12ahUKEwiVmYiv17uUAxUKbmwGHZhTEOsQnPAOegQIJRAB..i&w=2000&h=2000&hcb=2&ved=2ahUKEwiVmYiv17uUAxUKbmwGHZhTEOsQnPAOegQIJRAB"
         },
 
         {
