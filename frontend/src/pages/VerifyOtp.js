@@ -306,28 +306,48 @@ export default function VerifyOtp() {
 
 
   /* VERIFY OTP */
-
   const verifyOtp = async () => {
 
-    try {
+  try {
 
-      const finalOtp = otp.join("");
+    const finalOtp = otp.join("");
 
-      await API.post("/verify-otp", {
-  otp: finalOtp
-});
+    const response = await API.post(
+      "/verify-otp",
+      {
+        phone,
+        otp: finalOtp
+      }
+    );
+
+    // SUCCESS
+
+    if (response.data.token) {
 
       alert("Login Successful ✅");
 
+      localStorage.setItem(
+        "token",
+        response.data.token
+      );
+
       navigate("/Home");
 
-    } catch {
+    } else {
 
       alert("Invalid OTP ❌");
 
     }
 
-  };
+  } catch (error) {
+
+    console.log(error);
+
+    alert("Invalid OTP ❌");
+
+  }
+
+};
 
 
   return (
