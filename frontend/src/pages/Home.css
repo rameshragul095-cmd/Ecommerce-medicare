@@ -1,0 +1,4612 @@
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.home-container{
+  padding:20px;
+  background:#f5f7fb;
+  min-height:100vh;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section{
+
+  position:relative;
+
+  height:420px;
+
+  overflow:hidden;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  border-radius:0 0 40px 40px;
+
+  background:
+    linear-gradient(
+      -45deg,
+      #001219,
+      #005f73,
+      #0a9396,
+      #001219
+    );
+
+  background-size:400% 400%;
+
+  animation:
+    animatedBg 10s ease infinite;
+}
+
+
+/* BACKGROUND MOVEMENT */
+
+@keyframes animatedBg{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}
+
+
+/* GLOW EFFECTS */
+
+.hero-section::before,
+
+.hero-section::after{
+
+  content:"";
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(100px);
+
+  opacity:0.5;
+}
+
+
+/* BLUE GLOW */
+
+.hero-section::before{
+
+  width:350px;
+  height:350px;
+
+  background:#00e5ff;
+
+  top:-120px;
+  left:-100px;
+
+  animation:moveGlow 8s infinite alternate;
+}
+
+
+/* GREEN GLOW */
+
+.hero-section::after{
+
+  width:400px;
+  height:400px;
+
+  background:#00ff99;
+
+  bottom:-150px;
+  right:-100px;
+
+  animation:moveGlow 10s infinite alternate;
+}
+
+
+/* GLOW ANIMATION */
+
+@keyframes moveGlow{
+
+  from{
+    transform:
+      translateX(0px)
+      translateY(0px);
+  }
+
+  to{
+    transform:
+      translateX(40px)
+      translateY(30px);
+  }
+
+}
+
+
+/* =========================================
+   3D TITLE
+========================================= */
+
+.hero-title{
+
+  position:relative;
+
+  z-index:10;
+
+  font-size:72px;
+
+  font-weight:900;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #00e5ff,
+      #00ff99,
+      #ffffff
+    );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    gradientText 5s linear infinite,
+    floatTitle 4s ease-in-out infinite;
+
+  text-shadow:
+    0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* TEXT FLOAT */
+
+@keyframes floatTitle{
+
+  0%{
+    transform:
+      translateY(0px)
+      rotateX(0deg);
+  }
+
+  50%{
+    transform:
+      translateY(-10px)
+      rotateX(8deg);
+  }
+
+  100%{
+    transform:
+      translateY(0px)
+      rotateX(0deg);
+  }
+
+}
+
+
+/* TEXT GRADIENT */
+
+@keyframes gradientText{
+
+  0%{
+    background-position:0%;
+  }
+
+  100%{
+    background-position:300%;
+  }
+
+}
+
+
+/* SUBTITLE */
+
+.hero-subtitle{
+
+  position:relative;
+
+  z-index:10;
+
+  margin-top:15px;
+
+  color:white;
+
+  font-size:22px;
+
+  letter-spacing:1px;
+
+  opacity:0.9;
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.search-box{
+
+  position:relative;
+
+  z-index:10;
+
+  margin-top:35px;
+}
+
+
+/* INPUT */
+
+.search-box input{
+
+  width:700px;
+
+  height:70px;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:50px;
+
+  padding-left:70px;
+
+  padding-right:20px;
+
+  font-size:20px;
+
+  color:white;
+
+  background:
+    rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(15px);
+
+  border:
+    1px solid rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.3);
+
+  transition:0.4s;
+}
+
+
+/* INPUT FOCUS */
+
+.search-box input:focus{
+
+  transform:scale(1.02);
+
+  box-shadow:
+    0 15px 50px rgba(0,255,255,0.3);
+}
+
+
+/* PLACEHOLDER */
+
+.search-box input::placeholder{
+  color:#ddd;
+}
+
+
+/* SEARCH ICON */
+
+.search-icon{
+
+  position:absolute;
+
+  left:25px;
+
+  top:22px;
+
+  font-size:22px;
+
+  color:white;
+
+  z-index:20;
+}
+
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
+
+.product-row{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(5,1fr);
+
+  gap:20px;
+
+  margin-bottom:30px;
+}
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.product-card{
+
+  background:white;
+
+  border-radius:25px;
+
+  padding:20px;
+
+  text-align:center;
+
+  transition:0.5s;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.08);
+
+  transform-style:preserve-3d;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+
+/* GLOW BORDER */
+
+.product-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-2px;
+
+  background:
+    linear-gradient(
+      45deg,
+      #00e5ff,
+      #00ff99,
+      #0072ff
+    );
+
+  z-index:-1;
+
+  border-radius:25px;
+
+  opacity:0;
+
+  transition:0.5s;
+}
+
+
+/* CARD HOVER */
+
+.product-card:hover{
+
+  transform:
+    rotateY(8deg)
+    rotateX(6deg)
+    translateY(-10px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.2);
+}
+
+
+/* SHOW GLOW */
+
+.product-card:hover::before{
+  opacity:1;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
+
+.product-card img{
+
+  width:90px;
+  height:90px;
+
+  object-fit:contain;
+
+  animation:float 3s ease-in-out infinite;
+}
+
+
+/* FLOAT */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+
+/* =========================================
+   PRODUCT TEXT
+========================================= */
+
+.product-card h3{
+
+  margin-top:15px;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  color:#222;
+}
+
+.product-card p{
+
+  color:gray;
+
+  margin-top:5px;
+}
+
+.product-card span{
+
+  display:block;
+
+  margin:12px 0;
+
+  font-size:22px;
+
+  font-weight:bold;
+
+  color:#0072ff;
+}
+
+
+/* =========================================
+   PRODUCT BUTTON
+========================================= */
+
+.product-card button{
+
+  padding:10px 24px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0072ff,
+      #00c6ff
+    );
+
+  color:white;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+
+/* BUTTON HOVER */
+
+.product-card button:hover{
+
+  transform:scale(1.1);
+
+  box-shadow:
+    0 10px 25px rgba(0,114,255,0.4);
+}
+
+
+/* =========================================
+   ADVERTISEMENT SECTION
+========================================= */
+
+.ad-banner{
+
+  width:100%;
+
+  margin:60px 0;
+
+  border-radius:35px;
+
+  overflow:hidden;
+
+  perspective:1000px;
+
+  position:relative;
+}
+
+
+/* AD CONTENT */
+
+.ad-content{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:45px;
+
+  color:white;
+
+  transition:0.6s;
+
+  transform-style:preserve-3d;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+
+/* AD GLOW */
+
+.ad-content::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:250px;
+  height:250px;
+
+  background:
+    rgba(255,255,255,0.15);
+
+  border-radius:50%;
+
+  top:-100px;
+  right:-80px;
+
+  filter:blur(20px);
+}
+
+
+/* AD HOVER */
+
+.ad-content:hover{
+
+  transform:
+    rotateY(5deg)
+    rotateX(4deg)
+    scale(1.02);
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.3);
+}
+
+
+/* LEFT SIDE */
+
+.ad-left h1{
+
+  font-size:48px;
+
+  margin-bottom:15px;
+
+  font-weight:900;
+}
+
+.ad-left p{
+
+  font-size:20px;
+
+  margin-bottom:25px;
+
+  max-width:500px;
+}
+
+
+/* AD BUTTON */
+
+.ad-left button{
+
+  padding:15px 35px;
+
+  border:none;
+
+  border-radius:40px;
+
+  background:white;
+
+  color:#222;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+
+/* BUTTON HOVER */
+
+.ad-left button:hover{
+
+  transform:scale(1.1);
+
+  box-shadow:
+    0 10px 30px rgba(255,255,255,0.3);
+}
+
+
+/* RIGHT IMAGE */
+
+.ad-right img{
+
+  width:220px;
+
+  animation:
+    rotate3d 6s linear infinite;
+}
+
+
+/* ROTATE */
+
+@keyframes rotate3d{
+
+  from{
+    transform:rotateY(0deg);
+  }
+
+  to{
+    transform:rotateY(360deg);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+  .product-row{
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .ad-content{
+
+    flex-direction:column;
+
+    text-align:center;
+  }
+
+  .ad-right img{
+    width:140px;
+  }
+
+  .hero-title{
+
+    font-size:40px;
+
+    text-align:center;
+
+    padding:0 20px;
+  }
+
+  .hero-subtitle{
+
+    text-align:center;
+
+    padding:0 20px;
+  }
+
+  .search-box input{
+
+    width:90vw;
+  }
+
+}
+/* =========================
+   EXTRA HERO EFFECTS
+========================= */
+
+.circle{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(70px);
+
+  animation:floatCircle 8s infinite alternate;
+}
+
+
+/* CIRCLE 1 */
+
+.circle1{
+
+  width:250px;
+  height:250px;
+
+  background:#00e5ff;
+
+  top:-80px;
+  left:-60px;
+}
+
+
+/* CIRCLE 2 */
+
+.circle2{
+
+  width:300px;
+  height:300px;
+
+  background:#00ff99;
+
+  bottom:-100px;
+  right:-80px;
+
+  animation-duration:10s;
+}
+
+
+/* CIRCLE 3 */
+
+.circle3{
+
+  width:180px;
+  height:180px;
+
+  background:#0072ff;
+
+  top:100px;
+  right:25%;
+}
+
+
+/* FLOAT ANIMATION */
+
+@keyframes floatCircle{
+
+  from{
+
+    transform:
+      translateY(0px)
+      translateX(0px);
+
+  }
+
+  to{
+
+    transform:
+      translateY(40px)
+      translateX(30px);
+
+  }
+
+}
+
+
+/* BETTER TITLE */
+
+.hero-title{
+
+  font-size:85px !important;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  letter-spacing:4px;
+
+  z-index:10;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #00e5ff,
+      #00ff99,
+      #ffffff
+    );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    gradientText 5s linear infinite,
+    titleFloat 4s ease-in-out infinite;
+
+  text-shadow:
+    0 10px 40px rgba(0,0,0,0.4);
+}
+
+
+/* TITLE FLOAT */
+
+@keyframes titleFloat{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+
+/* SUBTITLE */
+
+.hero-subtitle{
+
+  color:white;
+
+  font-size:24px;
+
+  margin-top:15px;
+
+  z-index:10;
+
+  letter-spacing:2px;
+}
+
+
+/* SEARCH BOX */
+
+.search-box{
+
+  margin-top:35px;
+
+  position:relative;
+
+  z-index:10;
+}
+
+
+/* GLASS SEARCH */
+
+.search-box input{
+
+  width:750px;
+
+  height:75px;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:60px;
+
+  padding-left:75px;
+
+  font-size:22px;
+
+  color:white;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(20px);
+
+  border:
+    1px solid rgba(255,255,255,0.25);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.3);
+
+  transition:0.4s;
+}
+
+
+/* SEARCH FOCUS */
+
+.search-box input:focus{
+
+  transform:scale(1.03);
+
+  box-shadow:
+    0 20px 60px rgba(0,255,255,0.4);
+}
+
+
+/* PLACEHOLDER */
+
+.search-box input::placeholder{
+
+  color:#ddd;
+}
+
+
+/* ICON */
+
+.search-icon{
+
+  position:absolute;
+
+  left:28px;
+
+  top:24px;
+
+  font-size:26px;
+
+  color:white;
+}
+
+/* =========================================
+   FULL PAGE BACKGROUND
+========================================= */
+
+body{
+
+  margin:0;
+
+  padding:0;
+
+  overflow-x:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef7ff,
+      #f5fffd,
+      #eefcff
+    );
+
+  background-size:400% 400%;
+
+  animation:
+    bodyGradient 12s ease infinite;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+}
+
+
+/* ANIMATED BACKGROUND */
+
+@keyframes bodyGradient{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}
+
+
+/* FLOATING MEDICAL GLOW */
+
+body::before,
+
+body::after{
+
+  content:"";
+
+  position:fixed;
+
+  border-radius:50%;
+
+  filter:blur(120px);
+
+  z-index:-1;
+
+  opacity:0.4;
+}
+
+
+/* BLUE GLOW */
+
+body::before{
+
+  width:400px;
+  height:400px;
+
+  background:#00d9ff;
+
+  top:-120px;
+  left:-100px;
+
+  animation:
+    glowMove1 10s infinite alternate;
+}
+
+
+/* GREEN GLOW */
+
+body::after{
+
+  width:450px;
+  height:450px;
+
+  background:#00ff99;
+
+  bottom:-150px;
+  right:-120px;
+
+  animation:
+    glowMove2 12s infinite alternate;
+}
+
+
+/* GLOW ANIMATION */
+
+@keyframes glowMove1{
+
+  from{
+    transform:
+      translateX(0px)
+      translateY(0px);
+  }
+
+  to{
+    transform:
+      translateX(60px)
+      translateY(40px);
+  }
+
+}
+
+
+@keyframes glowMove2{
+
+  from{
+    transform:
+      translateX(0px)
+      translateY(0px);
+  }
+
+  to{
+    transform:
+      translateX(-60px)
+      translateY(-40px);
+  }
+
+}
+
+/* =========================================
+   PREMIUM MEDICAL NAVBAR
+========================================= */
+
+.navbar{
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+
+  height: 105px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.85),
+      rgba(220,255,255,0.75),
+      rgba(230,255,245,0.78)
+    );
+
+  backdrop-filter: blur(30px);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.35);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.08);
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   WATER GEL BACKGROUND
+========================================= */
+
+.navbar::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:500px;
+
+  height:500px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,255,255,0.25),
+      transparent 70%
+    );
+
+  left:-150px;
+
+  top:-200px;
+
+  animation:
+    waterMove 10s infinite alternate ease-in-out;
+
+}
+
+
+.navbar::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:400px;
+
+  height:400px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,140,255,0.18),
+      transparent 70%
+    );
+
+  right:-100px;
+
+  top:-150px;
+
+  animation:
+    waterMove2 12s infinite alternate ease-in-out;
+
+}
+
+
+@keyframes waterMove{
+
+  from{
+
+    transform:
+      translateY(0px)
+      rotate(0deg);
+
+  }
+
+  to{
+
+    transform:
+      translateY(30px)
+      rotate(10deg);
+
+  }
+
+}
+
+
+@keyframes waterMove2{
+
+  from{
+
+    transform:
+      translateY(0px)
+      rotate(0deg);
+
+  }
+
+  to{
+
+    transform:
+      translateY(-20px)
+      rotate(-10deg);
+
+  }
+
+}
+
+
+/* =========================================
+   LOGO SECTION
+========================================= */
+
+.nav-logo-container{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  position:relative;
+
+  cursor:pointer;
+
+  z-index:5;
+
+}
+
+
+/* GLOW */
+
+.logo-glow{
+
+  position:absolute;
+
+  width:90px;
+
+  height:90px;
+
+  background:#00e5ff;
+
+  border-radius:50%;
+
+  filter:blur(40px);
+
+  opacity:0.5;
+
+  animation:
+    pulseGlow 3s infinite alternate;
+
+}
+
+
+@keyframes pulseGlow{
+
+  from{
+
+    transform:scale(1);
+
+  }
+
+  to{
+
+    transform:scale(1.25);
+
+  }
+
+}
+
+
+/* LOGO IMAGE */
+
+.nav-logo-img{
+
+  width:65px;
+
+  position:relative;
+
+  z-index:2;
+
+  animation:
+    logoFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes logoFloat{
+
+  0%{
+
+    transform:translateY(0px);
+
+  }
+
+  50%{
+
+    transform:translateY(-8px);
+
+  }
+
+  100%{
+
+    transform:translateY(0px);
+
+  }
+
+}
+
+
+/* LOGO TEXT */
+
+.nav-logo-text{
+
+  font-size:52px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0072ff,
+      #00c6ff,
+      #00ff99
+    );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    gradientMove 6s linear infinite;
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+@keyframes gradientMove{
+
+  0%{
+
+    background-position:0%;
+
+  }
+
+  100%{
+
+    background-position:300%;
+
+  }
+
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:30px;
+
+  z-index:5;
+
+}
+
+
+/* =========================================
+   PREMIUM BUTTON
+========================================= */
+
+.nav-item{
+
+  position:relative;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+
+  min-width:145px;
+
+  height:62px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,0.35);
+
+  backdrop-filter:blur(20px);
+
+  color:#0f172a;
+
+  font-size:18px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  overflow:hidden;
+
+  transition:0.45s;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08),
+    inset 0 1px 2px rgba(255,255,255,0.8);
+
+}
+
+
+/* BUTTON HOVER */
+
+.nav-item:hover{
+
+  transform:
+    translateY(-5px)
+    scale(1.06);
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0072ff,
+      #00c6ff
+    );
+
+  box-shadow:
+    0 18px 40px rgba(0,114,255,0.35);
+
+}
+
+
+/* SHINE EFFECT */
+
+.nav-item::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:160px;
+
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.55),
+      transparent
+    );
+
+  left:-180px;
+
+  top:0;
+
+  transform:skewX(-25deg);
+
+  transition:0.8s;
+
+}
+
+
+.nav-item:hover::before{
+
+  left:180%;
+
+}
+
+
+/* =========================================
+   CART BUTTON
+========================================= */
+
+.cart-btn{
+
+  background:
+    linear-gradient(
+      135deg,
+      #00c6ff,
+      #0072ff
+    );
+
+  color:white;
+
+  box-shadow:
+    0 15px 35px rgba(0,114,255,0.35);
+
+}
+
+
+/* CART HOVER */
+
+.cart-btn:hover{
+
+  background:
+    linear-gradient(
+      135deg,
+      #0072ff,
+      #00e5ff
+    );
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+
+  .navbar{
+
+    padding:0 20px;
+
+    height:90px;
+
+  }
+
+  .nav-logo-text{
+
+    font-size:34px;
+
+  }
+
+  .nav-links{
+
+    gap:12px;
+
+  }
+
+  .nav-item{
+
+    min-width:auto;
+
+    padding:0 18px;
+
+    height:52px;
+
+    font-size:15px;
+
+  }
+
+}
+
+/* =========================================
+   PREMIUM MAIN CONTAINER
+========================================= */
+
+.premium-profile-container{
+
+  position:relative;
+
+  overflow:hidden;
+
+  width:100%;
+
+  padding:50px;
+
+  border-radius:45px;
+
+  min-height:850px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #050505 0%,
+      #0b1220 30%,
+      #06263a 60%,
+      #0c3f47 100%
+    );
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.35);
+
+}
+
+/* =========================================
+   BLUE LIGHT EFFECT
+========================================= */
+
+.premium-profile-container::after{
+
+  content:"";
+
+  position:absolute;
+
+  bottom:-150px;
+  left:-120px;
+
+  width:420px;
+  height:420px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,153,255,0.28),
+      transparent 70%
+    );
+
+  z-index:0;
+}
+
+
+/* =========================================
+   MEMBER CARD
+========================================= */
+
+.premium-member-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:35px;
+
+  padding:40px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #020202,
+      #0d0d0d,
+      #171717,
+      #1f1f1f
+    );
+
+  border:
+    2px solid rgba(255,215,0,0.45);
+
+  box-shadow:
+    0 0 25px rgba(255,215,0,0.22),
+    0 0 70px rgba(255,170,0,0.12),
+    inset 0 0 35px rgba(255,215,0,0.06);
+
+  backdrop-filter:blur(20px);
+
+}
+
+.premium-member-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+
+  height:300px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,215,0,0.30),
+      transparent
+    );
+
+  top:-120px;
+
+  right:-100px;
+
+  filter:blur(30px);
+
+  animation:
+    goldGlow 5s infinite alternate;
+
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.premium-name{
+
+  font-size:68px;
+
+  font-weight:900;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff6b0,
+      #ffd700,
+      #ffb700,
+      #fff4a3
+    );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    goldText 4s linear infinite;
+
+  text-shadow:
+    0 0 20px rgba(255,215,0,0.35);
+
+}
+
+
+/* =========================================
+   MEMBER TEXT
+========================================= */
+
+.premium-member{
+
+  margin-top:12px;
+
+  font-size:28px;
+
+  font-weight:800;
+
+  color:#ffe082;
+
+  letter-spacing:1px;
+
+  text-shadow:
+    0 0 12px rgba(255,215,0,0.4);
+
+}
+
+
+/* =========================================
+   GOLD BADGE
+========================================= */
+
+.gold-badge{
+
+  padding:18px 40px;
+
+  border-radius:60px;
+
+  font-size:30px;
+
+  font-weight:900;
+
+  color:#000000;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #fff8b0,
+    #ffd700,
+    #ffb300,
+    #fff3a0
+  ) !important;
+  color:#000 !important;
+  -webkit-text-fill-color:#000 !important;
+
+  background-size:300%;
+
+  animation:
+    goldBadgeMove 4s linear infinite;
+
+  border:
+    2px solid rgba(255,255,255,0.35);
+
+  box-shadow:
+    0 0 18px rgba(255,215,0,0.45),
+    0 0 40px rgba(255,180,0,0.25),
+    inset 0 2px 10px rgba(255,255,255,0.35);
+
+  text-shadow:
+    none;
+
+}
+
+
+/* BADGE ANIMATION */
+
+@keyframes glowBadge{
+
+  from{
+
+    box-shadow:
+      0 0 20px rgba(255,215,0,0.35);
+
+  }
+
+  to{
+
+    box-shadow:
+      0 0 55px rgba(255,215,0,0.8);
+
+  }
+
+}
+
+
+/* =========================================
+   REWARD SECTION
+========================================= */
+
+.reward-container{
+
+  margin-top:45px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:40px;
+
+  padding:40px;
+
+  border-radius:35px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #020202,
+      #0d0d0d,
+      #151515
+    );
+
+  border:
+    1px solid rgba(255,215,0,0.22);
+
+  box-shadow:
+    0 0 30px rgba(255,215,0,0.12),
+    inset 0 0 30px rgba(255,215,0,0.04);
+
+}
+
+
+/* =========================================
+   COINS
+========================================= */
+
+.coin-box{
+
+  display:flex;
+
+  gap:20px;
+}
+
+
+.coin{
+
+  width:120px;
+
+  height:120px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:44px;
+
+  color:#ffd700;
+
+  background:
+  radial-gradient(
+    circle at top,
+    #1a1a1a,
+    #050505,
+    #000000
+  ) !important;
+
+  overflow:hidden;
+  border:
+  3px solid rgba(255,215,0,0.55);
+
+  box-shadow:
+    0 0 18px rgba(255,215,0,0.28),
+    inset 0 0 20px rgba(255,215,0,0.08);
+
+  animation:
+    coinGlow 2.5s infinite alternate;
+
+}
+
+
+.coin:nth-child(2){
+
+  animation-delay:0.5s;
+}
+
+.coin:nth-child(3){
+
+  animation-delay:1s;
+}
+
+
+@keyframes floatCoin{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+
+/* =========================================
+   POINTS
+========================================= */
+
+.points-title{
+
+  font-size:52px;
+
+  font-weight:900;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff3a0,
+      #ffd700,
+      #ffb300
+    );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    goldText 4s linear infinite;
+
+}
+
+.points-value{
+
+  margin-top:10px;
+
+  font-size:120px;
+
+  line-height:1;
+
+  font-weight:900;
+
+ background:
+  linear-gradient(
+    90deg,
+    #fff8c9,
+    #ffd700,
+    #ffb300,
+    #ffea70,
+    #fff8c9
+  );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    goldText 4s linear infinite;
+
+  text-shadow:
+  0 0 10px rgba(255,215,0,0.35),
+  0 0 20px rgba(255,215,0,0.45),
+  0 0 40px rgba(255,180,0,0.55);
+
+}
+
+
+.points-sub{
+
+  margin-top:16px;
+
+  font-size:28px;
+
+  font-weight:700;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff8c9,
+      #ffd700,
+      #ffcf40
+    );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:
+    0 0 10px rgba(255,215,0,0.25);
+
+}
+
+/* =========================================
+   BENEFITS GRID
+========================================= */
+
+.benefits-grid{
+
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:25px;
+}
+
+
+/* =========================================
+   BENEFIT CARD
+========================================= */
+
+.benefit-card{
+
+  padding:35px;
+
+  border-radius:30px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color:white;
+
+  font-size:30px;
+
+  font-weight:700;
+
+  transition:0.5s;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+
+.benefit-card:hover{
+
+  transform:
+    translateY(-8px);
+
+  background:
+    rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.3);
+}
+/* =========================================
+   MANAGE PROFILE CONTAINER
+========================================= */
+
+.manage-profile-container{
+
+  flex:1;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:35px;
+
+  padding:40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #111827,
+      #1e293b
+    );
+
+  min-height:700px;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.25);
+}
+
+
+/* GLOW EFFECTS */
+
+.manage-profile-container::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:350px;
+
+  height:350px;
+
+  background:#00e5ff;
+
+  border-radius:50%;
+
+  filter:blur(120px);
+
+  top:-120px;
+
+  right:-100px;
+
+  opacity:0.35;
+
+  animation:
+    profileGlow 8s infinite alternate;
+}
+
+
+.manage-profile-container::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+
+  height:300px;
+
+  background:#00ff99;
+
+  border-radius:50%;
+
+  filter:blur(120px);
+
+  bottom:-100px;
+
+  left:-100px;
+
+  opacity:0.3;
+
+  animation:
+    profileGlow 10s infinite alternate;
+}
+
+
+/* GLOW FLOAT */
+
+@keyframes profileGlow{
+
+  from{
+
+    transform:
+      translateY(0px)
+      translateX(0px);
+
+  }
+
+  to{
+
+    transform:
+      translateY(40px)
+      translateX(30px);
+
+  }
+
+}
+
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.premium-profile-card{
+
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:40px;
+
+  border-radius:35px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  border:
+    1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.2);
+
+  transition:0.5s;
+
+  overflow:hidden;
+}
+
+
+/* SHINY EFFECT */
+
+.premium-profile-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:250px;
+
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.18),
+      transparent
+    );
+
+  left:-260px;
+
+  top:0;
+
+  transform:skewX(-20deg);
+
+  transition:0.8s;
+}
+
+
+/* HOVER */
+
+.premium-profile-card:hover{
+
+  transform:
+    translateY(-8px)
+    scale(1.01);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.3);
+}
+
+
+/* SHINE MOVE */
+
+.premium-profile-card:hover::before{
+
+  left:130%;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-avatar{
+
+  width:130px;
+
+  border-radius:50%;
+
+  border:
+    5px solid rgba(255,255,255,0.25);
+
+  box-shadow:
+    0 10px 35px rgba(0,229,255,0.35);
+
+  animation:
+    avatarFloat 4s ease-in-out infinite;
+}
+
+
+/* FLOAT */
+
+@keyframes avatarFloat{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+
+/* =========================================
+   PROFILE NAME
+========================================= */
+
+.profile-name{
+
+  font-size:64px;
+
+  font-weight:900;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #00e5ff,
+      #00ff99
+    );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+
+/* DETAILS */
+
+.profile-detail{
+
+  font-size:28px;
+
+  color:#d1d5db;
+
+  margin-top:15px;
+}
+
+
+/* RELATION */
+
+.profile-relation{
+
+  font-size:42px;
+
+  font-weight:900;
+
+  padding:18px 35px;
+
+  border-radius:50px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00c6ff,
+      #0072ff
+    );
+
+  color:white;
+
+  box-shadow:
+    0 10px 30px rgba(0,114,255,0.35);
+}
+
+
+/* =========================================
+   ADD BUTTON
+========================================= */
+
+.premium-add-btn{
+
+  padding:22px 60px;
+
+  border:none;
+
+  border-radius:60px;
+
+  font-size:28px;
+
+  font-weight:800;
+
+  color:white;
+
+  cursor:pointer;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00c6ff,
+      #0072ff
+    );
+
+  box-shadow:
+    0 15px 40px rgba(0,114,255,0.35);
+
+  transition:0.4s;
+}
+
+
+/* HOVER */
+
+.premium-add-btn:hover{
+
+  transform:
+    translateY(-5px)
+    scale(1.04);
+
+  box-shadow:
+    0 25px 60px rgba(0,114,255,0.45);
+}
+
+
+/* =========================================
+   HELP BUTTON
+========================================= */
+
+.premium-help-btn{
+
+  width:100%;
+
+  margin-top:40px;
+
+  padding:28px;
+
+  border:none;
+
+  border-radius:28px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  border:
+    1px solid rgba(255,255,255,0.1);
+
+  color:white;
+
+  font-size:24px;
+
+  transition:0.4s;
+}
+
+
+/* HOVER */
+
+.premium-help-btn:hover{
+
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.25);
+}
+/* =========================================
+   MEDICAL PREMIUM CONTAINER
+========================================= */
+
+/* .premium-profile-container{
+
+  position:relative;
+
+  overflow:hidden;
+
+  width:100%;
+
+  padding:50px;
+
+  border-radius:40px;
+
+  min-height:850px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e9fbff 0%,
+      #f3fffd 25%,
+      #eef8ff 50%,
+      #f7fffb 100%
+    );
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.08);
+} */
+
+
+/* =========================================
+   FLOATING GLOW EFFECTS
+========================================= */
+
+.premium-glow{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(120px);
+
+  opacity:0.45;
+
+  z-index:0;
+}
+
+
+/* CYAN */
+
+.premium-glow1{
+
+  width:450px;
+  height:450px;
+
+  background:#00d9ff;
+
+  top:-150px;
+  left:-120px;
+
+  opacity:0.35;
+
+  animation:
+    glowMove 12s infinite alternate;
+
+}
+
+
+/* GREEN */
+
+.premium-glow2{
+
+  width:420px;
+  height:420px;
+
+  background:#00ff99;
+
+  bottom:-120px;
+  right:-100px;
+
+  opacity:0.30;
+
+  animation:
+    glowMove 14s infinite alternate;
+
+}
+
+
+/* BLUE */
+
+.premium-glow3{
+
+  width:350px;
+  height:350px;
+
+  background:#008cff;
+
+  top:40%;
+  left:40%;
+
+  opacity:0.25;
+
+  animation:
+    glowMove 16s infinite alternate;
+
+}
+
+
+@keyframes glowMove{
+
+  from{
+
+    transform:
+      translateY(0px)
+      translateX(0px);
+
+  }
+
+  to{
+
+    transform:
+      translateY(50px)
+      translateX(40px);
+
+  }
+
+}
+
+
+
+
+/* =========================================
+   NAME
+========================================= */
+
+
+
+
+/* ANIMATION */
+
+@keyframes gradientMove{
+
+  0%{
+    background-position:0%;
+  }
+
+  100%{
+    background-position:300%;
+  }
+
+}
+
+
+
+
+
+/* =========================================
+   GOLD BADGE
+========================================= */
+
+
+
+@keyframes pulseBadge{
+
+  from{
+
+    transform:scale(1);
+
+  }
+
+  to{
+
+    transform:scale(1.08);
+
+  }
+
+}
+
+
+/* =========================================
+   REWARD SECTION
+========================================= */
+
+
+
+
+/* =========================================
+   COINS
+========================================= */
+
+.coin-box{
+
+  display:flex;
+
+  gap:18px;
+}
+
+
+.coin{
+
+  width:90px;
+  height:90px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00e5ff,
+      #00ffaa
+    );
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:36px;
+
+  color:white;
+
+  box-shadow:
+    0 15px 40px rgba(0,229,255,0.3);
+
+  animation:
+    floatCoin 3s ease-in-out infinite;
+}
+
+
+.coin:nth-child(2){
+
+  animation-delay:0.5s;
+}
+
+.coin:nth-child(3){
+
+  animation-delay:1s;
+}
+
+
+@keyframes floatCoin{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+
+/* =========================================
+   POINTS
+========================================= */
+
+.points-title{
+
+  font-size:38px;
+
+  font-weight:700;
+
+  color:#334155;
+}
+
+
+
+/* =========================================
+   BENEFITS GRID
+========================================= */
+
+.benefits-grid{
+
+  position:relative;
+
+  z-index:2;
+
+  margin-top:60px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:25px;
+}
+
+
+/* =========================================
+   BENEFIT CARD
+========================================= */
+
+.benefit-card{
+
+  padding:35px;
+
+  border-radius:30px;
+
+  background:
+    rgba(255,255,255,0.45);
+
+  backdrop-filter:blur(18px);
+
+  border:
+    1px solid rgba(255,255,255,0.35);
+
+  font-size:30px;
+
+  font-weight:700;
+
+  color:#0f172a;
+
+  transition:0.5s;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+}
+
+
+/* HOVER */
+
+.benefit-card:hover{
+
+  transform:
+    translateY(-8px)
+    rotateX(6deg);
+
+  background:
+    rgba(255,255,255,0.7);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.08);
+}
+/* =========================================
+   VERIFY OTP PREMIUM BACKGROUND
+========================================= */
+
+.verify-otp-page{
+
+  min-height:100vh;
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+
+  background:
+    linear-gradient(
+      -45deg,
+      #e0f7ff,
+      #f0fffb,
+      #dff7ff,
+      #f5fffe
+    );
+
+  background-size:400% 400%;
+
+  animation:
+    otpGradient 12s ease infinite;
+}
+
+
+/* MOVING GRADIENT */
+
+@keyframes otpGradient{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}
+
+
+/* =========================================
+   FLOATING GLOWS
+========================================= */
+
+.otp-glow{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(120px);
+
+  opacity:0.45;
+
+  animation:
+    otpGlowMove 10s infinite alternate;
+}
+
+
+/* BLUE */
+
+.otp-glow1{
+
+  width:350px;
+  height:350px;
+
+  background:#00d9ff;
+
+  top:-120px;
+  left:-120px;
+}
+
+
+/* GREEN */
+
+.otp-glow2{
+
+  width:320px;
+  height:320px;
+
+  background:#00ff99;
+
+  bottom:-100px;
+  right:-100px;
+
+  animation-duration:12s;
+}
+
+
+/* PURPLE */
+
+.otp-glow3{
+
+  width:260px;
+  height:260px;
+
+  background:#7c4dff;
+
+  top:40%;
+  right:15%;
+
+  animation-duration:14s;
+}
+
+
+/* GLOW MOVE */
+
+@keyframes otpGlowMove{
+
+  from{
+
+    transform:
+      translateX(0px)
+      translateY(0px);
+
+  }
+
+  to{
+
+    transform:
+      translateX(50px)
+      translateY(40px);
+
+  }
+
+}
+
+
+/* =========================================
+   FLOATING MEDICAL ICONS
+========================================= */
+
+.medical-icon{
+
+  position:absolute;
+
+  font-size:70px;
+
+  opacity:0.08;
+
+  animation:
+    floatMedical 8s ease-in-out infinite;
+}
+
+
+/* ICON POSITIONS */
+
+.icon1{
+
+  top:10%;
+  left:12%;
+}
+
+.icon2{
+
+  top:20%;
+  right:15%;
+
+  animation-delay:2s;
+}
+
+.icon3{
+
+  bottom:18%;
+  left:20%;
+
+  animation-delay:4s;
+}
+
+.icon4{
+
+  bottom:10%;
+  right:20%;
+
+  animation-delay:6s;
+}
+
+
+/* FLOAT */
+
+@keyframes floatMedical{
+
+  0%{
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+  50%{
+    transform:
+      translateY(-20px)
+      rotate(8deg);
+  }
+
+  100%{
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+}
+
+
+/* =========================================
+   PREMIUM OTP CARD
+========================================= */
+
+.premium-otp-card{
+
+  position:relative;
+
+  width:100%;
+
+  max-width:540px;
+
+  border-radius:40px;
+
+  overflow:hidden;
+
+  background:
+    rgba(255,255,255,0.45);
+
+  backdrop-filter:blur(25px);
+
+  border:
+    1px solid rgba(255,255,255,0.35);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.12);
+
+  animation:
+    otpCardFloat 5s ease-in-out infinite;
+}
+
+
+/* CARD FLOAT */
+
+@keyframes otpCardFloat{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+
+/* SHINY EFFECT */
+
+.premium-otp-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:250px;
+
+  height:120%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.35),
+      transparent
+    );
+
+  left:-280px;
+
+  top:-20px;
+
+  transform:skewX(-20deg);
+
+  animation:
+    otpShine 6s linear infinite;
+}
+
+
+/* SHINE MOVE */
+
+@keyframes otpShine{
+
+  100%{
+    left:140%;
+  }
+
+}
+
+
+/* =========================================
+   PREMIUM TITLE
+========================================= */
+
+.otp-title{
+
+  font-size:60px;
+
+  font-weight:900;
+
+  text-align:center;
+
+  margin-top:30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0072ff,
+      #00c6ff,
+      #00ff99
+    );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    otpTitleMove 5s linear infinite;
+}
+
+
+/* TITLE ANIMATION */
+
+@keyframes otpTitleMove{
+
+  0%{
+    background-position:0%;
+  }
+
+  100%{
+    background-position:300%;
+  }
+
+}
+
+
+/* =========================================
+   OTP BOXES
+========================================= */
+
+.otp-input{
+
+  width:68px;
+
+  height:68px;
+
+  border-radius:24px;
+
+  border:
+    2px solid rgba(255,255,255,0.3);
+
+  background:
+    rgba(255,255,255,0.55);
+
+  backdrop-filter:blur(10px);
+
+  text-align:center;
+
+  font-size:28px;
+
+  font-weight:900;
+
+  color:#0f172a;
+
+  outline:none;
+
+  transition:0.4s;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.08);
+}
+
+
+/* HOVER */
+
+.otp-input:hover{
+
+  transform:
+    translateY(-5px);
+
+  border-color:#00c6ff;
+}
+
+
+/* FOCUS */
+
+.otp-input:focus{
+
+  transform:
+    scale(1.08);
+
+  border-color:#00e5ff;
+
+  box-shadow:
+    0 15px 40px rgba(0,229,255,0.3);
+}
+
+
+/* =========================================
+   VERIFY BUTTON
+========================================= */
+
+.verify-btn{
+
+  width:100%;
+
+  height:68px;
+
+  border:none;
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00c6ff,
+      #0072ff
+    );
+
+  color:white;
+
+  font-size:24px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:0.4s;
+
+  box-shadow:
+    0 15px 40px rgba(0,114,255,0.35);
+}
+
+
+/* HOVER */
+
+.verify-btn:hover{
+
+  transform:
+    translateY(-5px)
+    scale(1.02);
+
+  box-shadow:
+    0 25px 60px rgba(0,114,255,0.45);
+}
+/* =========================================
+   PREMIUM SIDEBAR
+========================================= */
+
+.profile-layout{
+
+  display:flex;
+
+  gap:175px;
+
+  padding:28px 34px;
+
+  align-items:flex-start;
+
+}
+
+/* =========================================
+   PREMIUM SIDEBAR
+========================================= */
+
+.premium-sidebar{
+
+  width:320px;
+
+  min-width:320px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:32px;
+
+  padding-top:12px;
+
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.premium-sidebar-btn{
+
+  position:relative;
+
+  overflow:hidden;
+
+  height:112px;
+
+  border-radius:34px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:0 38px;
+
+  cursor:pointer;
+
+  transition:0.45s;
+
+  backdrop-filter:blur(18px);
+
+  border:
+    3px solid rgba(255,255,255,0.9);
+
+  background:
+    linear-gradient(
+      135deg,
+      #00c8ff 0%,
+      #18f3cf 45%,
+      #46ffe0 75%,
+      #b8fff8 100%
+    );
+
+  box-shadow:
+    0 0 22px rgba(255,255,255,0.7),
+    0 0 45px rgba(0,255,255,0.45),
+    0 0 65px rgba(0,200,255,0.28),
+    inset 0 2px 3px rgba(255,255,255,0.85);
+
+  background-size:200% 200%;
+
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.premium-sidebar-btn span{
+
+  font-size:34px;
+
+  font-weight:900;
+
+  letter-spacing:0.6px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #ffffff,
+      #eaffff,
+      #ffffff
+    );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.9);
+
+}
+
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.premium-sidebar-btn svg{
+
+  font-size:26px;
+
+  color:white;
+
+  animation:
+    arrowMove 1.5s infinite alternate;
+
+}
+
+
+/* WATER SHINE */
+
+.premium-sidebar-btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.28),
+      transparent
+    );
+
+  left:-200px;
+
+  top:0;
+
+  transform:skewX(-20deg);
+
+  animation:
+    premiumWater 5s linear infinite;
+
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.premium-sidebar-btn:hover{
+
+  transform:
+    translateY(-6px)
+    scale(1.03);
+
+  box-shadow:
+    0 20px 45px rgba(0,255,200,0.28);
+
+}
+
+
+/* =========================================
+   ACTIVE BUTTON
+========================================= */
+
+.active-sidebar-btn{
+
+  background:
+    linear-gradient(
+      135deg,
+      #00c6ff,
+      #00ffcc,
+      #09eaee
+    );
+
+  box-shadow:
+    0 18px 40px rgba(0,255,200,0.35),
+    0 0 25px rgba(0,195,255,0.4);
+
+}
+
+
+
+/* =========================================
+   BLUE WATER FLOW
+========================================= */
+
+.premium-sidebar-btn::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.22),
+      transparent
+    );
+
+  transform:
+    translateX(-120%);
+
+  animation:
+    waterShine 5s linear infinite;
+
+}
+
+
+
+
+
+
+
+/* =========================================
+   RIGHT SIDE WRAPPER
+========================================= */
+
+.premium-right-wrapper{
+
+  width:78%;
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+
+
+.premium-top-card-container{
+
+  width:92%;
+
+  margin:auto;
+
+  border-radius:32px;
+
+  padding:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #000000,
+    #001326,
+    #003d3d
+  );
+
+  box-shadow:
+  0 18px 45px rgba(0,0,0,0.22);
+
+}
+
+
+.premium-bottom-card-container{
+
+  width:92%;
+
+  margin:auto;
+
+  border-radius:32px;
+
+  padding:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #000000,
+    #001326,
+    #00574d
+  );
+
+  box-shadow:
+  0 18px 45px rgba(0,0,0,0.22);
+
+}
+
+
+/* =========================================
+   WHITE SPACE
+========================================= */
+
+.premium-section-gap{
+
+  height:35px;
+
+  background:transparent;
+
+}
+
+/* =========================================
+   BOTTOM CONTAINER
+========================================= */
+
+.premium-bottom-card-container{
+
+  background:
+  linear-gradient(
+    135deg,
+    #000000,
+    #001326,
+    #00574d
+  );
+
+  border-radius:42px;
+
+  padding:35px;
+
+  box-shadow:
+  0 25px 60px rgba(0,0,0,0.25);
+
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.logout-btn{
+
+  background:
+    linear-gradient(
+      135deg,
+      #00bfff,
+      #00ffd5,
+      #8affff
+    );
+
+  box-shadow:
+    0 15px 35px rgba(0,255,200,0.35);
+
+}
+
+
+/* =========================================
+   WATER SHINE ANIMATION
+========================================= */
+
+@keyframes waterShine{
+
+  100%{
+
+    transform:
+      translateX(120%);
+
+  }
+
+}
+
+
+
+
+
+/* HOVER */
+
+.premium-sidebar-btn:hover{
+
+  transform:
+    translateY(-5px)
+    scale(1.03);
+
+}
+
+
+/* =========================================
+   SHINE EFFECT
+========================================= */
+
+.premium-sidebar-btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.35),
+      transparent
+    );
+
+  left:-200px;
+
+  top:0;
+
+  transform:skewX(-25deg);
+
+  animation:
+    premiumWater 4s linear infinite;
+
+}
+
+
+.membership-page-wrapper{
+
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:42px;
+
+}
+.membership-card-wrapper{
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+
+}
+.membership-card{
+
+  width:480px;
+
+  height:260px;
+
+  margin:auto;
+
+  border-radius:20px;
+
+  background: 
+  linear-gradient(
+    135deg,
+    red,
+    rgb(62, 205, 241),
+    rgb(236, 60, 216)
+  );
+
+  position:relative;
+
+  padding:55px 45px;
+
+  overflow:visible;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.12);
+
+}
+
+.card-shine{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+
+}
+.membership-info{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:22px;
+
+  margin-top:45px;
+
+}
+
+.apollo-mini-logo{
+
+  width:60px;
+
+  height:60px;
+
+  border-radius:50%;
+
+  background:silver;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-weight:900;
+
+  font-size:24px;
+
+  color:#111;
+
+}
+.membership-name{
+
+  font-size:26px;
+
+  font-weight:800;
+
+  color:black;
+
+}
+
+.membership-level{
+
+  font-size:18px;
+
+  color:black;
+
+  margin-top:6px;
+
+}
+
+/* =====================================
+   FLOATING HC CARD
+===================================== */
+
+.floating-hc-card{
+
+  position:absolute;
+
+  left:50%;
+
+  bottom:-32px;
+
+  transform:translateX(-50%);
+
+  width:340px;
+
+  height:72px;
+
+  border-radius:16px;
+
+  background:silver;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:0 28px;
+
+  box-shadow:
+  0 8px 25px rgba(0,0,0,0.18);
+
+}
+.available-text{
+
+  font-size:16px;
+
+  font-weight:700;
+
+   color:#111;
+
+}
+
+
+
+.floating-hc-value{
+
+  font-size:20px;
+
+  font-weight:900;
+
+  color:#111;
+
+}
+
+.hc-left{
+
+  font-size:22px;
+
+}
+
+/* =====================================
+   TRANSACTIONS
+===================================== */
+
+.transactions-main-section{
+
+  width:95%;
+
+  background:white;
+
+  border-radius:18px;
+
+  padding:30px;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.1);
+
+}
+.transaction-main-title{
+
+  text-align:center;
+
+  font-size:26px;
+
+  font-weight:900;
+
+  margin-bottom:45px;
+
+}
+.transaction-top-summary{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:35px;
+
+}
+.summary-small{
+
+  font-size:20px;
+
+  color:#666;
+
+}
+
+
+.summary-value{
+
+  font-size:36px;
+
+  font-weight:900;
+
+}
+
+/* =====================================
+   TRANSACTION LIST
+===================================== */
+
+.transactions-list-new{
+
+  max-height:600px;
+
+  overflow-y:auto;
+
+}
+
+
+.transaction-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:30px 0;
+
+  border-bottom:
+  1px solid #ddd;
+
+}
+
+
+.transaction-left{
+
+  display:flex;
+
+  gap:18px;
+
+}
+
+
+.transaction-icon{
+
+  width:45px;
+
+  height:45px;
+
+  border-radius:50%;
+
+  border:2px solid #008cff;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+}
+
+
+.transaction-title-new{
+
+  font-size:28px;
+
+  font-weight:700;
+
+}
+
+
+.transaction-date{
+
+  font-size:20px;
+
+  color:#666;
+
+}
+
+
+.transaction-bill-new{
+
+  font-size:22px;
+
+  margin-top:8px;
+
+  color:#444;
+
+}
+
+
+.transaction-right{
+
+  text-align:right;
+
+}
+
+
+.earned-green{
+
+  color:#00a86b;
+
+  font-size:28px;
+
+  font-weight:800;
+
+}
+
+
+.redeemed-red{
+
+  color:red;
+
+  font-size:28px;
+
+  font-weight:800;
+
+}
+
+/* =====================================
+   ORDERS PAGE
+===================================== */
+
+.orders-page-wrapper{
+
+  width:100%;
+
+  max-width:1050px;
+
+  background:white;
+
+  border-radius:10px;
+
+  padding:20px;
+
+  margin:auto;
+
+  box-shadow:
+  0 5px 20px rgba(0,0,0,0.08);
+
+}
+
+
+/* TABS */
+
+.orders-tabs{
+
+  display:flex;
+
+  gap:30px;
+
+  border-bottom:1px solid #ddd;
+
+  padding-bottom:14px;
+
+  margin-bottom:20px;
+
+}
+
+.orders-tabs button{
+
+  border:none;
+
+  background:none;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  color:#777;
+
+  cursor:pointer;
+
+}
+
+.active-order-tab{
+
+  color:#006d77 !important;
+
+  border-bottom:3px solid #57d6c7;
+
+  padding-bottom:10px;
+
+}
+
+
+/* SCROLL */
+
+.orders-scroll-container{
+
+  max-height:700px;
+
+  overflow-y:auto;
+
+  padding-right:10px;
+
+}
+
+
+/* ORDER ROW */
+
+.modern-order-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:20px 10px;
+
+  border-bottom:1px solid #e5e5e5;
+
+}
+
+
+/* LEFT */
+
+.order-left-area{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+  width:220px;
+
+}
+
+.small-order-label{
+
+  font-size:11px;
+
+  color:#888;
+
+}
+
+.order-date{
+
+  font-size:15px;
+
+  font-weight:700;
+
+}
+
+.shipment-id{
+
+  font-size:15px;
+
+  font-weight:700;
+
+}
+
+
+/* CENTER */
+
+.order-center-area{
+
+  flex:1;
+
+}
+
+.items-count{
+
+  font-size:12px;
+
+  color:#888;
+
+  margin-bottom:10px;
+
+}
+
+.mini-images{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-bottom:14px;
+
+}
+
+.mini-order-img{
+
+  width:42px;
+
+  height:42px;
+
+  object-fit:contain;
+
+  border:1px solid #ddd;
+
+  border-radius:4px;
+
+  background:white;
+
+  padding:3px;
+
+}
+
+.purchase-type{
+
+  font-size:14px;
+
+  font-weight:600;
+
+}
+
+
+/* RIGHT */
+
+.order-right-area{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-end;
+
+  gap:20px;
+
+}
+
+.details-btn{
+
+  border:1px solid #7faeb2;
+
+  background:white;
+
+  color:#35676d;
+
+  padding:8px 18px;
+
+  border-radius:4px;
+
+  font-size:13px;
+
+  cursor:pointer;
+
+}
+
+.reorder-btn{
+
+  border:none;
+
+  background:none;
+
+  color:#ff9800;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+.product-upload-wrapper{
+
+  position:relative;
+
+}
+
+
+/* UPLOAD BUTTON */
+
+.upload-overlay{
+
+  position:absolute;
+
+  top:14px;
+
+  right:14px;
+
+  z-index:20;
+
+  background:
+  linear-gradient(
+    135deg,
+    #00c6ff,
+    #00ffd0
+  );
+
+  color:white;
+
+  padding:10px 16px;
+
+  border-radius:14px;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 8px 25px rgba(0,255,200,0.35);
+
+  transition:0.3s;
+
+  border:2px solid rgba(255,255,255,0.5);
+
+}
+
+
+.upload-overlay:hover{
+
+  transform:scale(1.08);
+
+  box-shadow:
+  0 10px 35px rgba(0,255,255,0.55);
+
+}
+
+/* =========================================
+   TEXT ANIMATION
+========================================= */
+
+@keyframes medicalText{
+
+  0%{
+
+    background-position:0%;
+
+  }
+
+  100%{
+
+    background-position:300%;
+
+  }
+
+}
+
+/* =========================================
+   ARROW ANIMATION
+========================================= */
+
+@keyframes arrowMove{
+
+  from{
+
+    transform:translateX(0px);
+
+  }
+
+  to{
+
+    transform:translateX(6px);
+
+  }
+
+}
+
+@keyframes premiumWater{
+
+  100%{
+
+    left:180%;
+
+  }
+
+}
+
+ @keyframes premiumTextFlow{
+
+  0%{
+
+    background-position:0%;
+
+  }
+
+  100%{
+
+    background-position:300%;
+
+  }
+
+}
+@keyframes memberGradient{
+
+  0%{
+
+    background-position:0% 50%;
+
+  }
+
+  50%{
+
+    background-position:100% 50%;
+
+  }
+
+  100%{
+
+    background-position:0% 50%;
+
+  }
+
+}
+
+
+@keyframes memberBubble{
+
+  from{
+
+    transform:
+      translateX(0px)
+      translateY(0px)
+      scale(1);
+
+  }
+
+  to{
+
+    transform:
+      translateX(40px)
+      translateY(25px)
+      scale(1.2);
+
+  }
+
+}
+ @keyframes goldGlow{
+
+  from{
+
+    transform:
+      scale(1)
+      translateY(0px);
+
+    opacity:0.5;
+
+  }
+
+  to{
+
+    transform:
+      scale(1.2)
+      translateY(20px);
+
+    opacity:0.9;
+
+  }
+
+}
+@keyframes goldText{
+
+  0%{
+
+    background-position:0%;
+
+  }
+
+  100%{
+
+    background-position:300%;
+
+  }
+
+}
+
+
+@keyframes badgePulse{
+
+  from{
+
+    transform:scale(1);
+
+  }
+
+  to{
+
+    transform:scale(1.08);
+
+  }
+
+}
+@keyframes coinGlow{
+
+  from{
+
+    transform:
+      translateY(0px);
+
+    box-shadow:
+      0 0 18px rgba(255,215,0,0.22);
+
+  }
+
+  to{
+
+    transform:
+      translateY(-8px);
+
+    box-shadow:
+      0 0 35px rgba(255,215,0,0.45);
+
+  }
+
+}
+@keyframes goldBadgeMove{
+
+  0%{
+
+    background-position:0%;
+
+  }
+
+  100%{
+
+    background-position:300%;
+
+  }
+
+}
