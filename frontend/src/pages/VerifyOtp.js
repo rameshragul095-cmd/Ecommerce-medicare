@@ -315,29 +315,28 @@ export default function VerifyOtp() {
   try {
 
     const response = await API.post(
-      "/verify-otp",
-      {
-        phone,
-        otp: finalOtp
-      }
-    );
+  "/verify-otp",
+  {
+    phone,
+    otp: finalOtp
+  }
+);
 
-    console.log(response.data);
+console.log(response.data);
 
-    if (response.data.token) {
+if (response.data.success) {
 
-      localStorage.setItem(
-        "token",
-        response.data.token
-      );
+  alert("Login Successful ✅");
 
-      navigate("/");
+  navigate("/Home");
 
-    } else {
+} else {
 
-      alert("Invalid OTP ❌");
+  alert("Invalid OTP ❌");
 
-    }
+}
+
+ 
 
   } catch (error) {
 
@@ -348,34 +347,6 @@ export default function VerifyOtp() {
   }
 
 };
-
-    // SUCCESS
-
-  //   if (response.data.token) {
-
-  //     alert("Login Successful ✅");
-
-  //     localStorage.setItem(
-  //       "token",
-  //       response.data.token
-  //     );
-
-  //     navigate("/Home");
-
-  //   } else {
-
-  //     alert("Invalid OTP ❌");
-
-  //   }
-
-  // } catch (error) {
-
-  //   console.log(error);
-
-  //   alert("Invalid OTP ❌");
-
-  // }
-
 
 
 
