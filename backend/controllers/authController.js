@@ -24,21 +24,33 @@ exports.sendOtp = async (req, res) => {
 
 // VERIFY OTP
 exports.verifyOtp = async (req, res) => {
-  const { phone, otp } = req.body;
 
-  const cleanOtp = otp.toString().trim();
-  
-  console.log("PHONE:", phone);
-  console.log("ENTERED OTP:", cleanOtp);
-  console.log("VERIFY BODY:", req.body);
-  const record = await Otp.findOne({
-    where: {
-      phone,
-      otp: cleanOtp
-    }
+  const { phone } = req.body;
+
+  let user = await User.findOne({
+    where: { phone }
   });
 
-  console.log("DB OTP:", record?.otp);
+  if (!user) {
+
+    user = await User.create({ phone });
+
+  }
+
+  const token = jwt.sign(
+    { id: user.id },
+    "secret",
+    { expiresIn: "1h" }
+  );
+
+  res.json({
+    success: true,
+    message: "Login successful",
+    token,
+    user
+  });
+
+};
 
   if (!record) {
     return res.status(400).json({ message: "Invalid OTP" });
