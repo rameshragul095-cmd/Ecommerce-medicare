@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://medicare-backend-r6j.onrender.com/auth"
+  baseURL: "https://medicare-backend-rj0j.onrender.com"
 });
 
 export default API;
