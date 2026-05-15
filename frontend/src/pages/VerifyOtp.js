@@ -328,7 +328,7 @@ const verifyOtp = async () => {
 
       alert("Login Successful ✅");
 
-      navigate("/");
+      navigate("/home");
 
     } else {
 
