@@ -26,9 +26,19 @@ exports.sendOtp = async (req, res) => {
 exports.verifyOtp = async (req, res) => {
   const { phone, otp } = req.body;
 
+  const cleanOtp = otp.toString().trim();
+  
+  console.log("PHONE:", phone);
+  console.log("ENTERED OTP:", cleanOtp);
+
   const record = await Otp.findOne({
-    where: { phone, otp }
+    where: {
+      phone,
+      otp: cleanOtp
+    }
   });
+
+  console.log("DB OTP:", record?.otp);
 
   if (!record) {
     return res.status(400).json({ message: "Invalid OTP" });
