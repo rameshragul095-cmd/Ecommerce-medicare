@@ -534,7 +534,7 @@ export default function Home() {
           category: "Pain Relief",
           price: 35,
           image:
-            "https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+            "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg"
         },
 
         {
@@ -543,7 +543,7 @@ export default function Home() {
           category: "Supplement",
           price: 90,
           image:
-            "https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+            "https://m.media-amazon.com/images/I/61Q-+KR3WcL._AC_UF894,1000_QL80_.jpg"
         },
 
         // REAL MEDICINES
@@ -554,7 +554,7 @@ export default function Home() {
           category: "Fever Tablet",
           price: 35,
           image:
-            "https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+            "https://5.imimg.com/data5/SELLER/Default/2024/5/420344701/PF/LS/HF/33400885/dolo-650-mg-paracetamol-tablet-500x500.jpeg"
         },
 
         {
@@ -563,7 +563,7 @@ export default function Home() {
           category: "Antibiotic",
           price: 120,
           image:
-            "https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+            "https://5.imimg.com/data5/SELLER/Default/2024/9/449088584/IF/NG/TI/163113727/azithromycin-500-mg-tablet-500x500.jpg"
         },
 
         {
@@ -572,7 +572,7 @@ export default function Home() {
           category: "Capsule",
           price: 95,
           image:
-            "https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2tXj8SkHk006ZNLJA_h3LZddF9l7yfRJzHg&s"
         },
 
         {
@@ -581,7 +581,7 @@ export default function Home() {
           category: "Allergy Tablet",
           price: 45,
           image:
-            "https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+            "https://5.imimg.com/data5/SELLER/Default/2025/6/517707907/WE/XR/WJ/15257790/10mg-cetirizine-hydrochloride-tablets.jpeg"
         },
 
         {
@@ -590,7 +590,7 @@ export default function Home() {
           category: "Hydration",
           price: 25,
           image:
-            "https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+            "https://assets.truemeds.in/Images/ProductImage/TM-POER1-002179/ors-orange-flavour-cadila-powder-21.8gm_ors-orange-flavour-cadila-powder-218gm--TM-POER1-002179_6.png?width=320"
         },
 
         {
@@ -599,7 +599,7 @@ export default function Home() {
           category: "Supplement",
           price: 110,
           image:
-            "https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+            "https://assets.truemeds.in/Images/ProductImage/TM-TACR1-044993/zincovit-tablet-15_zincovit-tablet-15--TM-TACR1-044993_1.png"
         },
 
         {
@@ -608,7 +608,7 @@ export default function Home() {
           category: "Calcium Tablet",
           price: 140,
           image:
-            "https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+            "https://assets.truemeds.in/Images/ProductImage/TM-TACR1-036336/shelcal-500-tablet-15_shelcal-500-tablet-15--TM-TACR1-036336_1.png"
         },
 
         {
@@ -617,7 +617,7 @@ export default function Home() {
           category: "Cough Syrup",
           price: 90,
           image:
-            "https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+            "https://5.imimg.com/data5/SELLER/Default/2024/2/384398231/RG/WC/XS/37247731/benadryl-dr-kids-cough-syrup.jpg"
         },
 
         {
@@ -626,7 +626,7 @@ export default function Home() {
           category: "Pain Relief",
           price: 30,
           image:
-            "https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvpFxnyTcLQF92oim2_-VP8HpwcaNgUKPLhg&s"
         },
 
         {
@@ -635,7 +635,7 @@ export default function Home() {
           category: "Acidity",
           price: 55,
           image:
-            "https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHW6QWsYG3bVwv2QISQoSwMjpvJpJhWwJRAQ&s"
         },
 
         {
@@ -644,7 +644,7 @@ export default function Home() {
           category: "Pain Relief",
           price: 210,
           image:
-            "https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+            "https://img.clevup.in/82900/1661090898099_SKU-1862_1.jpg?width=600&format=webp"
         },
 
         {
@@ -653,7 +653,7 @@ export default function Home() {
           category: "Fever Tablet",
           price: 42,
           image:
-            "https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+            "https://tiimg.tistatic.com/fp/1/007/557/crocin-advance-pain-relief-for-headache-with-15x1-packaging-459.jpg"
         },
 
         // AUTO GENERATE MANY MEDICINES
@@ -664,7 +664,7 @@ export default function Home() {
           name:"Aspirin",
           category:"Tablet",
           price:120,
-          image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+          image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXh1qkdvwChMPKX5cHolUNiqh0pKaPx-PXSg&s"
         },
 
         {
@@ -672,7 +672,7 @@ export default function Home() {
           name:"Ibuprofen",
           category:"Pain Relief",
           price:80,
-          image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+          image:"https://5.imimg.com/data5/SELLER/Default/2023/7/325863554/WI/JM/SY/135658020/ibuprofen-tablets-ip-200-mg-.jpg"
         },
 
         {
@@ -680,7 +680,7 @@ export default function Home() {
           name:"Amoxiclav",
           category:"Antibiotic",
           price:220,
-          image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+          image:"https://5.imimg.com/data5/SELLER/Default/2025/6/515929171/OZ/JR/ED/243247988/1000mg-co-amoxiclav-amoxicillin-tablets.jpeg"
         },
 
         {
@@ -688,7 +688,7 @@ export default function Home() {
           name:"Cetaphil Cream",
           category:"Skin Care",
           price:340,
-          image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+          image:"https://media6.ppl-media.com/tr:h-235,w-235,c-at_max,dpr-2/static/img/product/409602/cetaphil-moisturising-cream-100-gm_9_display_1767766918_9d6b72b0.jpg"
         },
 
         {
@@ -696,7 +696,7 @@ export default function Home() {
           name:"Livogen",
           category:"Iron Supplement",
           price:160,
-          image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+          image:"https://m.media-amazon.com/images/I/51vwitONSoL._AC_UF1000,1000_QL80_.jpg"
         },
 
         {
@@ -704,7 +704,7 @@ export default function Home() {
           name:"Pantocid",
           category:"Acidity",
           price:140,
-          image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+          image:"https://icdn.tnmeds.com/cache/data/tnimages/9942-500x500.jpg"
         },
 
         {
@@ -712,7 +712,7 @@ export default function Home() {
           name:"Revital H",
           category:"Vitamin",
           price:320,
-          image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+          image:"https://rukminim2.flixcart.com/image/480/640/xif0q/vitamin-supplement/o/h/b/60-daily-health-30-cap-special-supplements-revital-original-imahfbfhmujpbmp4.jpeg?q=90"
         },
 
         {
@@ -720,7 +720,7 @@ export default function Home() {
           name:"Sinarest New",
           category:"Cold Tablet",
           price:95,
-          image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+          image:"https://m.media-amazon.com/images/I/61jOzTZhT1L._AC_UF1000,1000_QL80_.jpg"
         },
 
         {
@@ -728,7 +728,7 @@ export default function Home() {
           name:"Electral Powder",
           category:"Hydration",
           price:40,
-          image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+          image:"https://assets.truemeds.in/Images/ProductImage/TM-POER1-003820/electral-z-powder-4.38gm_electral-z-powder-438gm--TM-POER1-003820_1.png"
         },
 
         {
@@ -736,7 +736,7 @@ export default function Home() {
           name:"Omnigel",
           category:"Pain Relief",
           price:210,
-          image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+          image:"https://images.apollo247.in/pub/media/catalog/product/2/0/20_1.jpg"
         },
 
         {
@@ -744,7 +744,7 @@ export default function Home() {
         name:"Dolo 650",
         category:"Fever",
         price:35,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        image:"https://5.imimg.com/data5/SELLER/Default/2024/5/420344701/PF/LS/HF/33400885/dolo-650-mg-paracetamol-tablet-500x500.jpeg"
       },
 
       {
@@ -752,7 +752,7 @@ export default function Home() {
         name:"Azithromycin",
         category:"Antibiotic",
         price:180,
-        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        image:"https://medihealthdirect.co.uk/wp-content/uploads/2025/01/Azithromycin-Doxycycline_1-1.jpg"
       },
 
       {
@@ -760,39 +760,39 @@ export default function Home() {
         name:"Shelcal 500",
         category:"Calcium",
         price:145,
-        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        image:"https://assets.truemeds.in/Images/ProductImage/TM-TACR1-036336/shelcal-500-tablet-15_shelcal-500-tablet-15--TM-TACR1-036336_1.png"
       },
 
-      {
-        id:29,
-        name:"Benadryl Syrup",
-        category:"Cough Syrup",
-        price:110,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
-      },
+     {
+      id:29,
+      name:"Ascoril LS Syrup",
+      category:"Cough Syrup",
+      price:110,
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiwAnBlplE2G9ubIgkGppB2s9Ol_UNvUjaRQ&s"
+    },
 
-      {
-        id:30,
-        name:"Volini Spray",
-        category:"Pain Relief",
-        price:220,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
-      },
+    {
+      id:30,
+      name:"Dynapar Spray",
+      category:"Pain Relief",
+      price:240,
+      image:"https://davai24.com/wp-content/uploads/2021/12/download-2021-12-11T140823.996.jpeg"
+    },
 
       {
         id:31,
-        name:"Digene",
+        name:"Gelusil",
         category:"Acidity",
         price:75,
-        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        image:"https://images.apollo247.in/pub/media/catalog/product/G/E/GEL0002_3_1.jpg"
       },
 
-      {
+     {
         id:32,
-        name:"Zincovit",
+        name:"Supradyn Daily",
         category:"Multivitamin",
         price:190,
-        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        image:"https://m.media-amazon.com/images/I/61PsaAj51BL.jpg"
       },
 
       {
@@ -800,7 +800,7 @@ export default function Home() {
         name:"Cetzine",
         category:"Allergy",
         price:60,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+        image:"https://images.apollo247.in/pub/media/catalog/product/C/E/CET0423_1.jpg"
       },
 
       {
@@ -808,7 +808,7 @@ export default function Home() {
         name:"Monocef",
         category:"Antibiotic",
         price:260,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        image:"https://akmedicalhall.com/wp-content/uploads/2023/06/Monocef-O-1597641518-10017115-1.jpg"
       },
 
       {
@@ -816,7 +816,7 @@ export default function Home() {
         name:"ORS Electrolyte",
         category:"Hydration",
         price:40,
-        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        image:"https://m.media-amazon.com/images/I/71KQRvw3lbL.jpg"
       },
 
       {
@@ -824,7 +824,7 @@ export default function Home() {
         name:"Gaviscon",
         category:"Acidity",
         price:165,
-        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe08jWFl-bUL5Kuqud7mILv9Wx193cj6j2Bg&s"
       },
 
       {
@@ -832,7 +832,7 @@ export default function Home() {
         name:"Thyronorm",
         category:"Thyroid",
         price:130,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+        image:"https://medizzo.com/cdn/shop/products/Thyronorm100mcg.jpg?v=1747707964"
       },
 
       {
@@ -840,7 +840,7 @@ export default function Home() {
         name:"A to Z Gold",
         category:"Supplement",
         price:250,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        image:"https://assets.truemeds.in/Images/ProductImage/TM-CACR1-000016/a-to-z-gold-new-capsule-15-tm-cacr1-000016_1.png"
       },
 
       {
@@ -848,7 +848,7 @@ export default function Home() {
         name:"Moxikind CV",
         category:"Antibiotic",
         price:280,
-        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        image:"https://cdn01.pharmeasy.in/dam/productsnowatermark/117556/moxikind-cv-bottle-of-10ml-oral-drops-box-front-1-1756902748-non-watermarked.jpg"
       },
 
       {
@@ -856,7 +856,7 @@ export default function Home() {
         name:"Betadine",
         category:"Antiseptic",
         price:95,
-        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        image:"https://rizochem.com/wp-content/uploads/2023/05/Sachin-22.jpg"
       },
 
       {
@@ -864,7 +864,7 @@ export default function Home() {
         name:"Becosules",
         category:"Vitamin",
         price:155,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+        image:"https://assets.truemeds.in/Images/ProductImage/TM-CACR1-006834/becosules-capsule-20-tm-cacr1-006834_1.png"
       },
 
       {
@@ -872,7 +872,7 @@ export default function Home() {
         name:"Allegra",
         category:"Allergy",
         price:175,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        image:"https://cdn01.pharmeasy.in/dam/products/005720/allegra-180mg-strip-of-10-tablets-1-1641534155.jpg"
       },
 
       {
@@ -880,7 +880,7 @@ export default function Home() {
         name:"Ecosprin",
         category:"Heart Care",
         price:85,
-        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        image:"https://cdn01.pharmeasy.in/dam/productsnowatermark/064424/ecosprin-gold-10mg-strip-of-15-capsules-box-front-1-1756894428-non-watermarked.jpg"
       },
 
       {
@@ -888,7 +888,7 @@ export default function Home() {
         name:"TusQ Syrup",
         category:"Cough Syrup",
         price:125,
-        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        image:"https://www.practostatic.com/practopedia-images/v3/res-750/tusq-x-plus-expt-100ml_e5dc123a-1a19-49f2-83df-5fb382a88a4c.JPG"
       },
 
       {
@@ -896,7 +896,7 @@ export default function Home() {
         name:"Dexorange",
         category:"Iron Tonic",
         price:145,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+        image:"https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/0f87429517dc400289696733b3b0efec.jpg"
       },
 
       {
@@ -904,7 +904,7 @@ export default function Home() {
         name:"Limcee",
         category:"Vitamin C",
         price:90,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        image:"https://m.media-amazon.com/images/I/71FcUpi5X4L.jpg"
       },
 
       {
@@ -912,7 +912,7 @@ export default function Home() {
         name:"Nicip Plus",
         category:"Pain Relief",
         price:110,
-        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        image:"https://d1s24u4ln0wd0i.cloudfront.net/med/9173/NICIP%20PLUS%20TABLET%2010'S_1.webp"
       },
 
       {
@@ -920,7 +920,7 @@ export default function Home() {
         name:"Clavam",
         category:"Antibiotic",
         price:310,
-        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        image:"https://zeelabpharmacy.com/uploads/other_brand_image/Zee6784a1e0cef23.jpeg"
       },
 
       {
@@ -928,7 +928,7 @@ export default function Home() {
         name:"Fast Relief Balm",
         category:"Pain Relief",
         price:70,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+        image:"https://cdn01.pharmeasy.in/dam/products/I07472/fast-relife-50g-4-45ml-3.1-1663681504.jpg"
       },
 
       {
@@ -936,7 +936,7 @@ export default function Home() {
         name:"Lacto Calamine",
         category:"Skin Care",
         price:240,
-        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        image:"https://m.media-amazon.com/images/I/51dX1oamOnL._AC_UF1000,1000_QL80_.jpg"
       },
 
       {
