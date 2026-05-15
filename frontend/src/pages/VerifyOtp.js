@@ -310,7 +310,7 @@ export default function VerifyOtp() {
 
   try {
 
-    const finalOtp = otp.join("");
+    const finalOtp = otp.toString().replace(/,/g, "");
 
     const response = await API.post(
       "/verify-otp",
@@ -319,6 +319,12 @@ export default function VerifyOtp() {
         otp: finalOtp
       }
     );
+   
+    console.log("VERIFY DATA:", {
+    phone,
+    otp,
+    finalOtp: otp.join("")
+  });
 
     // SUCCESS
 

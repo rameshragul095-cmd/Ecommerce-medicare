@@ -30,7 +30,7 @@ exports.verifyOtp = async (req, res) => {
   
   console.log("PHONE:", phone);
   console.log("ENTERED OTP:", cleanOtp);
-
+  console.log("VERIFY BODY:", req.body);
   const record = await Otp.findOne({
     where: {
       phone,
