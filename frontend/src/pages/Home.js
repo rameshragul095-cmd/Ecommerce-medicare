@@ -658,53 +658,685 @@ export default function Home() {
 
         // AUTO GENERATE MANY MEDICINES
 
-        ...Array.from(
-          { length: 85 },
-          (_, i) => ({
+        
+        {
+          id:16,
+          name:"Aspirin",
+          category:"Tablet",
+          price:120,
+          image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        },
 
-            id: i + 16,
+        {
+          id:17,
+          name:"Ibuprofen",
+          category:"Pain Relief",
+          price:80,
+          image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        },
 
-            name:
-              [
-                "Pantoprazole",
-                "Metformin",
-                "Atorvastatin",
-                "Vitamin D3",
-                "Calpol",
-                "Augmentin",
-                "Liv52",
-                "Neurobion",
-                "Sinarest",
-                "Gelusil"
-              ][i % 10]
-              + " "
-              + (i + 1),
+        {
+          id:18,
+          name:"Amoxiclav",
+          category:"Antibiotic",
+          price:220,
+          image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        },
 
-            category:
-              [
-                "Tablet",
-                "Capsule",
-                "Syrup",
-                "Supplement",
-                "Injection"
-              ][i % 5],
+        {
+          id:19,
+          name:"Cetaphil Cream",
+          category:"Skin Care",
+          price:340,
+          image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+        },
 
-            price:
-              Math.floor(
-                Math.random() * 900
-              ) + 50,
+        {
+          id:20,
+          name:"Livogen",
+          category:"Iron Supplement",
+          price:160,
+          image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        },
 
-            image:
-              [
-                "https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
+        {
+          id:21,
+          name:"Pantocid",
+          category:"Acidity",
+          price:140,
+          image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        },
 
-                "https://cdn-icons-png.flaticon.com/512/3050/3050158.png",
+        {
+          id:22,
+          name:"Revital H",
+          category:"Vitamin",
+          price:320,
+          image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        },
 
-                "https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
-              ][i % 3]
+        {
+          id:23,
+          name:"Sinarest New",
+          category:"Cold Tablet",
+          price:95,
+          image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+        },
 
-          })
-        )
+        {
+          id:24,
+          name:"Electral Powder",
+          category:"Hydration",
+          price:40,
+          image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+        },
+
+        {
+          id:25,
+          name:"Omnigel",
+          category:"Pain Relief",
+          price:210,
+          image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+        }
+
+        {
+        id:26,
+        name:"Dolo 650",
+        category:"Fever",
+        price:35,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:27,
+        name:"Azithromycin",
+        category:"Antibiotic",
+        price:180,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:28,
+        name:"Shelcal 500",
+        category:"Calcium",
+        price:145,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:29,
+        name:"Benadryl Syrup",
+        category:"Cough Syrup",
+        price:110,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:30,
+        name:"Volini Spray",
+        category:"Pain Relief",
+        price:220,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:31,
+        name:"Digene",
+        category:"Acidity",
+        price:75,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:32,
+        name:"Zincovit",
+        category:"Multivitamin",
+        price:190,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:33,
+        name:"Cetzine",
+        category:"Allergy",
+        price:60,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:34,
+        name:"Monocef",
+        category:"Antibiotic",
+        price:260,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:35,
+        name:"ORS Electrolyte",
+        category:"Hydration",
+        price:40,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:36,
+        name:"Gaviscon",
+        category:"Acidity",
+        price:165,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:37,
+        name:"Thyronorm",
+        category:"Thyroid",
+        price:130,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:38,
+        name:"A to Z Gold",
+        category:"Supplement",
+        price:250,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:39,
+        name:"Moxikind CV",
+        category:"Antibiotic",
+        price:280,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:40,
+        name:"Betadine",
+        category:"Antiseptic",
+        price:95,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:41,
+        name:"Becosules",
+        category:"Vitamin",
+        price:155,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:42,
+        name:"Allegra",
+        category:"Allergy",
+        price:175,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:43,
+        name:"Ecosprin",
+        category:"Heart Care",
+        price:85,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:44,
+        name:"TusQ Syrup",
+        category:"Cough Syrup",
+        price:125,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:45,
+        name:"Dexorange",
+        category:"Iron Tonic",
+        price:145,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:46,
+        name:"Limcee",
+        category:"Vitamin C",
+        price:90,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:47,
+        name:"Nicip Plus",
+        category:"Pain Relief",
+        price:110,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:48,
+        name:"Clavam",
+        category:"Antibiotic",
+        price:310,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:49,
+        name:"Fast Relief Balm",
+        category:"Pain Relief",
+        price:70,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:50,
+        name:"Lacto Calamine",
+        category:"Skin Care",
+        price:240,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:51,
+        name:"Crocin Advance",
+        category:"Fever",
+        price:45,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:52,
+        name:"Otrivin Spray",
+        category:"Cold Relief",
+        price:130,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:53,
+        name:"Pudin Hara",
+        category:"Digestion",
+        price:50,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:54,
+        name:"Vicks Vaporub",
+        category:"Cold Relief",
+        price:85,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:55,
+        name:"Moov Spray",
+        category:"Pain Relief",
+        price:190,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      }
+      {
+        id:56,
+        name:"Gelusil MPS",
+        category:"Acidity",
+        price:95,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:57,
+        name:"Neurobion Forte",
+        category:"Vitamin B",
+        price:165,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:58,
+        name:"Calpol 650",
+        category:"Fever",
+        price:38,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:59,
+        name:"Meftal Spas",
+        category:"Pain Relief",
+        price:120,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:60,
+        name:"Pan D",
+        category:"Acidity",
+        price:145,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:61,
+        name:"Liv52 Syrup",
+        category:"Liver Care",
+        price:180,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:62,
+        name:"Rantac",
+        category:"Gastric",
+        price:75,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:63,
+        name:"Baidyanath Chyawanprash",
+        category:"Immunity",
+        price:320,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:64,
+        name:"Sinarest AF",
+        category:"Cold Relief",
+        price:105,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:65,
+        name:"Pantosec",
+        category:"Acidity",
+        price:135,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:66,
+        name:"Dabur Honitus",
+        category:"Cough Syrup",
+        price:155,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:67,
+        name:"Cetaphil Lotion",
+        category:"Skin Care",
+        price:420,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:68,
+        name:"ENO Powder",
+        category:"Digestion",
+        price:45,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:69,
+        name:"Flexon",
+        category:"Pain Relief",
+        price:90,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:70,
+        name:"Azee 500",
+        category:"Antibiotic",
+        price:210,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:71,
+        name:"Supradyn Daily",
+        category:"Multivitamin",
+        price:290,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:72,
+        name:"Ascoril LS",
+        category:"Cough Syrup",
+        price:145,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:73,
+        name:"Glucon D",
+        category:"Energy Drink",
+        price:180,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:74,
+        name:"Mucaine Gel",
+        category:"Acidity",
+        price:110,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:75,
+        name:"Voveran",
+        category:"Pain Relief",
+        price:125,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:76,
+        name:"TusQ DX",
+        category:"Cough Syrup",
+        price:135,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:77,
+        name:"Clindamycin",
+        category:"Antibiotic",
+        price:240,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:78,
+        name:"Duphaston",
+        category:"Hormonal",
+        price:380,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:79,
+        name:"Methylcobalamin",
+        category:"Vitamin B12",
+        price:260,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:80,
+        name:"Cofsils Lozenges",
+        category:"Throat Care",
+        price:55,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:81,
+        name:"Revital Women",
+        category:"Supplement",
+        price:340,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:82,
+        name:"Nasoclear",
+        category:"Nasal Spray",
+        price:95,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:83,
+        name:"Montair LC",
+        category:"Allergy",
+        price:185,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:84,
+        name:"Hexidine Mouthwash",
+        category:"Oral Care",
+        price:160,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:85,
+        name:"Burnol Cream",
+        category:"First Aid",
+        price:70,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      }
+      {
+        id:86,
+        name:"Dermi Cool Powder",
+        category:"Skin Care",
+        price:120,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:87,
+        name:"Becosules Z",
+        category:"Vitamin",
+        price:175,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:88,
+        name:"Aciloc 150",
+        category:"Acidity",
+        price:85,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:89,
+        name:"T-Bact Ointment",
+        category:"Skin Care",
+        price:145,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:90,
+        name:"Althrocin",
+        category:"Antibiotic",
+        price:230,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:91,
+        name:"Neosporin Powder",
+        category:"First Aid",
+        price:95,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:92,
+        name:"Pyrigesic",
+        category:"Fever",
+        price:48,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:93,
+        name:"Combiflam",
+        category:"Pain Relief",
+        price:65,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:94,
+        name:"D Cold Total",
+        category:"Cold Relief",
+        price:105,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:95,
+        name:"Alkasol Syrup",
+        category:"Urinary Care",
+        price:155,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:96,
+        name:"Baidyanath Ashwagandha",
+        category:"Ayurvedic",
+        price:310,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      },
+
+      {
+        id:97,
+        name:"Candid Dusting Powder",
+        category:"Skin Care",
+        price:135,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+      },
+
+      {
+        id:98,
+        name:"Meganeuron",
+        category:"Nerve Care",
+        price:275,
+        image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+      },
+
+      {
+        id:99,
+        name:"Oxalgin Nano Gel",
+        category:"Pain Relief",
+        price:190,
+        image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png"
+      },
+
+      {
+        id:100,
+        name:"Soframycin Cream",
+        category:"First Aid",
+        price:115,
+        image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+      }
+
 
       ];
 
