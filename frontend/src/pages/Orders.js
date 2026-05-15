@@ -228,6 +228,28 @@ export default function Orders() {
 
         <div className="orders-scroll-container">
 
+          {orders.length === 0 && (
+
+            <div className="text-center mt-20">
+
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png"
+                alt=""
+                className="w-40 mx-auto opacity-70"
+              />
+
+              <h2 className="text-3xl font-bold mt-6 text-gray-700">
+                No Orders Yet
+              </h2>
+
+              <p className="text-gray-500 mt-2">
+                Your purchased medicines will appear here
+              </p>
+
+            </div>
+
+          )}
+
           {orders.map((order,index) => (
 
             <div
@@ -282,13 +304,13 @@ export default function Orders() {
 
                 <p className="items-count">
 
-                  {order.items.length} Item(s)
+                  {order.items?.length || 0} Item(s)
 
                 </p>
 
                 <div className="mini-images">
 
-                  {order.items.map((item) => (
+                  {order.items?.map((item) => (
 
                     <img
                       key={item.id}

@@ -16,9 +16,14 @@ exports.createOrder = async (req, res) => {
     const finalAmount = total - discount;
 
     const order = await Order.create({
-      user_id: userId,
-      total: finalAmount
-    });
+
+  user_id: userId,
+
+  total: finalAmount,
+
+  items: items
+
+});
 
     await User.increment('points', {
       by: userPoints,
