@@ -1,12 +1,11 @@
 import Profile from "./Profile";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-import { FaQuestionCircle } from "react-icons/fa";
 
 export default function Membership() {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const transactions = [
 

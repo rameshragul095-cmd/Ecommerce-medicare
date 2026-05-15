@@ -1,115 +1,115 @@
-// import Profile from "./Profile";
+import Profile from "./Profile";
 
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-// import { FaQuestionCircle } from "react-icons/fa";
+import { FaQuestionCircle } from "react-icons/fa";
 
-// export default function Payments() {
+export default function Payments() {
 
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//   return (
+  return (
 
-//     <Profile>
+    <Profile>
 
-//       {/* GLOW EFFECTS */}
+      {/* GLOW EFFECTS */}
 
-//       <div className="premium-glow premium-glow1"></div>
+      <div className="premium-glow premium-glow1"></div>
 
-//       <div className="premium-glow premium-glow2"></div>
-
-
-//       {/* PAYMENT CONTAINER */}
-
-//       <div className="payments-container">
-
-//         {/* TOP HEADER */}
-
-//         <div className="payments-header">
-
-//           <h1 className="payments-title">
-
-//             PHARMACY PAYMENTS
-
-//           </h1>
-
-//           <h1 className="payments-title">
-
-//             MANAGE PAYMENTS
-
-//           </h1>
-
-//         </div>
+      <div className="premium-glow premium-glow2"></div>
 
 
-//         {/* EMPTY HISTORY */}
+      {/* PAYMENT CONTAINER */}
 
-//         <div className="payments-empty">
+      <div className="payments-container">
 
-//           {/* FLOATING ICON */}
+        {/* TOP HEADER */}
 
-//           <div className="payment-icon-container">
+        <div className="payments-header">
 
-//             <div className="payment-glow"></div>
+          <h1 className="payments-title">
 
-//             <img
-//               src="https://cdn-icons-png.flaticon.com/512/7486/7486740.png"
-//               alt=""
-//               className="payment-icon"
-//             />
+            PHARMACY PAYMENTS
 
-//           </div>
+          </h1>
 
+          <h1 className="payments-title">
 
-//           {/* TEXT */}
+            MANAGE PAYMENTS
 
-//           <h2 className="payment-empty-title">
+          </h1>
 
-//             No Payment History Found
-
-//           </h2>
-
-//           <p className="payment-empty-sub">
-
-//             Your completed transactions
-//             will appear here.
-
-//           </p>
-
-//         </div>
+        </div>
 
 
-//         {/* HELP BUTTON */}
+        {/* EMPTY HISTORY */}
 
-//         <button
+        <div className="payments-empty">
 
-//           onClick={() =>
-//             navigate("/help")
-//           }
+          {/* FLOATING ICON */}
 
-//           className="premium-help-btn"
+          <div className="payment-icon-container">
 
-//         >
+            <div className="payment-glow"></div>
 
-//           <div className="flex items-center gap-4">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/7486/7486740.png"
+              alt=""
+              className="payment-icon"
+            />
 
-//             <FaQuestionCircle />
+          </div>
 
-//             <span className="font-semibold text-2xl">
 
-//               Need Help
+          {/* TEXT */}
 
-//             </span>
+          <h2 className="payment-empty-title">
 
-//           </div>
+            No Payment History Found
 
-//           →
+          </h2>
 
-//         </button>
+          <p className="payment-empty-sub">
 
-//       </div>
+            Your completed transactions
+            will appear here.
 
-//     </Profile>
+          </p>
 
-//   );
-// }
+        </div>
+
+
+        {/* HELP BUTTON */}
+
+        <button
+
+          onClick={() =>
+            navigate("/help")
+          }
+
+          className="premium-help-btn"
+
+        >
+
+          <div className="flex items-center gap-4">
+
+            <FaQuestionCircle />
+
+            <span className="font-semibold text-2xl">
+
+              Need Help
+
+            </span>
+
+          </div>
+
+          →
+
+        </button>
+
+      </div>
+
+    </Profile>
+
+  );
+}

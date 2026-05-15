@@ -2,10 +2,10 @@ import Profile from "./Profile";
 
 import { useNavigate } from "react-router-dom";
 
-// import {
-//   FaQuestionCircle,
-//   FaSearch
-// } from "react-icons/fa";
+import {
+  FaQuestionCircle,
+  FaSearch
+} from "react-icons/fa";
 
 import {
   MapContainer,

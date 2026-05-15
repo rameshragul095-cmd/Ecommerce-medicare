@@ -9,7 +9,7 @@ import {
   FaCrown,
   FaMapMarkerAlt,
   FaTicketAlt,
-  // FaQuestionCircle,
+  FaQuestionCircle,
   FaSignOutAlt,
   FaGift,
 } from "react-icons/fa";
@@ -160,7 +160,7 @@ export default function PharmacyVoucher() {
           <button className="bg-white w-full rounded-2xl p-6 flex items-center justify-between shadow">
 
             <div className="flex items-center gap-4">
-              {/* <FaQuestionCircle /> */}
+              <FaQuestionCircle />
               <span className="font-semibold text-2xl">
                 Need Help
               </span>

@@ -6,7 +6,7 @@ export default function Login() {
 
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
-  // const [loading, setLoading] = useState(false);
+ 
   
   const sendOtp = async () => {
 
