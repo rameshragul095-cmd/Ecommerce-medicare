@@ -351,32 +351,32 @@ export default function VerifyOtp() {
 
     // SUCCESS
 
-    if (response.data.token) {
+  //   if (response.data.token) {
 
-      alert("Login Successful ✅");
+  //     alert("Login Successful ✅");
 
-      localStorage.setItem(
-        "token",
-        response.data.token
-      );
+  //     localStorage.setItem(
+  //       "token",
+  //       response.data.token
+  //     );
 
-      navigate("/Home");
+  //     navigate("/Home");
 
-    } else {
+  //   } else {
 
-      alert("Invalid OTP ❌");
+  //     alert("Invalid OTP ❌");
 
-    }
+  //   }
 
-  } catch (error) {
+  // } catch (error) {
 
-    console.log(error);
+  //   console.log(error);
 
-    alert("Invalid OTP ❌");
+  //   alert("Invalid OTP ❌");
 
-  }
+  // }
 
-};
+
 
 
   return (
