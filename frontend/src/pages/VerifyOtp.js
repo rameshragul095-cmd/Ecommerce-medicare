@@ -306,7 +306,7 @@ export default function VerifyOtp() {
 
 
   /* VERIFY OTP */
-  const verifyOtp = async () => {
+const verifyOtp = async () => {
 
   const finalOtp = otp.join("").trim();
 
@@ -315,40 +315,36 @@ export default function VerifyOtp() {
   try {
 
     const response = await API.post(
-  "/verify-otp",
-  {
-    phone,
-    otp: finalOtp
-  }
-);
+      "/verify-otp",
+      {
+        phone,
+        otp: finalOtp
+      }
+    );
 
-console.log(response.data);
+    console.log("FULL RESPONSE:", response.data);
 
-if (response.data.success) {
+    if (response.data.success === true) {
 
-  alert("Login Successful ✅");
+      alert("Login Successful ✅");
 
-  navigate("/Home");
+      navigate("/");
 
-} else {
+    } else {
 
-  alert("Invalid OTP ❌");
+      alert(response.data.message);
 
-}
-
- 
+    }
 
   } catch (error) {
 
-    console.log(error);
+    console.log("FULL ERROR:", error);
 
-    alert("Invalid OTP ❌");
+    alert("Server Error ❌");
 
   }
 
 };
-
-
 
   return (
 
