@@ -52,27 +52,27 @@ exports.verifyOtp = async (req, res) => {
 
 };
 
-  if (!record) {
-    return res.status(400).json({ message: "Invalid OTP" });
-  }
+//   if (!record) {
+//     return res.status(400).json({ message: "Invalid OTP" });
+//   }
 
-  if (new Date() > record.expiry) {
-    return res.status(400).json({ message: "OTP expired" });
-  }
+//   if (new Date() > record.expiry) {
+//     return res.status(400).json({ message: "OTP expired" });
+//   }
 
-  let user = await User.findOne({ where: { phone } });
+//   let user = await User.findOne({ where: { phone } });
 
-  if (!user) {
-    user = await User.create({ phone });
-  }
+//   if (!user) {
+//     user = await User.create({ phone });
+//   }
 
-  const token = jwt.sign({ id: user.id }, "secret", {
-    expiresIn: "1h"
-  });
+//   const token = jwt.sign({ id: user.id }, "secret", {
+//     expiresIn: "1h"
+//   });
 
-  res.json({
-    message: "Login successful",
-    token,
-    user
-  });
-};
+//   res.json({
+//     message: "Login successful",
+//     token,
+//     user
+//   });
+// };
