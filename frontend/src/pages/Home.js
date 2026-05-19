@@ -846,7 +846,105 @@ export default function Home() {
         category:"First Aid",
         price:115,
         image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
-      }
+      },
+          {
+        id:101,
+        name:"Whey Protein Powder",
+        category:"Men Gym",
+        price:2499,
+        image:"https://m.media-amazon.com/images/I/71LMYzN2LEL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        id:102,
+        name:"Mass Gainer",
+        category:"Men Gym",
+        price:2899,
+        image:"https://beastlife.in/cdn/shop/files/Artboard1_498b8a1a-ab6e-478f-b0c4-a057e4d3df34.png?v=1777989173&width=1445"
+    },
+    {
+        id:103,
+        name:"Creatine Monohydrate",
+        category:"Men Gym",
+        price:1499,
+        image:"https://m.media-amazon.com/images/I/61yKEkaszjL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        id:104,
+        name:"Pre Workout Booster",
+        category:"Men Gym",
+        price:1799,
+        image:"https://int.esn.com/cdn/shop/files/Crank380g_VividPackshot.jpg?v=1744615891&width=2048"
+    },
+    {
+        id:105,
+        name:"BCAA Energy Drink",
+        category:"Men Gym",
+        price:999,
+        image:"https://m.media-amazon.com/images/I/81ofMGh-knL.jpg"
+    },
+    {
+        id:106,
+        name:"L-Arginine Tablets",
+        category:"Men Gym",
+        price:850,
+        image:"https://m.media-amazon.com/images/I/7155wLAKU9L.jpg"
+    },
+    {
+        id:107,
+        name:"Fish Oil Omega 3",
+        category:"Men Gym",
+        price:1199,
+        image:"https://i5.walmartimages.com/seo/Nature-Made-Extra-Strength-Burp-Less-Omega-3-Fish-Oil-Supplements-1400-mg-Minis-Softgels-80-Count_186cb396-d9c3-4c3a-ae4b-07ea778af5a3.b67c612823b1aa020e048263324ea505.jpeg"
+    },
+    {
+        id:108,
+        name:"Multivitamin Men",
+        category:"Men Gym",
+        price:699,
+        image:"https://www.bbassets.com/media/uploads/p/l/40322611_2-centrum-men-multivitamin-protein-health-drink-powder-chocolate.jpg"
+    },
+    {
+        id:109,
+        name:"Testosterone Support",
+        category:"Men Gym",
+        price:1599,
+        image:"https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/pharmacy-production-rxs%2F1757500999_crop_210.png"
+    },
+    {
+        id:110,
+        name:"Protein Energy Bar",
+        category:"Men Gym",
+        price:299,
+        image:"https://m.media-amazon.com/images/I/51+e0SHvTVL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        id:111,
+        name:"Electrolyte Hydration Mix",
+        category:"Men Gym",
+        price:599,
+        image:"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cuh/cuh62335/l/20.jpg"
+    },
+    {
+        id:112,
+        name:"Joint Support Capsules",
+        category:"Men Gym",
+        price:899,
+        image:"https://images-static.nykaa.com/media/catalog/product/7/7/779f3c3BBETT00000023.jpg?tr=w-500"
+    },
+    {
+        id:113,
+        name:"Muscle Recovery Powder",
+        category:"Men Gym",
+        price:1699,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2BJWD2X4BQE2jdOpidvjzvekcCMITsAGyA&s"
+    },
+    {
+        id:114,
+        name:"Gym Performance Stack",
+        category:"Men Gym",
+        price:3299,
+        image:"https://beastlife.in/cdn/shop/files/Gym_Bro_Stack_V3_01.jpg?v=1737448171&width=1445"
+    }
 
 
       ];
@@ -1618,556 +1716,556 @@ export default function Home() {
 
       ];
 
-return (
+      return (
 
-<div className="
-relative
-min-h-screen
-overflow-hidden
-bg-gradient-to-br
-from-white
-via-[#eafcff]
-to-[#c8f3ff]
-">
+      <div className="
+      relative
+      min-h-screen
+      overflow-hidden
+      bg-gradient-to-br
+      from-white
+      via-[#eafcff]
+      to-[#c8f3ff]
+      ">
 
-{/* WATER BACKGROUND */}
+      {/* WATER BACKGROUND */}
 
-<div
-className="
-absolute
-inset-0
-opacity-30
-pointer-events-none
-z-0
-overflow-hidden
-"
->
+      <div
+      className="
+      absolute
+      inset-0
+      opacity-30
+      pointer-events-none
+      z-0
+      overflow-hidden
+      "
+      >
 
-<div className="water1"></div>
+      <div className="water1"></div>
 
-<div className="water2"></div>
+      <div className="water2"></div>
 
-<div className="water3"></div>
+      <div className="water3"></div>
 
-</div>
+      </div>
 
 
 
-{/* ALL PAGE CONTENT */}
+      {/* ALL PAGE CONTENT */}
 
-<div
-className="
-relative
-z-50
-pointer-events-auto
-"
->
+      <div
+      className="
+      relative
+      z-50
+      pointer-events-auto
+      "
+      >
 
-<Navbar/>
+      <Navbar/>
 
-<MegaMenu/>
+      <MegaMenu/>
 
 
-{/* HERO */}
+      {/* HERO */}
 
-<div className="hero-section">
+      <div className="hero-section">
 
-<div className="circle circle1"></div>
+      <div className="circle circle1"></div>
 
-<div className="circle circle2"></div>
+      <div className="circle circle2"></div>
 
-<div className="circle circle3"></div>
+      <div className="circle circle3"></div>
 
 
-<h1 className="hero-title">
+      <h1 className="hero-title">
 
-MediCare Health Store
+      MediCare Health Store
 
-</h1>
+      </h1>
 
 
-<p className="hero-subtitle">
+      <p className="hero-subtitle">
 
-Trusted Medicines • Healthcare • Fast Delivery
+      Trusted Medicines • Healthcare • Fast Delivery
 
-</p>
+      </p>
 
 
 
-{/* SEARCH */}
+      {/* SEARCH */}
 
-<div className="search-box">
+      <div className="search-box">
 
-<span className="search-icon">
+      <span className="search-icon">
 
-🔍
+      🔍
 
-</span>
+      </span>
 
-<input
+      <input
 
-type="text"
+      type="text"
 
-placeholder="Search Medicines..."
+      placeholder="Search Medicines..."
 
-value={search}
+      value={search}
 
-onChange={(e)=>
-setSearch(
-e.target.value
-)
-}
+      onChange={(e)=>
+      setSearch(
+      e.target.value
+      )
+      }
 
-/>
+      />
 
-</div>
+      </div>
 
-</div>
+      </div>
 
 
 
-{/* PRODUCTS */}
+      {/* PRODUCTS */}
 
-<div className="px-4 md:px-8 lg:px-16 mt-14 pb-20">
+      <div className="px-4 md:px-8 lg:px-16 mt-14 pb-20">
 
-<h2 className="text-4xl font-bold mb-10">
+      <h2 className="text-4xl font-bold mb-10">
 
-Top Medicines
+      Top Medicines
 
-</h2>
+      </h2>
 
 
-<div
-className="
-grid
-grid-cols-3
-md:grid-cols-3
-lg:grid-cols-4
-gap-6
-"
->
+      <div
+      className="
+      grid
+      grid-cols-3
+      md:grid-cols-3
+      lg:grid-cols-4
+      gap-6
+      "
+      >
 
-{filteredProducts.map((item,index)=>{
+      {filteredProducts.map((item,index)=>{
 
-const adIndex=
-Math.floor(index/8)
-%
-ads.length;
+      const adIndex=
+      Math.floor(index/8)
+      %
+      ads.length;
 
 
-return(
+      return(
 
-<React.Fragment
-key={item.id}
->
+      <React.Fragment
+      key={item.id}
+      >
 
-{/* PRODUCT */}
+      {/* PRODUCT */}
 
-<div
-className="relative"
->
+      <div
+      className="relative"
+      >
 
-<ProductCard
-item={item}
-/>
+      <ProductCard
+      item={item}
+      />
 
 
-<label
-className="
-upload-overlay
-"
->
+      <label
+      className="
+      upload-overlay
+      "
+      >
 
-📷 Upload
+      📷 Upload
 
 
-<input
+      <input
 
-type="file"
+      type="file"
 
-hidden
+      hidden
 
-accept="image/*"
+      accept="image/*"
 
-onChange={(e)=>{
+      onChange={(e)=>{
 
-if(
-e.target.files[0]
-){
+      if(
+      e.target.files[0]
+      ){
 
-updateProductImage(
+      updateProductImage(
 
-item.id,
+      item.id,
 
-e.target.files[0]
+      e.target.files[0]
 
-);
+      );
 
-}
+      }
 
-}}
+      }}
 
- />
+      />
 
-</label>
+      </label>
 
-</div>
+      </div>
 
 
 
-{/* ADS */}
+      {/* ADS */}
 
-{(index+1)%8===0 && (
+      {(index+1)%8===0 && (
 
-<div
+      <div
 
-className="
-col-span-full
-cursor-pointer
-my-8
-"
+      className="
+      col-span-full
+      cursor-pointer
+      my-8
+      "
 
-onClick={()=>
+      onClick={()=>
 
-setSelectedAd(
+      setSelectedAd(
 
-ads[
-adIndex
-]
+      ads[
+      adIndex
+      ]
 
-)
+      )
 
-}
+      }
 
->
+      >
 
-<div
+      <div
 
-className="
-ad-banner
-"
+      className="
+      ad-banner
+      "
 
-style={{
+      style={{
 
-background:
+      background:
 
-ads[
-adIndex
-].bg
+      ads[
+      adIndex
+      ].bg
 
-}}
+      }}
 
->
+      >
 
-<div
-className="
-ad-content
-"
->
+      <div
+      className="
+      ad-content
+      "
+      >
 
-<div
-className="
-ad-left
-"
->
+      <div
+      className="
+      ad-left
+      "
+      >
 
-<h1>
+      <h1>
 
-{
-ads[
-adIndex
-]
-.title
-}
+      {
+      ads[
+      adIndex
+      ]
+      .title
+      }
 
-</h1>
+      </h1>
 
 
-<p>
+      <p>
 
-{
-ads[
-adIndex
-]
-.subtitle
-}
+      {
+      ads[
+      adIndex
+      ]
+      .subtitle
+      }
 
-</p>
+      </p>
 
 
-<button>
+      <button>
 
-Explore Now
+      Explore Now
 
-</button>
+      </button>
 
-</div>
+      </div>
 
 
-<div
-className="
-ad-right
-"
->
+      <div
+      className="
+      ad-right
+      "
+      >
 
-<img
+      <img
 
-src={
-ads[
-adIndex
-]
-.image
-}
+      src={
+      ads[
+      adIndex
+      ]
+      .image
+      }
 
-alt=""
+      alt=""
 
-/>
+      />
 
-</div>
+      </div>
 
-</div>
+      </div>
 
-</div>
+      </div>
 
-</div>
+      </div>
 
-)}
+      )}
 
-</React.Fragment>
+      </React.Fragment>
 
-)
+      )
 
-})}
+      })}
 
-</div>
+      </div>
 
-</div>
+      </div>
 
 
 
-{/* AD MODAL */}
+      {/* AD MODAL */}
 
-{selectedAd && (
+      {selectedAd && (
 
-<div
-className="
-fixed
-inset-0
-bg-black/60
-flex
-items-center
-justify-center
-z-[100]
-"
->
+      <div
+      className="
+      fixed
+      inset-0
+      bg-black/60
+      flex
+      items-center
+      justify-center
+      z-[100]
+      "
+      >
 
-<div
+      <div
 
-className="
-w-[95%]
-max-w-[900px]
-max-h-[90vh]
-overflow-y-auto
-rounded-[35px]
-p-8
-text-white
-relative
-shadow-2xl
-"
+      className="
+      w-[95%]
+      max-w-[900px]
+      max-h-[90vh]
+      overflow-y-auto
+      rounded-[35px]
+      p-8
+      text-white
+      relative
+      shadow-2xl
+      "
 
-style={{
-background:
-selectedAd.bg
-}}
->
+      style={{
+      background:
+      selectedAd.bg
+      }}
+      >
 
-<button
+      <button
 
-onClick={()=>
-setSelectedAd(null)
-}
+      onClick={()=>
+      setSelectedAd(null)
+      }
 
-className="
-absolute
-top-5
-right-5
-bg-white
-text-black
-w-10
-h-10
-rounded-full
-font-bold
-"
->
+      className="
+      absolute
+      top-5
+      right-5
+      bg-white
+      text-black
+      w-10
+      h-10
+      rounded-full
+      font-bold
+      "
+      >
 
-✕
+      ✕
 
-</button>
+      </button>
 
 
-<div className="flex flex-col lg:flex-row gap-10">
+      <div className="flex flex-col lg:flex-row gap-10">
 
-<div className="flex-1">
+      <div className="flex-1">
 
-<h1 className="text-5xl font-black">
+      <h1 className="text-5xl font-black">
 
-{selectedAd.title}
+      {selectedAd.title}
 
-</h1>
+      </h1>
 
-<p className="mt-3 text-xl">
+      <p className="mt-3 text-xl">
 
-{selectedAd.subtitle}
+      {selectedAd.subtitle}
 
-</p>
+      </p>
 
-<p className="mt-6">
+      <p className="mt-6">
 
-{selectedAd.description}
+      {selectedAd.description}
 
-</p>
+      </p>
 
 
-<div className="
-mt-6
-bg-white/20
-p-5
-rounded-2xl
-">
+      <div className="
+      mt-6
+      bg-white/20
+      p-5
+      rounded-2xl
+      ">
 
-<h3 className="font-bold">
+      <h3 className="font-bold">
 
-✅ Benefits
+      ✅ Benefits
 
-</h3>
+      </h3>
 
-<ul>
+      <ul>
 
-{selectedAd.benefits?.map(
+      {selectedAd.benefits?.map(
 
-(item,index)=>(
+      (item,index)=>(
 
-<li key={index}>
+      <li key={index}>
 
-• {item}
+      • {item}
 
-</li>
+      </li>
 
-)
+      )
 
-)}
+      )}
 
-</ul>
+      </ul>
 
-</div>
+      </div>
 
 
-<div className="
-mt-6
-bg-white/20
-p-5
-rounded-2xl
-">
+      <div className="
+      mt-6
+      bg-white/20
+      p-5
+      rounded-2xl
+      ">
 
-<h3 className="font-bold">
+      <h3 className="font-bold">
 
-⚠ Causes
+      ⚠ Causes
 
-</h3>
+      </h3>
 
-<ul>
+      <ul>
 
-{selectedAd.causes?.map(
+      {selectedAd.causes?.map(
 
-(item,index)=>(
+      (item,index)=>(
 
-<li key={index}>
+      <li key={index}>
 
-• {item}
+      • {item}
 
-</li>
+      </li>
 
-)
+      )
 
-)}
+      )}
 
-</ul>
+      </ul>
 
-</div>
+      </div>
 
 
-<div className="
-mt-6
-bg-white/20
-p-5
-rounded-2xl
-">
+      <div className="
+      mt-6
+      bg-white/20
+      p-5
+      rounded-2xl
+      ">
 
-<h3 className="font-bold">
+      <h3 className="font-bold">
 
-🛡 Prevention
+      🛡 Prevention
 
-</h3>
+      </h3>
 
-<ul>
+      <ul>
 
-{selectedAd.prevention?.map(
+      {selectedAd.prevention?.map(
 
-(item,index)=>(
+      (item,index)=>(
 
-<li key={index}>
+      <li key={index}>
 
-• {item}
+      • {item}
 
-</li>
+      </li>
 
-)
+      )
 
-)}
+      )}
 
-</ul>
+      </ul>
 
-</div>
+      </div>
 
-</div>
+      </div>
 
 
-<div className="
-w-full
-lg:w-[280px]
-flex
-justify-center
-items-center
-">
+      <div className="
+      w-full
+      lg:w-[280px]
+      flex
+      justify-center
+      items-center
+      ">
 
-<img
+      <img
 
-src={selectedAd.image}
+      src={selectedAd.image}
 
-alt=""
+      alt=""
 
-className="
-w-[250px]
-hover:scale-110
-duration-300
-"
+      className="
+      w-[250px]
+      hover:scale-110
+      duration-300
+      "
 
-/>
+      />
 
-</div>
+      </div>
 
-</div>
+      </div>
 
-</div>
+      </div>
 
-</div>
+      </div>
 
-)}
+      )}
 
-</div>
+      </div>
 
-</div>
+      </div>
 
-);
+      );
 
-}
+      }
