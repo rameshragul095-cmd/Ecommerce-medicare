@@ -23,87 +23,87 @@ export default function MedicalChatBot() {
 
   const sendMessage = async () => {
 
-    if (!message.trim()) return;
+  if (!message.trim()) return;
 
-    const userInput = message;
+  const userInput = message;
+
+  setChat((prev) => [
+    ...prev,
+    {
+      sender: "user",
+      text: userInput
+    }
+  ]);
+
+  setMessage("");
+
+  setLoading(true);
+
+  try {
+
+    const response = await axios.post(
+
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDJ4G6YdtYN7EpcOqtsd9M4dSziZWdkOHo",
+
+      {
+        contents: [
+          {
+            parts: [
+              {
+                text:
+                  `You are MediCare AI medical assistant.
+                   Answer clearly and shortly.
+                   User question: ${userInput}`
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+
+    );
+
+    console.log("SUCCESS:", response.data);
+
+    const botReply =
+      response.data.candidates[0]
+      .content.parts[0]
+      .text;
 
     setChat((prev) => [
       ...prev,
       {
-        sender: "user",
-        text: userInput
+        sender: "bot",
+        text: botReply
       }
     ]);
 
-    setMessage("");
+  } catch (error) {
 
-    setLoading(true);
+    console.log(
+      "REAL ERROR:",
+      error.response?.data
+    );
 
-    try {
+    setChat((prev) => [
+      ...prev,
+      {
+        sender: "bot",
+        text:
+          "⚠️ Gemini AI failed."
+      }
+    ]);
 
-      const response = await axios.post(
+  }
 
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDJ4G6YdtYN7EpcOqtsd9M4dSziZWdkOHo",
+  setLoading(false);
 
-        {
-          contents: [
-            {
-              parts: [
-                {
-                  text:
-                    `You are a medical AI assistant for MediCare medical store app.
-                    Answer clearly and shortly.
-                    User question: ${userInput}`
-                }
-              ]
-            }
-          ]
-        },
-
-        {
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-
-      );
-
-      console.log(response.data);
-
-      const botReply =
-        response.data.candidates[0]
-          .content.parts[0]
-          .text;
-
-      setChat((prev) => [
-        ...prev,
-        {
-          sender: "bot",
-          text: botReply
-        }
-      ]);
-
-    } catch (error) {
-
-      console.log(
-        "FULL ERROR:",
-        error.response?.data || error.message
-      );
-
-      setChat((prev) => [
-        ...prev,
-        {
-          sender: "bot",
-          text:
-            "⚠️ Gemini AI failed. Please try again."
-        }
-      ]);
-
-    }
-
-    setLoading(false);
-
-  };
+};
 
 
 
