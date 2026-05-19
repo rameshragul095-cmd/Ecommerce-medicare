@@ -3348,7 +3348,7 @@ body::after{
 
   display:flex;
 
-  gap:175px;
+  gap:20px;
 
   padding:28px 34px;
 
@@ -3374,6 +3374,16 @@ body::after{
 
   padding-top:12px;
 
+}
+/* =========================================
+   PREMIUM RIGHT CONTAINER
+========================================= */
+
+.premium-right-container{
+    flex:1;
+    margin-left:0;        /* remove extra margin */
+    padding:20px;
+    position:relative;
 }
 
 /* =========================================

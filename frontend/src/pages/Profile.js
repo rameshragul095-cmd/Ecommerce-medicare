@@ -374,39 +374,28 @@ export default function Profile({ children }) {
             RIGHT PREMIUM CONTENT
         ======================================= */}
 
-        <div className="premium-right-wrapper">
+        {/* =======================================
+    RIGHT PREMIUM CONTENT
+======================================= */}
 
-          {/* TOP CONTAINER */}
+          <div className="premium-right-container">
 
-          <div className="premium-top-container">
+            {/* WATER EFFECTS */}
 
             <div className="water-effect water1"></div>
-
             <div className="water-effect water2"></div>
-
             <div className="water-effect water3"></div>
 
-          </div>
-
-
-          {/* WHITE GAP */}
-
-          <div className="premium-container-gap"></div>
-
-
-          {/* MAIN CONTENT */}
-
-          <div className="premium-bottom-container">
+            {/* CONTENT */}
 
             <div className="relative z-10">
 
-              {children}
+                {children}
 
             </div>
 
           </div>
 
-        </div>
 
       </div>
 
