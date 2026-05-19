@@ -60,117 +60,158 @@ export default function Login() {
 };
   return (
 
-    <div className="relative min-h-screen overflow-hidden bg-[#98FBCB]">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-[#eafcff] to-[#c8f3ff]">
 
-  {/* Crystal Water Layer */}
-  <div className="crystal-flow crystal1"></div>
-  <div className="crystal-flow crystal2"></div>
-  <div className="crystal-flow crystal3"></div>
+    {/* Crystal Water Layer */}
+
+    <div className="crystal-flow crystal1"></div>
+    <div className="crystal-flow crystal2"></div>
+    <div className="crystal-flow crystal3"></div>
+
+
+    {/* CENTER WRAPPER */}
+
+    <div className="relative z-10 min-h-screen flex items-center justify-center px-4">
 
       {/* MAIN CONTAINER */}
-      <div className="w-full max-w-[720px] bg-white border border-green-100 rounded-[30px] shadow-lg px-8 py-10">
+
+      <div className="relative w-full max-w-[720px] bg-white border border-green-100 rounded-[30px] shadow-lg px-8 py-10">
 
         {/* TOP GLOW */}
-        <div className="absolute"></div>
-        {/* LOGO + TITLE */}
-<div className="flex flex-col items-center mb-6">
 
-  {/* TOP BRAND NAME */}
-  <div className="flex flex-col items-center">
+        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-green-100/50 to-transparent rounded-t-[30px]"></div>
 
-    <div className="flex items-center gap-3">
 
-      {/* SMALL LOGO ICON */}
-      <img
-        src="/logo.png"
-        alt="MediCare Logo"
-        className="w-10 h-10 object-contain"
-      />
+        {/* LOGO */}
 
-      {/* BRAND NAME */}
-      <h1 className="text-4xl font-extrabold text-emerald-700">
-        MediCare+
-      </h1>
+        <div className="flex flex-col items-center mb-6">
 
-    </div>
+          <div className="flex flex-col items-center">
 
-    {/* TAGLINE */}
-    <p className="text-green-600 text-sm font-medium mt-1">
-      Your Health, Our Priority
-    </p>
+            <div className="flex items-center gap-3">
 
-  </div>
+              <img
+                src="/logo.png"
+                alt="MediCare Logo"
+                className="w-10 h-10 object-contain"
+              />
 
-  {/* MEDICAL IMAGE BELOW */}
-  <img
-    src="/medical.png"
-    alt="Medical"
-    className="w-64 object-contain mt-6"
-  />
+              <h1 className="text-4xl font-extrabold text-emerald-700">
 
-</div>
+                MediCare+
 
-        {/* WELCOME TEXT */}
-        <div className="text-center mt-10">
+              </h1>
+
+            </div>
+
+            <p className="text-green-600 text-sm font-medium mt-1">
+
+              Your Health, Our Priority
+
+            </p>
+
+          </div>
+
+
+          <img
+            src="/medical.png"
+            alt="Medical"
+            className="w-64 object-contain mt-6"
+          />
+
+        </div>
+
+
+        {/* TITLE */}
+
+        <div className="text-center mt-6">
 
           <h2 className="text-4xl font-bold text-gray-800">
+
             Login / Register
+
           </h2>
 
-          <p className="text-gray-500 mt-4 text-lg leading-relaxed">
+          <p className="text-gray-500 mt-4 text-lg">
+
             Enter your mobile number to receive secure OTP access
+
           </p>
 
         </div>
 
-        {/* INPUT BOX */}
-      <div className="flex items-center border-2 border-green-100 bg-white rounded-2xl overflow-hidden h-14 shadow-sm transition-all duration-300 hover:border-green-400 focus-within:border-green-500 focus-within:ring-4 focus-within:ring-green-100">
 
-       <div className="px-5 text-lg font-semibold text-gray-700 border-r bg-green-50 h-full flex items-center">
-         +91
+        {/* INPUT */}
+
+        <div className="mt-6 flex items-center border-2 border-green-100 bg-white rounded-2xl overflow-hidden h-14 shadow-sm transition-all duration-300 hover:border-green-400 focus-within:border-green-500 focus-within:ring-4 focus-within:ring-green-100">
+
+          <div className="px-5 text-lg font-semibold text-gray-700 border-r bg-green-50 h-full flex items-center">
+
+            +91
+
+          </div>
+
+          <input
+            type="tel"
+            value={phone}
+            maxLength={10}
+            onChange={(e)=>
+              setPhone(
+                e.target.value.replace(/\D/g,"")
+              )
+            }
+            placeholder="Enter Mobile Number"
+            className="w-full h-full px-4 outline-none"
+          />
+
         </div>
 
-        <input
-          type="tel"
-          value={phone}
-          onChange={(e) =>
-            setPhone(e.target.value)
-          }
-          placeholder="Enter Mobile Number"
-          className="w-full outline-none"
-        />
-     </div>
 
         {/* BUTTON */}
-        <div className="flex justify-center mt-8">
-        <button
-          onClick={sendOtp}
-          className="w-[320px] h-14 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-700 text-white text-lg font-bold mt-8 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-        >
-          Send OTP
-        </button>
+
+        <div className="flex justify-center">
+
+          <button
+            onClick={sendOtp}
+            className="w-[320px] h-14 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-700 text-white text-lg font-bold mt-8 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+          >
+
+            Send OTP
+
+          </button>
+
         </div>
 
-        {/* POSITIVE SECURITY */}
+
+        {/* SECURITY */}
+
         <div className="mt-8 flex items-center justify-center gap-2">
 
           <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
 
           <p className="text-green-700 font-medium">
+
             Safe • Trusted • Instant Login
+
           </p>
 
         </div>
 
+
         {/* FOOTER */}
+
         <div className="text-center mt-10">
 
           <p className="text-gray-500 text-sm">
+
             By continuing, you agree to our
+
           </p>
 
           <p className="text-green-700 font-semibold mt-2 hover:underline cursor-pointer">
+
             Terms & Privacy Policy
+
           </p>
 
         </div>
@@ -178,5 +219,9 @@ export default function Login() {
       </div>
 
     </div>
+
+</div>
+
   );
+
 }
