@@ -3379,10 +3379,25 @@ body::after{
 ========================================= */
 
 .premium-right-container{
-    flex:1;
-    margin-left:0;        /* remove extra margin */
-    padding:20px;
-    position:relative;
+
+flex:1;
+
+padding:20px;
+
+position:relative;
+
+overflow:hidden;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+align-items:stretch;
+
+min-height:100vh;
+
 }
 
 /* =========================================
@@ -4620,16 +4635,30 @@ body::after{
 
 }
 
+.water-effect,
 .water1,
 .water2,
 .water3{
 
+position:absolute;
+
+top:0;
+left:0;
+
 width:280px;
 height:280px;
 
+border-radius:50%;
+
 filter:blur(18px);
 
-opacity:.4;
+pointer-events:none;
+
+z-index:0;
+
+will-change:transform;
+
+transform:translate3d(0,0,0);
 
 }
 
