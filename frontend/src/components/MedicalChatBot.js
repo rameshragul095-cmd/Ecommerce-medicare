@@ -20,8 +20,7 @@ export default function MedicalChatBot() {
 
 
   // SEND MESSAGE
-
- const sendMessage = async () => {
+const sendMessage = async () => {
 
   if (!message.trim()) return;
 
@@ -30,7 +29,10 @@ export default function MedicalChatBot() {
     text: message
   };
 
-  setChat((prev) => [...prev, userMessage]);
+  setChat((prev) => [
+    ...prev,
+    userMessage
+  ]);
 
   const userInput = message;
 
@@ -40,25 +42,31 @@ export default function MedicalChatBot() {
 
   try {
 
-   const response = await axios.post(
+    const response = await axios.post(
 
-  "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyCYxrV4hs2uU7sl6PMDzIfmurn_1yvhRQY",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCYxrV4hs2uU7sl6PMDzIfmurn_1yvhRQY",
 
-  {
-    contents: [
       {
-        parts: [
+        contents: [
           {
-            text:
-              `You are a helpful medical AI assistant.
-               User question: ${userInput}`
+            parts: [
+              {
+                text:
+                  `You are a helpful medical AI assistant for MediCare app.
+                  User question: ${userInput}`
+              }
+            ]
           }
         ]
-      }
-    ]
-  }
+      },
 
-);
+      {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+
+    );
 
     console.log("SUCCESS:", response.data);
 
@@ -82,7 +90,7 @@ export default function MedicalChatBot() {
 
     console.log(
       "FULL ERROR:",
-      error.response?.data || error
+      error.response?.data
     );
 
     setChat((prev) => [
