@@ -52,22 +52,28 @@ export default function MedicalChatBot() {
 
       const response = await axios.post(
 
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDJ4G6YdtYN7EpcOqtsd9M4dSziZWdkOHo`,
+  `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=AIzaSyDJ4G6YdtYN7EpcOqtsd9M4dSziZWdkOHo`,
 
-        {
-          contents: [
-            {
-              parts: [
-                {
-                  text:
-                    `You are a medical support AI for MediCare medical store app. User question: ${userInput}`
-                }
-              ]
-            }
-          ]
-        }
+  {
+    contents: [
+      {
+        parts: [
+          {
+            text:
+              `You are a medical support AI for MediCare medical store app. User question: ${userInput}`
+          }
+        ]
+      }
+    ]
+  },
 
-      );
+  {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+
+);
 
 
 
