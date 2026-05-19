@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import MegaMenu from "../components/MegaMenu";
 import ProductCard from "../components/ProductCard";
@@ -1619,539 +1618,556 @@ export default function Home() {
 
       ];
 
-  return (
+return (
 
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-cyan-50 via-blue-50 to-cyan-100">
+<div className="
+relative
+min-h-screen
+overflow-hidden
+bg-gradient-to-br
+from-white
+via-[#eafcff]
+to-[#c8f3ff]
+">
 
-  {/* Water Animation Layer 1 */}
-  <div className="absolute inset-0 opacity-60">
-    <div className="water1"></div>
-    <div className="water2"></div>
-    <div className="water3"></div>
-  </div>
+{/* WATER BACKGROUND */}
 
-      <Navbar />
+<div
+className="
+absolute
+inset-0
+opacity-30
+pointer-events-none
+z-0
+overflow-hidden
+"
+>
 
-      <MegaMenu />
+<div className="water1"></div>
 
-      {/* HERO */}
+<div className="water2"></div>
 
-      <div className="hero-section">
+<div className="water3"></div>
 
-        <div className="circle circle1"></div>
+</div>
 
-        <div className="circle circle2"></div>
 
-        <div className="circle circle3"></div>
 
-        <h1 className="hero-title">
+{/* ALL PAGE CONTENT */}
 
-          MediCare Health Store
+<div
+className="
+relative
+z-50
+pointer-events-auto
+"
+>
 
-        </h1>
+<Navbar/>
 
-        <p className="hero-subtitle">
+<MegaMenu/>
 
-          Trusted Medicines • Healthcare • Fast Delivery
 
-        </p>
+{/* HERO */}
 
-        {/* SEARCH */}
+<div className="hero-section">
 
-        <div className="search-box">
+<div className="circle circle1"></div>
 
-          <span className="search-icon">
+<div className="circle circle2"></div>
 
-            🔍
+<div className="circle circle3"></div>
 
-          </span>
 
-          <input
+<h1 className="hero-title">
 
-            type="text"
+MediCare Health Store
 
-            placeholder="Search Medicines..."
+</h1>
 
-            value={search}
 
-            onChange={(e) =>
-              setSearch(e.target.value)
-            }
+<p className="hero-subtitle">
 
-          />
+Trusted Medicines • Healthcare • Fast Delivery
 
-        </div>
+</p>
 
-      </div>
 
-      {/* BANNERS */}
 
-      <div className="grid grid-cols-3 gap-6 px-16 mt-10">
+{/* SEARCH */}
 
-        <div className="bg-green-100 rounded-3xl p-8 shadow-md">
+<div className="search-box">
 
-          <h2 className="text-3xl font-bold">
+<span className="search-icon">
 
-            20% OFF
+🔍
 
-          </h2>
+</span>
 
-          <p className="mt-2 text-gray-700">
+<input
 
-            First Order Discount
+type="text"
 
-          </p>
+placeholder="Search Medicines..."
 
-        </div>
+value={search}
 
-        <div className="bg-purple-100 rounded-3xl p-8 shadow-md">
+onChange={(e)=>
+setSearch(
+e.target.value
+)
+}
 
-          <h2 className="text-3xl font-bold">
+/>
 
-            Doctor Appointment
+</div>
 
-          </h2>
+</div>
 
-          <p className="mt-2 text-gray-700">
 
-            Book Online Consultation
 
-          </p>
+{/* PRODUCTS */}
 
-        </div>
+<div className="px-4 md:px-8 lg:px-16 mt-14 pb-20">
 
-        <div className="bg-yellow-100 rounded-3xl p-8 shadow-md">
+<h2 className="text-4xl font-bold mb-10">
 
-          <h2 className="text-3xl font-bold">
+Top Medicines
 
-            Health Insurance
+</h2>
 
-          </h2>
 
-          <p className="mt-2 text-gray-700">
+<div
+className="
+grid
+grid-cols-3
+md:grid-cols-3
+lg:grid-cols-4
+gap-6
+"
+>
 
-            Explore Medical Plans
+{filteredProducts.map((item,index)=>{
 
-          </p>
+const adIndex=
+Math.floor(index/8)
+%
+ads.length;
 
-        </div>
 
-      </div>
+return(
 
-      
-      {/* PRODUCTS */}
+<React.Fragment
+key={item.id}
+>
 
-          <div className="px-4 md:px-8 lg:px-16 mt-14 pb-20">
+{/* PRODUCT */}
 
-          <h2 className="text-4xl font-bold mb-10">
-          Top Medicines
-          </h2>
+<div
+className="relative"
+>
 
-          <div className="
-          grid
-          grid-cols-3
-          sm:grid-cols-3
-          md:grid-cols-2
-          lg:grid-cols-3
-          xl:grid-cols-4
-          gap-6
-          ">
+<ProductCard
+item={item}
+/>
 
-          {filteredProducts.map((item,index)=>{
 
-          const adIndex=
-          Math.floor(index/8)%ads.length;
+<label
+className="
+upload-overlay
+"
+>
 
-          return(
-          <>
-          <div
-          key={item.id}
-          className="relative"
-          >
+📷 Upload
 
-          <ProductCard item={item}/>
 
-          <label className="upload-overlay">
+<input
 
-          📷 Upload
+type="file"
 
-          <input
-          type="file"
-          hidden
-          accept="image/*"
+hidden
 
-          onChange={(e)=>{
+accept="image/*"
 
-          if(e.target.files[0]){
+onChange={(e)=>{
 
-          updateProductImage(
-          item.id,
-          e.target.files[0]
-          );
+if(
+e.target.files[0]
+){
 
-          }
+updateProductImage(
 
-          }}
-          />
+item.id,
 
-          </label>
+e.target.files[0]
 
-          </div>
+);
 
-          {/* AD AFTER EVERY 8 PRODUCTS */}
+}
 
-          {(index+1)%8===0 && (
+}}
 
-          <div
-          className="
-          col-span-full
-          cursor-pointer
-          mt-6
-          mb-6
-          "
+ />
 
-          onClick={()=>
-          setSelectedAd(
-          ads[adIndex]
-          )
-          }
-          >
+</label>
 
-          <div
-          className="ad-banner"
-          style={{
-          background:
-          ads[adIndex].bg
-          }}
-          >
+</div>
 
-          <div className="ad-content">
 
-          <div className="ad-left">
 
-          <h1>
-          {ads[adIndex].title}
-          </h1>
+{/* ADS */}
 
-          <p>
-          {ads[adIndex].subtitle}
-          </p>
+{(index+1)%8===0 && (
 
-          <button>
-          Explore Now
-          </button>
+<div
 
-          </div>
+className="
+col-span-full
+cursor-pointer
+my-8
+"
 
-          <div className="ad-right">
+onClick={()=>
 
-          <img
-          src={ads[adIndex].image}
-          alt=""
-          />
+setSelectedAd(
 
-          </div>
+ads[
+adIndex
+]
 
-          </div>
+)
 
-          </div>
+}
 
-          </div>
+>
 
-          )}
+<div
 
-          </>
-          )
+className="
+ad-banner
+"
 
-          })}
+style={{
 
-          </div>
+background:
 
-          </div>
+ads[
+adIndex
+].bg
 
-      {/* AD MODAL */}
+}}
 
-        {selectedAd && (
+>
 
-        <div className="
-        fixed
-        inset-0
-        z-50
-        bg-black/70
-        flex
-        items-center
-        justify-center
-        p-4
-        ">
+<div
+className="
+ad-content
+"
+>
 
-        <div
+<div
+className="
+ad-left
+"
+>
 
-        className="
-        w-[950px]
-        max-h-[90vh]
-        overflow-y-auto
-        rounded-[35px]
-        p-8
-        text-white
-        relative
-        shadow-2xl
-        "
+<h1>
 
-        style={{
-        background:selectedAd.bg
-        }}
+{
+ads[
+adIndex
+]
+.title
+}
 
-        >
+</h1>
 
-        {/* CLOSE BUTTON */}
 
-        <button
+<p>
 
-        onClick={()=>
-        setSelectedAd(null)
-        }
+{
+ads[
+adIndex
+]
+.subtitle
+}
 
-        className="
-        absolute
-        top-4
-        right-4
-        w-12
-        h-12
-        rounded-full
-        bg-white
-        text-black
-        font-bold
-        text-xl
-        "
+</p>
 
-        >
 
-        ✕
+<button>
 
-        </button>
+Explore Now
 
+</button>
 
-        <div className="flex gap-10">
+</div>
 
-        {/* LEFT SIDE */}
 
-        <div className="flex-1">
+<div
+className="
+ad-right
+"
+>
 
-        <h1 className="text-5xl font-black">
+<img
 
-        {selectedAd.title}
+src={
+ads[
+adIndex
+]
+.image
+}
 
-        </h1>
+alt=""
 
-        <p className="mt-3 text-xl">
+/>
 
-        {selectedAd.subtitle}
+</div>
 
-        </p>
+</div>
 
-        <p className="mt-6 leading-8 text-lg">
+</div>
 
-        {selectedAd.description}
+</div>
 
-        </p>
+)}
 
+</React.Fragment>
 
-        <div className="mt-6">
+)
 
-        <span className="
-        bg-white
-        text-black
-        px-6
-        py-3
-        rounded-full
-        font-bold
-        ">
+})}
 
-        {selectedAd.offer}
+</div>
 
-        </span>
+</div>
 
-        </div>
 
 
-        <div className="
-        mt-6
-        bg-white/20
-        backdrop-blur-md
-        p-4
-        rounded-2xl
-        ">
+{/* AD MODAL */}
 
-        <h3 className="font-bold text-2xl">
+{selectedAd && (
 
-        💰 Amount
+<div
+className="
+fixed
+inset-0
+bg-black/60
+flex
+items-center
+justify-center
+z-[100]
+"
+>
 
-        </h3>
+<div
 
-        <p className="mt-2">
+className="
+w-[95%]
+max-w-[900px]
+max-h-[90vh]
+overflow-y-auto
+rounded-[35px]
+p-8
+text-white
+relative
+shadow-2xl
+"
 
-        {selectedAd.amount}
+style={{
+background:
+selectedAd.bg
+}}
+>
 
-        </p>
+<button
 
-        </div>
+onClick={()=>
+setSelectedAd(null)
+}
 
+className="
+absolute
+top-5
+right-5
+bg-white
+text-black
+w-10
+h-10
+rounded-full
+font-bold
+"
+>
 
-        {/* BENEFITS */}
+✕
 
-        <div className="
-        mt-6
-        bg-white/20
-        p-4
-        rounded-2xl
-        ">
+</button>
 
-        <h3 className="font-bold text-2xl">
 
-        ✅ Benefits
+<div className="flex flex-col lg:flex-row gap-10">
 
-        </h3>
+<div className="flex-1">
 
-        <ul className="mt-3 space-y-2">
+<h1 className="text-5xl font-black">
 
-        {selectedAd.benefits?.map(
-        (item,index)=>(
+{selectedAd.title}
 
-        <li key={index}>
+</h1>
 
-        • {item}
+<p className="mt-3 text-xl">
 
-        </li>
+{selectedAd.subtitle}
 
-        ))
-        }
+</p>
 
-        </ul>
+<p className="mt-6">
 
-        </div>
+{selectedAd.description}
 
+</p>
 
-        {/* CAUSES */}
 
-        <div className="
-        mt-6
-        bg-white/20
-        p-4
-        rounded-2xl
-        ">
+<div className="
+mt-6
+bg-white/20
+p-5
+rounded-2xl
+">
 
-        <h3 className="font-bold text-2xl">
+<h3 className="font-bold">
 
-        ⚠ Causes
+✅ Benefits
 
-        </h3>
+</h3>
 
-        <ul className="mt-3 space-y-2">
+<ul>
 
-        {selectedAd.causes?.map(
-        (item,index)=>(
+{selectedAd.benefits?.map(
 
-        <li key={index}>
+(item,index)=>(
 
-        • {item}
+<li key={index}>
 
-        </li>
+• {item}
 
-        ))
-        }
+</li>
 
-        </ul>
+)
 
-        </div>
+)}
 
+</ul>
 
-        {/* PREVENTION */}
+</div>
 
-        <div className="
-        mt-6
-        bg-white/20
-        p-4
-        rounded-2xl
-        ">
 
-        <h3 className="font-bold text-2xl">
+<div className="
+mt-6
+bg-white/20
+p-5
+rounded-2xl
+">
 
-        🛡 Prevention
+<h3 className="font-bold">
 
-        </h3>
+⚠ Causes
 
-        <ul className="mt-3 space-y-2">
+</h3>
 
-        {selectedAd.prevention?.map(
-        (item,index)=>(
+<ul>
 
-        <li key={index}>
+{selectedAd.causes?.map(
 
-        • {item}
+(item,index)=>(
 
-        </li>
+<li key={index}>
 
-        ))
-        }
+• {item}
 
-        </ul>
+</li>
 
-        </div>
+)
 
+)}
 
-        <button className="
-        mt-8
-        bg-black
-        px-8
-        py-4
-        rounded-2xl
-        font-bold
-        text-lg
-        ">
+</ul>
 
-        Shop Now
+</div>
 
-        </button>
 
-        </div>
+<div className="
+mt-6
+bg-white/20
+p-5
+rounded-2xl
+">
 
+<h3 className="font-bold">
 
-        {/* RIGHT SIDE */}
+🛡 Prevention
 
-        <div className="
-        w-[300px]
-        flex
-        items-center
-        justify-center
-        ">
+</h3>
 
-        <img
+<ul>
 
-        src={selectedAd.image}
+{selectedAd.prevention?.map(
 
-        alt=""
+(item,index)=>(
 
-        className="
-        w-[250px]
-        drop-shadow-2xl
-        hover:scale-110
-        duration-300
-        "
+<li key={index}>
 
-        />
+• {item}
 
-        </div>
+</li>
 
-        </div>
+)
 
-        </div>
+)}
 
-        </div>
+</ul>
 
-        )}
+</div>
 
-    </div>
+</div>
 
-  );
+
+<div className="
+w-full
+lg:w-[280px]
+flex
+justify-center
+items-center
+">
+
+<img
+
+src={selectedAd.image}
+
+alt=""
+
+className="
+w-[250px]
+hover:scale-110
+duration-300
+"
+
+/>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+)}
+
+</div>
+
+</div>
+
+);
 
 }
