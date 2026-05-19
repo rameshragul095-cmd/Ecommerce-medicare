@@ -52,7 +52,7 @@ export default function MedicalChatBot() {
 
       const response = await axios.post(
 
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDJ4G6YdtYN7EpcOqtsd9M4dSziZWdkOHo`,
 
         {
           contents: [
