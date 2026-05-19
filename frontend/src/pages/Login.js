@@ -60,7 +60,12 @@ export default function Login() {
 };
   return (
 
-    <div className="min-h-screen bg-[#eef8f3] flex items-center justify-center px-4">
+    <div className="relative min-h-screen overflow-hidden bg-[#98FBCB]">
+
+  {/* Crystal Water Layer */}
+  <div className="crystal-flow crystal1"></div>
+  <div className="crystal-flow crystal2"></div>
+  <div className="crystal-flow crystal3"></div>
 
       {/* MAIN CONTAINER */}
       <div className="w-full max-w-[720px] bg-white border border-green-100 rounded-[30px] shadow-lg px-8 py-10">
