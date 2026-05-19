@@ -3,26 +3,48 @@ import axios from "axios";
 
 export default function MedicalChatBot() {
 
-  const [message, setMessage] = useState("");
+  const [open, setOpen] =
+    useState(false);
 
-  const [chat, setChat] = useState([]);
+  const [message, setMessage] =
+    useState("");
 
   const [loading, setLoading] =
     useState(false);
+
+  const [chat, setChat] =
+    useState([
+      {
+        sender: "bot",
+        text:
+          "👋 Hello! I am MediCare AI Assistant. Ask me about medicines, orders, healthcare or payments."
+      }
+    ]);
+
+
+
+  // GEMINI SEND MESSAGE
 
   const sendMessage = async () => {
 
     if (!message.trim()) return;
 
-    const userMsg = {
+    const userMessage = {
+
       sender: "user",
+
       text: message
+
     };
 
     setChat((prev) => [
       ...prev,
-      userMsg
+      userMessage
     ]);
+
+    const userInput = message;
+
+    setMessage("");
 
     setLoading(true);
 
@@ -30,7 +52,7 @@ export default function MedicalChatBot() {
 
       const response = await axios.post(
 
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAGH19in2yVUuef9rYJFf2oPoiflBWhXFU",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY`,
 
         {
           contents: [
@@ -38,8 +60,7 @@ export default function MedicalChatBot() {
               parts: [
                 {
                   text:
-                    "You are a medical store assistant. Answer simply: " +
-                    message
+                    `You are a medical support AI for MediCare medical store app. User question: ${userInput}`
                 }
               ]
             }
@@ -48,16 +69,23 @@ export default function MedicalChatBot() {
 
       );
 
+
+
       const botReply =
         response.data.candidates[0]
         .content.parts[0].text;
 
+
+
       setChat((prev) => [
+
         ...prev,
+
         {
           sender: "bot",
           text: botReply
         }
+
       ]);
 
     } catch (error) {
@@ -65,102 +93,177 @@ export default function MedicalChatBot() {
       console.log(error);
 
       setChat((prev) => [
+
         ...prev,
+
         {
           sender: "bot",
           text:
-            "Server busy. Try again."
+            "⚠️ AI server busy. Please try again."
         }
+
       ]);
 
     }
 
     setLoading(false);
 
-    setMessage("");
-
   };
+
+
 
   return (
 
-    <div className="fixed bottom-6 right-6 w-[350px] bg-white rounded-3xl shadow-2xl overflow-hidden z-50">
+    <>
 
-      {/* HEADER */}
+      {/* OPEN BUTTON */}
 
-      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-4 text-xl font-bold">
-
-        MediCare AI Assistant
-
-      </div>
-
-      {/* CHAT AREA */}
-
-      <div className="h-[400px] overflow-y-auto p-4 bg-gray-50">
-
-        {chat.map((item, index) => (
-
-          <div
-            key={index}
-            className={`mb-4 flex ${
-              item.sender === "user"
-                ? "justify-end"
-                : "justify-start"
-            }`}
-          >
-
-            <div
-              className={`max-w-[80%] px-4 py-3 rounded-2xl ${
-                item.sender === "user"
-                  ? "bg-cyan-500 text-white"
-                  : "bg-white shadow"
-              }`}
-            >
-
-              {item.text}
-
-            </div>
-
-          </div>
-
-        ))}
-
-        {loading && (
-
-          <p className="text-gray-400">
-
-            AI typing...
-
-          </p>
-
-        )}
-
-      </div>
-
-      {/* INPUT */}
-
-      <div className="flex p-3 border-t">
-
-        <input
-          value={message}
-          onChange={(e) =>
-            setMessage(e.target.value)
-          }
-          placeholder="Ask medical help..."
-          className="flex-1 border rounded-2xl px-4 py-2 outline-none"
-        />
+      {!open && (
 
         <button
-          onClick={sendMessage}
-          className="ml-2 bg-cyan-500 text-white px-5 rounded-2xl"
+
+          onClick={() => setOpen(true)}
+
+          className="fixed bottom-6 right-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-7 py-4 rounded-2xl shadow-2xl z-50 font-bold"
+
         >
 
-          Send
+          💬 Start Live Chat
 
         </button>
 
-      </div>
+      )}
 
-    </div>
+
+
+      {/* CHAT WINDOW */}
+
+      {open && (
+
+        <div className="fixed bottom-6 right-6 w-[370px] h-[580px] bg-white rounded-[35px] shadow-2xl overflow-hidden z-50 border border-cyan-100">
+
+          {/* HEADER */}
+
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-5 flex items-center justify-between">
+
+            <div>
+
+              <h1 className="text-white text-2xl font-bold">
+
+                MediCare AI
+
+              </h1>
+
+              <p className="text-white/80 text-sm">
+
+                Powered by Gemini
+
+              </p>
+
+            </div>
+
+            <button
+
+              onClick={() => setOpen(false)}
+
+              className="text-white text-2xl"
+
+            >
+
+              ✕
+
+            </button>
+
+          </div>
+
+
+
+          {/* CHAT AREA */}
+
+          <div className="h-[430px] overflow-y-auto bg-gray-50 p-4">
+
+            {chat.map((item, index) => (
+
+              <div
+                key={index}
+                className={`mb-4 flex ${
+                  item.sender === "user"
+                    ? "justify-end"
+                    : "justify-start"
+                }`}
+              >
+
+                <div
+                  className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm shadow ${
+                    item.sender === "user"
+                      ? "bg-cyan-500 text-white"
+                      : "bg-white text-gray-800"
+                  }`}
+                >
+
+                  {item.text}
+
+                </div>
+
+              </div>
+
+            ))}
+
+
+
+            {loading && (
+
+              <div className="text-sm text-gray-500">
+
+                MediCare AI typing...
+
+              </div>
+
+            )}
+
+          </div>
+
+
+
+          {/* INPUT */}
+
+          <div className="p-3 border-t bg-white flex gap-2">
+
+            <input
+
+              type="text"
+
+              value={message}
+
+              onChange={(e) =>
+                setMessage(e.target.value)
+              }
+
+              placeholder="Ask medical help..."
+
+              className="flex-1 border border-gray-300 rounded-2xl px-4 py-3 outline-none"
+
+            />
+
+            <button
+
+              onClick={sendMessage}
+
+              className="bg-cyan-500 text-white px-5 rounded-2xl font-bold"
+
+            >
+
+              Send
+
+            </button>
+
+          </div>
+
+        </div>
+
+      )}
+
+    </>
 
   );
 
