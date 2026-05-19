@@ -3345,13 +3345,10 @@ body::after{
 
 .profile-layout{
 
-  display:flex;
-
-  gap:10px;
-
-  padding:28px 34px;
-
-  align-items:flex-start;
+display:flex;
+gap:20px;
+align-items:flex-start;
+padding:20px;
 
 }
 
@@ -3359,7 +3356,7 @@ body::after{
    PREMIUM SIDEBAR
 ========================================= */
 
-.premium-sidebar{
+/* .premium-sidebar{
 
   width:320px;
 
@@ -3373,36 +3370,51 @@ body::after{
 
   padding-top:12px;
 
+} */
+
+.premium-sidebar{
+
+width:260px;
+flex-shrink:0;
+
 }
+
+
+
+/* MOBILE FIX */
+
+@media screen and (max-width:768px){
+
+.profile-layout{
+
+flex-direction:column;   /* IMPORTANT */
+padding:10px;
+gap:15px;
+
+}
+
+.premium-sidebar{
+
+width:100%;              /* full width */
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+
+}
+
 /* =========================================
    PREMIUM RIGHT CONTAINER
 ========================================= */
 
 .premium-right-container{
 
-flex:1;
-
-padding:20px;
-
-position:relative;
-
-overflow:hidden;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:flex-start;
-
-min-height:auto;      /* remove full height */
-
-max-width:1200px;     /* limit width */
-
-margin:auto;
+width:100%;
+max-width:100%;
+padding:0;
+margin-top:0;
 
 }
+
 
 .manage-profile-wrapper{
 
@@ -3420,6 +3432,27 @@ gap:24px;
 
 }
 
+.premium-member-card,
+.reward-container{
+
+width:100%;
+max-width:100%;
+min-height:auto;
+
+}
+
+}
+/* EXTRA SMALL MOBILE */
+
+@media screen and (max-width:480px){
+
+.premium-sidebar{
+
+grid-template-columns:1fr;
+
+}
+
+}
 /* =========================================
    BUTTON
 ========================================= */
