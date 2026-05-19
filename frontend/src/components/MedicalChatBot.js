@@ -21,7 +21,7 @@ export default function MedicalChatBot() {
 
   // SEND MESSAGE
 
-  const sendMessage = async () => {
+ const sendMessage = async () => {
 
   if (!message.trim()) return;
 
@@ -40,57 +40,61 @@ export default function MedicalChatBot() {
 
   try {
 
-    const response = await axios.post(
+   const response = await axios.post(
 
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDJ4G6YdtYN7EpcOqtsd9M4dSziZWdkOHo",
+  "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyCYxrV4hs2uU7sl6PMDzIfmurn_1yvhRQY",
 
+  {
+    contents: [
       {
-        contents: [
+        parts: [
           {
-            parts: [
-              {
-                text:
-                  `You are a medical AI assistant for MediCare medical store app.
-                   Answer shortly and clearly.
-                   User question: ${userInput}`
-              }
-            ]
+            text:
+              `You are a helpful medical AI assistant.
+               User question: ${userInput}`
           }
         ]
-      },
-
-      {
-        headers: {
-          "Content-Type": "application/json"
-        }
       }
+    ]
+  }
 
-    );
+);
 
-    console.log("REAL RESPONSE:", response.data);
+    console.log("SUCCESS:", response.data);
 
     const botReply =
       response.data.candidates[0]
-      .content.parts[0].text;
+      .content.parts[0]
+      .text;
 
     setChat((prev) => [
+
       ...prev,
+
       {
         sender: "bot",
         text: botReply
       }
+
     ]);
 
   } catch (error) {
 
-    console.log("REAL ERROR:", error.response?.data);
+    console.log(
+      "FULL ERROR:",
+      error.response?.data || error
+    );
 
     setChat((prev) => [
+
       ...prev,
+
       {
         sender: "bot",
-        text: "⚠️ Gemini AI failed."
+        text:
+          "⚠️ Gemini AI failed."
       }
+
     ]);
 
   }
