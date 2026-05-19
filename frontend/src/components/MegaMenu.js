@@ -6,34 +6,158 @@ export default function MegaMenu() {
 
   const menuData = {
 
-    "Baby Care": [
-      "Diapers",
-      "Baby Oils",
-      "Baby Cream",
-      "Baby Powder"
+    "Baby Care":[
+
+    {
+    name:"Diapers",
+    brand:"Pampers",
+    sizes:["S","M","L","XL"],
+    rating:"4.8 ★",
+    price:"₹599",
+    description:"Soft breathable diapers with 12hr absorption"
+    },
+
+    {
+    name:"Baby Oils",
+    brand:"Johnson's Baby",
+    sizes:["100ml","200ml","500ml"],
+    rating:"4.7 ★",
+    price:"₹249",
+    description:"Gentle nourishing oil for baby skin"
+    },
+
+    {
+    name:"Baby Cream",
+    brand:"Himalaya Baby",
+    sizes:["50g","100g"],
+    rating:"4.6 ★",
+    price:"₹145",
+    description:"Moisturizing cream with natural herbs"
+    },
+
+    {
+    name:"Baby Powder",
+    brand:"Mee Mee",
+    sizes:["100g","300g"],
+    rating:"4.5 ★",
+    price:"₹125",
+    description:"Protects skin from irritation"
+    }
+
     ],
 
-    "Women Care": [
-      "Women Vitamins",
-      "Skin Care",
-      "Hair Care"
+    "Women Care":[
+
+    {
+    name:"Women Vitamins",
+    brand:"Revital Woman",
+    sizes:["30 Tablets","60 Tablets"],
+    rating:"4.7 ★",
+    price:"₹299",
+    description:"Daily vitamins for women health"
+    },
+
+    {
+    name:"Skin Care",
+    brand:"Cetaphil",
+    sizes:["100ml","250ml"],
+    rating:"4.8 ★",
+    price:"₹349",
+    description:"Hydrating sensitive skin lotion"
+    },
+
+    {
+    name:"Hair Care",
+    brand:"Loreal",
+    sizes:["100ml","250ml"],
+    rating:"4.5 ★",
+    price:"₹275",
+    description:"Hair repair shampoo"
+    }
+
     ],
 
-    "Personal Care": [
-      "Soap",
-      "Face Wash",
-      "Shampoo",
-      "Toothpaste"
+    "Personal Care":[
+
+    {
+    name:"Soap",
+    brand:"Dove",
+    sizes:["75g","125g"],
+    rating:"4.6 ★",
+    price:"₹99",
+    description:"Moisturizing body soap"
+    },
+
+    {
+    name:"Face Wash",
+    brand:"Himalaya",
+    sizes:["50ml","100ml"],
+    rating:"4.5 ★",
+    price:"₹149",
+    description:"Neem face wash for acne protection"
+    },
+
+    {
+    name:"Shampoo",
+    brand:"Head & Shoulders",
+    sizes:["100ml","200ml"],
+    rating:"4.7 ★",
+    price:"₹219",
+    description:"Anti dandruff shampoo"
+    },
+
+    {
+    name:"Toothpaste",
+    brand:"Colgate",
+    sizes:["100g","200g"],
+    rating:"4.6 ★",
+    price:"₹110",
+    description:"Cavity protection toothpaste"
+    }
+
     ],
 
-    "Health Devices": [
-      "BP Monitor",
-      "Sugar Test",
-      "Thermometer",
-      "Nebulizer"
+    "Health Devices":[
+
+    {
+    name:"BP Monitor",
+    brand:"Omron",
+    sizes:["Digital"],
+    rating:"4.9 ★",
+    price:"₹2499",
+    description:"Automatic blood pressure monitor"
+    },
+
+    {
+    name:"Sugar Test",
+    brand:"Accu-Chek",
+    sizes:["50 strips"],
+    rating:"4.8 ★",
+    price:"₹699",
+    description:"Accurate sugar level testing"
+    },
+
+    {
+    name:"Thermometer",
+    brand:"Dr Morepen",
+    sizes:["Digital"],
+    rating:"4.7 ★",
+    price:"₹299",
+    description:"Fast temperature reading"
+    },
+
+    {
+    name:"Nebulizer",
+    brand:"Omron",
+    sizes:["Standard"],
+    rating:"4.8 ★",
+    price:"₹1899",
+    description:"Portable nebulizer machine"
+    }
+
     ]
 
-  };
+    };
 
   return (
 
@@ -77,16 +201,62 @@ export default function MegaMenu() {
 
               <div className="space-y-6">
 
-                {menuData[activeMenu].map((item, index) => (
+               <div className="grid grid-cols-2 gap-5">
 
-                  <p
-                    key={index}
-                    className="text-2xl text-gray-700 hover:text-teal-700 cursor-pointer"
-                  >
-                    {item}
-                  </p>
+              {menuData[activeMenu].map((item,index)=>(
 
-                ))}
+              <div
+              key={index}
+              className="bg-white rounded-2xl p-5 shadow hover:shadow-lg transition cursor-pointer"
+              >
+
+              <h3 className="text-2xl font-bold text-teal-700">
+
+              {item.name}
+
+              </h3>
+
+              <p className="text-gray-700">
+
+              Brand:
+              <span className="font-semibold">
+
+              {item.brand}
+
+              </span>
+
+              </p>
+
+              <p className="text-gray-700">
+
+              Sizes:
+              {item.sizes.join(", ")}
+
+              </p>
+
+              <p className="text-yellow-500 font-bold">
+
+              {item.rating}
+
+              </p>
+
+              <p className="text-green-600 font-bold">
+
+              {item.price}
+
+              </p>
+
+              <p className="text-gray-500 text-sm mt-2">
+
+              {item.description}
+
+              </p>
+
+              </div>
+
+              ))}
+
+              </div>
 
               </div>
 
@@ -96,7 +266,7 @@ export default function MegaMenu() {
             <div className="flex-1 p-10 flex items-center justify-center">
 
               <img
-                src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+                src="logo.png"
                 alt="medical"
                 className="w-72 opacity-90"
               />
