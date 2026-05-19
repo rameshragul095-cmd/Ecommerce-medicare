@@ -1,50 +1,38 @@
 import Profile from "./Profile";
-
-import { useNavigate } from "react-router-dom";
-
-import {
-  FaQuestionCircle,
-  FaSearch
-} from "react-icons/fa";
+import { useState } from "react";
 
 import {
   MapContainer,
   TileLayer,
   Marker,
-  Popup,
-  useMapEvents,
+  useMapEvents
 } from "react-leaflet";
 
 import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 
-import { useState } from "react";
-
-
-/* LEAFLET FIX */
+import {
+  FaPlus,
+  FaMapMarkerAlt,
+  FaHome,
+  FaBriefcase
+} from "react-icons/fa";
 
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-
   iconRetinaUrl:
     "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-
   iconUrl:
     "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-
   shadowUrl:
     "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-
 });
 
-
-/* LOCATION PICKER */
-
-function LocationMarker({
-  setAddress,
+function LocationPicker({
   setPosition,
+  setAddressData
 }) {
 
   useMapEvents({
@@ -52,7 +40,6 @@ function LocationMarker({
     async click(e) {
 
       const lat = e.latlng.lat;
-
       const lng = e.latlng.lng;
 
       setPosition([lat, lng]);
@@ -63,277 +50,327 @@ function LocationMarker({
 
       const data = await response.json();
 
-      setAddress({
+      setAddressData((prev) => ({
+        ...prev,
+        address:
+          data.display_name || "",
+      }));
 
-        area:
-          data.address.suburb ||
-          data.address.neighbourhood ||
-          "Selected Area",
-
-        street:
-          data.address.road ||
-          "Street",
-
-        city:
-          data.address.city ||
-          data.address.town ||
-          "City",
-
-        pincode:
-          data.address.postcode ||
-          "000000",
-
-        phone:
-          "+91 9876543210",
-
-      });
-
-    },
+    }
 
   });
 
   return null;
 }
 
-
 export default function Address() {
 
-  const navigate = useNavigate();
-
-  const [search, setSearch] =
-    useState("");
+  const [open, setOpen] =
+    useState(false);
 
   const [position, setPosition] =
-    useState([
-      13.0827,
-      80.2707,
-    ]);
+    useState([13.0827, 80.2707]);
 
-  const [address, setAddress] =
+  const [savedAddresses, setSavedAddresses] =
+    useState([]);
+
+  const [addressData, setAddressData] =
     useState({
-
-      area: "Home",
-
-      street: "123 Green Park",
-
-      city: "Chennai",
-
-      pincode: "600028",
-
-      phone: "+91 9876543210",
-
+      name: "",
+      phone: "",
+      type: "Home",
+      address: "",
     });
 
+  const saveAddress = () => {
 
-  /* SEARCH LOCATION */
-
-  const searchLocation = async () => {
-
-    if (!search) return;
-
-    const response = await fetch(
-      `https://nominatim.openstreetmap.org/search?format=json&q=${search}`
-    );
-
-    const data = await response.json();
-
-    if (data.length > 0) {
-
-      const lat =
-        parseFloat(data[0].lat);
-
-      const lon =
-        parseFloat(data[0].lon);
-
-      setPosition([lat, lon]);
-
-      setAddress({
-
-        area:
-          data[0].display_name
-            .split(",")[0],
-
-        street:
-          data[0].display_name
-            .split(",")[1] || "",
-
-        city:
-          data[0].display_name
-            .split(",")[2] || "",
-
-        pincode: "600000",
-
-        phone:
-          "+91 9876543210",
-
-      });
-
+    if (
+      !addressData.name ||
+      !addressData.phone ||
+      !addressData.address
+    ) {
+      alert("Fill all details");
+      return;
     }
 
-  };
+    setSavedAddresses([
+      ...savedAddresses,
+      addressData
+    ]);
 
+    setOpen(false);
+
+    setAddressData({
+      name: "",
+      phone: "",
+      type: "Home",
+      address: "",
+    });
+
+  };
 
   return (
 
     <Profile>
 
-      {/* GLOW EFFECTS */}
-
-      <div className="premium-glow premium-glow1"></div>
-
-      <div className="premium-glow premium-glow2"></div>
-
-
-      {/* MAIN CONTAINER */}
-
-      <div className="address-container">
+      <div className="min-h-screen p-8">
 
         {/* TITLE */}
 
-        <h1 className="address-title">
+        <h1 className="text-5xl font-bold text-cyan-600 mb-10">
 
-          Address Book
+          My Addresses
 
         </h1>
 
+        {/* SAVED ADDRESS */}
 
-        {/* SEARCH */}
+        <div className="grid md:grid-cols-2 gap-8">
 
-        <div className="address-search">
+          {savedAddresses.map((item, index) => (
 
-          <div className="address-search-box">
+            <div
+              key={index}
+              className="bg-white rounded-[30px] p-6 shadow-xl border border-gray-100"
+            >
 
-            <FaSearch className="text-gray-500 text-2xl" />
+              <div className="flex items-center gap-3">
 
-            <input
-              type="text"
-              placeholder="Search Address..."
-              value={search}
-              onChange={(e) =>
-                setSearch(e.target.value)
-              }
-              className="address-input"
-            />
+                {item.type === "Home" ? (
+                  <FaHome className="text-cyan-500 text-2xl" />
+                ) : (
+                  <FaBriefcase className="text-cyan-500 text-2xl" />
+                )}
 
-          </div>
+                <h2 className="text-2xl font-bold">
 
+                  {item.type}
 
-          <button
-            onClick={searchLocation}
-            className="address-search-btn"
-          >
+                </h2>
 
-            Search
+              </div>
 
-          </button>
+              <p className="mt-4 text-gray-700">
 
-        </div>
+                {item.name}
 
+              </p>
 
-        {/* ADDRESS CARD */}
+              <p className="text-gray-700">
 
-        <div className="premium-address-card">
+                {item.phone}
 
-          <h2 className="address-area">
+              </p>
 
-            {address.area}
+              <p className="mt-2 text-gray-500">
 
-          </h2>
+                {item.address}
 
-          <p className="address-detail">
+              </p>
 
-            {address.street},
+            </div>
 
-          </p>
-
-          <p className="address-detail">
-
-            {address.city}
-            {" - "}
-            {address.pincode}
-
-          </p>
-
-          <p className="address-phone">
-
-            {address.phone}
-
-          </p>
+          ))}
 
         </div>
 
-
-        {/* MAP */}
-
-        <div className="premium-map-container">
-
-          <MapContainer
-            center={position}
-            zoom={13}
-            style={{
-              height: "600px",
-              width: "100%",
-            }}
-          >
-
-            <TileLayer
-              attribution='&copy; OpenStreetMap'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-
-
-            <Marker position={position}>
-
-              <Popup>
-
-                Selected Address
-
-              </Popup>
-
-            </Marker>
-
-
-            <LocationMarker
-              setAddress={setAddress}
-              setPosition={setPosition}
-            />
-
-          </MapContainer>
-
-        </div>
-
-
-        {/* HELP BUTTON */}
+        {/* ADD BUTTON */}
 
         <button
 
-          onClick={() =>
-            navigate("/help")
-          }
+          onClick={() => setOpen(true)}
 
-          className="premium-help-btn"
+          className="fixed bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 text-lg font-bold"
 
         >
 
-          <div className="flex items-center gap-4">
+          <FaPlus />
 
-            <FaQuestionCircle />
+          Add Address
 
-            <span className="font-semibold text-2xl">
+        </button>
 
-              Need Help
+        {/* MODAL */}
 
-            </span>
+        {open && (
+
+          <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+
+            <div className="bg-white w-[95%] max-w-7xl h-[85vh] rounded-[35px] overflow-hidden grid md:grid-cols-2">
+
+              {/* MAP */}
+
+              <div className="relative">
+
+                <MapContainer
+                  center={position}
+                  zoom={15}
+                  style={{
+                    height: "100%",
+                    width: "100%"
+                  }}
+                >
+
+                  <TileLayer
+                    attribution="&copy; OpenStreetMap"
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+
+                  <Marker position={position} />
+
+                  <LocationPicker
+                    setPosition={setPosition}
+                    setAddressData={setAddressData}
+                  />
+
+                </MapContainer>
+
+                <div className="absolute top-5 left-5 bg-white px-5 py-3 rounded-2xl shadow-xl z-[1000] flex items-center gap-3">
+
+                  <FaMapMarkerAlt className="text-red-500" />
+
+                  <p className="font-semibold">
+
+                    Select your delivery location
+
+                  </p>
+
+                </div>
+
+              </div>
+
+              {/* FORM */}
+
+              <div className="p-10 overflow-y-auto">
+
+                <div className="flex justify-between items-center">
+
+                  <h1 className="text-4xl font-bold">
+
+                    Add New Address
+
+                  </h1>
+
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="text-3xl"
+                  >
+
+                    ×
+
+                  </button>
+
+                </div>
+
+                <div className="mt-10 space-y-6">
+
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    value={addressData.name}
+                    onChange={(e) =>
+                      setAddressData({
+                        ...addressData,
+                        name: e.target.value
+                      })
+                    }
+                    className="w-full border p-4 rounded-2xl outline-none"
+                  />
+
+                  <input
+                    type="text"
+                    placeholder="Mobile Number"
+                    value={addressData.phone}
+                    onChange={(e) =>
+                      setAddressData({
+                        ...addressData,
+                        phone: e.target.value
+                      })
+                    }
+                    className="w-full border p-4 rounded-2xl outline-none"
+                  />
+
+                  <textarea
+                    rows="5"
+                    placeholder="Selected Address"
+                    value={addressData.address}
+                    onChange={(e) =>
+                      setAddressData({
+                        ...addressData,
+                        address: e.target.value
+                      })
+                    }
+                    className="w-full border p-4 rounded-2xl outline-none"
+                  />
+
+                  {/* ADDRESS TYPE */}
+
+                  <div className="flex gap-4">
+
+                    <button
+                      onClick={() =>
+                        setAddressData({
+                          ...addressData,
+                          type: "Home"
+                        })
+                      }
+                      className={`px-6 py-3 rounded-full ${
+                        addressData.type === "Home"
+                          ? "bg-cyan-500 text-white"
+                          : "bg-gray-100"
+                      }`}
+                    >
+
+                      Home
+
+                    </button>
+
+                    <button
+                      onClick={() =>
+                        setAddressData({
+                          ...addressData,
+                          type: "Work"
+                        })
+                      }
+                      className={`px-6 py-3 rounded-full ${
+                        addressData.type === "Work"
+                          ? "bg-cyan-500 text-white"
+                          : "bg-gray-100"
+                      }`}
+                    >
+
+                      Work
+
+                    </button>
+
+                  </div>
+
+                  <button
+
+                    onClick={saveAddress}
+
+                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 rounded-2xl text-xl font-bold shadow-xl"
+
+                  >
+
+                    Save Address
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
-          →
-
-        </button>
+        )}
 
       </div>
 
     </Profile>
 
   );
+
 }
