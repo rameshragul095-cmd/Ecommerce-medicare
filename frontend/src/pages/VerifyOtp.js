@@ -561,7 +561,8 @@ const verifyOtp = async () => {
 
           <p className="text-gray-600 text-lg font-medium">
 
-            🔒 Your data is 256-bit encrypted and secure
+            {/* 🔒 Your data is 256-bit encrypted and secure */}
+            Testing Phase Random OTP accepted!
 
           </p>
 
