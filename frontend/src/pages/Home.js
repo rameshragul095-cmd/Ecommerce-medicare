@@ -1399,66 +1399,713 @@ export default function Home() {
 
   // ADS
 
-  const ads = [
+  const ads=[
 
-    {
-      title: "Diabetes Care",
+      {
+      title:"Diabetes Care",
+      subtitle:"Control sugar levels effectively",
+      description:"Complete diabetic support medicines and health monitoring products.",
+      offer:"Flat 30% OFF",
+      benefits:[
+      "Maintains blood sugar level",
+      "Improves insulin support",
+      "Reduces diabetic complications"
+      ],
+      causes:[
+      "High sugar intake",
+      "Obesity",
+      "Family history"
+      ],
+      prevention:[
+      "Daily exercise",
+      "Healthy diet",
+      "Regular monitoring"
+      ],
+      amount:"Starting ₹299",
+      image:"https://cdn-icons-png.flaticon.com/512/2966/2966486.png",
+      bg:"linear-gradient(135deg,#00c6ff,#0072ff)"
+      },
 
-      subtitle:
-        "Premium diabetic support medicines",
+      {
+      title:"Heart Health",
+      subtitle:"Care for your heart naturally",
+      description:"Premium cardiovascular care medicines and BP support.",
+      offer:"Buy 1 Get 1",
+      benefits:[
+      "Improves heart function",
+      "Controls BP",
+      "Supports blood circulation"
+      ],
+      causes:[
+      "Smoking",
+      "Stress",
+      "High cholesterol"
+      ],
+      prevention:[
+      "Low fat diet",
+      "Exercise daily",
+      "Avoid smoking"
+      ],
+      amount:"Starting ₹399",
+      image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png",
+      bg:"linear-gradient(135deg,#ff758c,#ff7eb3)"
+      },
 
-      description:
-        "Monitor sugar levels with trusted diabetic healthcare products and supplements.",
+      {
+      title:"Skin Care",
+      subtitle:"Healthy glowing skin",
+      description:"Advanced dermatology products and skin nourishment.",
+      offer:"Up To 50% OFF",
+      benefits:[
+      "Hydrates skin",
+      "Reduces acne",
+      "Improves skin texture"
+      ],
+      causes:[
+      "Pollution",
+      "Stress",
+      "Poor hydration"
+      ],
+      prevention:[
+      "Drink water",
+      "Use sunscreen",
+      "Healthy diet"
+      ],
+      amount:"Starting ₹199",
+      image:"https://cdn-icons-png.flaticon.com/512/2785/2785819.png",
+      bg:"linear-gradient(135deg,#43e97b,#38f9d7)"
+      },
 
-      offer:
-        "Flat 30% OFF",
+      {
+      title:"Immunity Booster",
+      subtitle:"Strengthen your immunity",
+      description:"Vitamin-rich healthcare products.",
+      offer:"25% OFF",
+      benefits:[
+      "Improves immunity",
+      "Boosts energy",
+      "Fights infections"
+      ],
+      causes:[
+      "Weak nutrition",
+      "Lack of sleep",
+      "Stress"
+      ],
+      prevention:[
+      "Healthy diet",
+      "Sleep 8 hours",
+      "Take supplements"
+      ],
+      amount:"Starting ₹249",
+      image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png",
+      bg:"linear-gradient(135deg,#fc4a1a,#f7b733)"
+      },
 
-      image:
-        "https://cdn-icons-png.flaticon.com/512/2966/2966486.png",
+      {
+      title:"Joint Pain Relief",
+      subtitle:"Move without pain",
+      description:"Fast pain relief sprays and tablets.",
+      offer:"40% OFF",
+      benefits:[
+      "Reduces pain",
+      "Improves mobility",
+      "Fast action"
+      ],
+      causes:[
+      "Arthritis",
+      "Injury",
+      "Age"
+      ],
+      prevention:[
+      "Regular exercise",
+      "Healthy weight",
+      "Stretching"
+      ],
+      amount:"Starting ₹179",
+      image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
+      bg:"linear-gradient(135deg,#7f00ff,#e100ff)"
+      },
 
-      bg:
-        "linear-gradient(135deg,#00c6ff,#0072ff)"
+      {
+      title:"Women's Wellness",
+      subtitle:"Complete care for women",
+      description:"Health and nutrition support products.",
+      offer:"30% OFF",
+      benefits:[
+      "Improves health",
+      "Supports hormones",
+      "Boosts energy"
+      ],
+      causes:[
+      "Nutrition deficiency",
+      "Stress",
+      "Hormonal imbalance"
+      ],
+      prevention:[
+      "Balanced diet",
+      "Exercise",
+      "Regular checkups"
+      ],
+      amount:"Starting ₹350",
+      image:"https://cdn-icons-png.flaticon.com/512/4140/4140048.png",
+      bg:"linear-gradient(135deg,#ff9a9e,#fad0c4)"
+      },
+
+      {
+      title:"Men's Grooming",
+      subtitle:"Look fresh everyday",
+      description:"Premium grooming and skincare products.",
+      offer:"Up To 56% OFF",
+      benefits:[
+      "Healthy skin",
+      "Fresh appearance",
+      "Hydration"
+      ],
+      causes:[
+      "Dry skin",
+      "Pollution",
+      "Stress"
+      ],
+      prevention:[
+      "Use moisturizer",
+      "Healthy diet",
+      "Drink water"
+      ],
+      amount:"Starting ₹149",
+      image:"https://cdn-icons-png.flaticon.com/512/6997/6997662.png",
+      bg:"linear-gradient(135deg,#141e30,#243b55)"
+      },
+
+      {
+      title:"Cold & Flu Care",
+      subtitle:"Fast symptom relief",
+      description:"Cold, cough and fever medicines.",
+      offer:"20% OFF",
+      benefits:[
+      "Reduces fever",
+      "Clears congestion",
+      "Quick relief"
+      ],
+      causes:[
+      "Virus infection",
+      "Weather changes",
+      "Weak immunity"
+      ],
+      prevention:[
+      "Wash hands",
+      "Drink water",
+      "Wear mask"
+      ],
+      amount:"Starting ₹99",
+      image:"https://cdn-icons-png.flaticon.com/512/3209/3209265.png",
+      bg:"linear-gradient(135deg,#36d1dc,#5b86e5)"
+      },
+
+      {
+      title:"Digestive Health",
+      subtitle:"Healthy stomach support",
+      description:"Products for acidity and digestion.",
+      offer:"35% OFF",
+      benefits:[
+      "Reduces acidity",
+      "Improves digestion",
+      "Relieves bloating"
+      ],
+      causes:[
+      "Spicy food",
+      "Stress",
+      "Poor diet"
+      ],
+      prevention:[
+      "Healthy food",
+      "Drink water",
+      "Avoid junk food"
+      ],
+      amount:"Starting ₹89",
+      image:"https://cdn-icons-png.flaticon.com/512/1046/1046857.png",
+      bg:"linear-gradient(135deg,#11998e,#38ef7d)"
+      },
+
+      {
+      title:"Eye Care",
+      subtitle:"Protect your vision",
+      description:"Eye vitamins and protection products.",
+      offer:"25% OFF",
+      benefits:[
+      "Improves vision",
+      "Reduces strain",
+      "Eye nourishment"
+      ],
+      causes:[
+      "Screen exposure",
+      "Aging",
+      "Vitamin deficiency"
+      ],
+      prevention:[
+      "20-20-20 rule",
+      "Healthy diet",
+      "Eye checkup"
+      ],
+      amount:"Starting ₹190",
+      image:"https://cdn-icons-png.flaticon.com/512/2966/2966327.png",
+      bg:"linear-gradient(135deg,#56ab2f,#a8e063)"
+      },
+      {
+    title:"Kidney Care",
+    subtitle:"Healthy kidney support",
+    description:"Maintain kidney function and detox support.",
+    offer:"20% OFF",
+    benefits:["Improves kidney health","Supports filtration","Detox support"],
+    causes:["High BP","Diabetes","Dehydration"],
+    prevention:["Drink water","Healthy diet","Regular tests"],
+    amount:"Starting ₹299",
+    image:"https://cdn-icons-png.flaticon.com/512/3076/3076404.png",
+    bg:"linear-gradient(135deg,#2193b0,#6dd5ed)"
     },
 
     {
-      title: "Heart Health",
-
-      subtitle:
-        "Protect your heart naturally",
-
-      description:
-        "Advanced cardiac medicines and BP support healthcare solutions.",
-
-      offer:
-        "Buy 1 Get 1",
-
-      image:
-        "https://cdn-icons-png.flaticon.com/512/4320/4320371.png",
-
-      bg:
-        "linear-gradient(135deg,#ff758c,#ff7eb3)"
+    title:"Liver Care",
+    subtitle:"Protect your liver",
+    description:"Advanced liver wellness products.",
+    offer:"35% OFF",
+    benefits:["Detox support","Improves liver function","Boosts metabolism"],
+    causes:["Alcohol","Fatty liver","Poor diet"],
+    prevention:["Avoid alcohol","Exercise","Healthy food"],
+    amount:"Starting ₹280",
+    image:"https://cdn-icons-png.flaticon.com/512/2966/2966325.png",
+    bg:"linear-gradient(135deg,#11998e,#38ef7d)"
     },
 
     {
-      title: "Skin Care",
+    title:"Asthma Support",
+    subtitle:"Breathe freely",
+    description:"Respiratory medicines and inhaler care.",
+    offer:"25% OFF",
+    benefits:["Improves breathing","Reduces symptoms","Quick relief"],
+    causes:["Dust","Allergy","Smoking"],
+    prevention:["Avoid smoke","Use mask","Clean environment"],
+    amount:"Starting ₹350",
+    image:"https://cdn-icons-png.flaticon.com/512/4320/4320375.png",
+    bg:"linear-gradient(135deg,#56ccf2,#2f80ed)"
+    },
 
-      subtitle:
-        "Healthy glowing skin",
+    {
+    title:"Baby Care",
+    subtitle:"Complete baby health",
+    description:"Safe baby healthcare essentials.",
+    offer:"40% OFF",
+    benefits:["Gentle care","Safe products","Nutrition support"],
+    causes:["Sensitive skin","Low immunity","Poor nutrition"],
+    prevention:["Balanced diet","Vaccination","Hygiene"],
+    amount:"Starting ₹199",
+    image:"https://cdn-icons-png.flaticon.com/512/4140/4140047.png",
+    bg:"linear-gradient(135deg,#ffdde1,#ee9ca7)"
+    },
 
-      description:
-        "Premium dermatology and skin protection products.",
+    {
+    title:"Elder Care",
+    subtitle:"Care for seniors",
+    description:"Complete elderly health solutions.",
+    offer:"30% OFF",
+    benefits:["Bone support","Heart support","Daily wellness"],
+    causes:["Aging","Low activity","Weak immunity"],
+    prevention:["Exercise","Regular checkups","Healthy food"],
+    amount:"Starting ₹499",
+    image:"https://cdn-icons-png.flaticon.com/512/921/921347.png",
+    bg:"linear-gradient(135deg,#cfd9df,#e2ebf0)"
+    },
 
-      offer:
-        "Up To 50% OFF",
+    {
+    title:"Bone Health",
+    subtitle:"Strong bones",
+    description:"Calcium and vitamin support.",
+    offer:"Buy1Get1",
+    benefits:["Improves strength","Calcium support","Bone growth"],
+    causes:["Calcium deficiency","Age","Low nutrition"],
+    prevention:["Milk","Exercise","Vitamin D"],
+    amount:"Starting ₹179",
+    image:"https://cdn-icons-png.flaticon.com/512/2920/2920329.png",
+    bg:"linear-gradient(135deg,#667eea,#764ba2)"
+    },
 
-      image:
-        "https://cdn-icons-png.flaticon.com/512/2785/2785819.png",
+    {
+    title:"Dental Care",
+    subtitle:"Healthy smile",
+    description:"Premium dental hygiene products.",
+    offer:"50% OFF",
+    benefits:["Healthy gums","Fresh breath","Strong teeth"],
+    causes:["Sugar","Poor brushing","Smoking"],
+    prevention:["Brush twice","Dental checkups","Avoid smoking"],
+    amount:"Starting ₹99",
+    image:"https://cdn-icons-png.flaticon.com/512/2966/2966487.png",
+    bg:"linear-gradient(135deg,#36d1dc,#5b86e5)"
+    },
 
-      bg:
-        "linear-gradient(135deg,#43e97b,#38f9d7)"
-    }
+    {
+    title:"Hair Care",
+    subtitle:"Healthy hair growth",
+    description:"Hair nutrition and care products.",
+    offer:"40% OFF",
+    benefits:["Hair growth","Reduces hair fall","Healthy scalp"],
+    causes:["Stress","Poor nutrition","Pollution"],
+    prevention:["Healthy diet","Hair oil","Less stress"],
+    amount:"Starting ₹199",
+    image:"https://cdn-icons-png.flaticon.com/512/2785/2785846.png",
+    bg:"linear-gradient(135deg,#f7971e,#ffd200)"
+    },
 
-  ];
+    {
+    title:"Sleep Care",
+    subtitle:"Better sleep support",
+    description:"Products for healthy sleep cycles.",
+    offer:"20% OFF",
+    benefits:["Better sleep","Stress relief","Relaxation"],
+    causes:["Stress","Anxiety","Poor habits"],
+    prevention:["Sleep routine","Avoid caffeine","Exercise"],
+    amount:"Starting ₹250",
+    image:"https://cdn-icons-png.flaticon.com/512/4140/4140037.png",
+    bg:"linear-gradient(135deg,#141e30,#243b55)"
+    },
+
+    {
+    title:"Weight Management",
+    subtitle:"Stay fit",
+    description:"Weight loss and nutrition support.",
+    offer:"35% OFF",
+    benefits:["Burn calories","Boost metabolism","Healthy lifestyle"],
+    causes:["Poor diet","No exercise","Stress"],
+    prevention:["Exercise","Healthy meals","Hydration"],
+    amount:"Starting ₹399",
+    image:"https://cdn-icons-png.flaticon.com/512/2966/2966481.png",
+    bg:"linear-gradient(135deg,#11998e,#38ef7d)"
+    },
+
+    {
+    title:"Pregnancy Care",
+    subtitle:"Mother & baby health",
+    description:"Nutrition and wellness support.",
+    offer:"30% OFF",
+    benefits:["Healthy pregnancy","Baby support","Nutrition"],
+    causes:["Deficiency","Stress","Hormonal changes"],
+    prevention:["Healthy diet","Regular checkups","Exercise"],
+    amount:"Starting ₹450",
+    image:"https://cdn-icons-png.flaticon.com/512/4140/4140051.png",
+    bg:"linear-gradient(135deg,#ff9a9e,#fad0c4)"
+    },
+
+    {
+    title:"Vitamin Care",
+    subtitle:"Daily wellness",
+    description:"Multivitamins for complete care.",
+    offer:"25% OFF",
+    benefits:["Boost energy","Improve immunity","Better health"],
+    causes:["Poor diet","Stress","Deficiency"],
+    prevention:["Balanced food","Exercise","Supplements"],
+    amount:"Starting ₹199",
+    image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png",
+    bg:"linear-gradient(135deg,#f857a6,#ff5858)"
+    },
+
+    {
+    title:"Blood Pressure Care",
+    subtitle:"Control BP naturally",
+    description:"Advanced BP care products.",
+    offer:"40% OFF",
+    benefits:["Controls BP","Heart support","Blood flow"],
+    causes:["Salt intake","Stress","Obesity"],
+    prevention:["Low salt","Exercise","Healthy lifestyle"],
+    amount:"Starting ₹350",
+    image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png",
+    bg:"linear-gradient(135deg,#ff512f,#dd2476)"
+    },
+
+    {
+    title:"Protein Supplements",
+    subtitle:"Muscle support",
+    description:"Daily protein nutrition products.",
+    offer:"Up To 60% OFF",
+    benefits:["Build muscles","Improve recovery","Boost energy"],
+    causes:["Low protein","Poor diet","Heavy workouts"],
+    prevention:["Balanced meals","Protein intake","Exercise"],
+    amount:"Starting ₹599",
+    image:"https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+    bg:"linear-gradient(135deg,#42275a,#734b6d)"
+    },
+
+    {
+    title:"Ayurvedic Care",
+    subtitle:"Natural healthcare",
+    description:"Traditional herbal products.",
+    offer:"50% OFF",
+    benefits:["Natural healing","Less side effects","Wellness support"],
+    causes:["Stress","Lifestyle","Weak immunity"],
+    prevention:["Yoga","Healthy food","Natural care"],
+    amount:"Starting ₹120",
+    image:"https://cdn-icons-png.flaticon.com/512/2921/2921822.png",
+    bg:"linear-gradient(135deg,#56ab2f,#a8e063)"
+    },
+    {
+      title:"Thyroid Care",
+      subtitle:"Balance thyroid health",
+      description:"Advanced thyroid wellness support.",
+      offer:"30% OFF",
+      benefits:["Hormone balance","Energy support","Healthy metabolism"],
+      causes:["Hormonal imbalance","Stress","Genetics"],
+      prevention:["Healthy diet","Exercise","Regular tests"],
+      amount:"Starting ₹320",
+      image:"https://cdn-icons-png.flaticon.com/512/2966/2966325.png",
+      bg:"linear-gradient(135deg,#3a7bd5,#00d2ff)"
+      },
+
+      {
+      title:"Pain Relief",
+      subtitle:"Fast pain recovery",
+      description:"Pain relief sprays and tablets.",
+      offer:"40% OFF",
+      benefits:["Quick pain relief","Muscle support","Fast action"],
+      causes:["Injury","Stress","Inflammation"],
+      prevention:["Exercise","Stretching","Healthy posture"],
+      amount:"Starting ₹149",
+      image:"https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
+      bg:"linear-gradient(135deg,#ff512f,#f09819)"
+      },
+
+      {
+      title:"Fever Care",
+      subtitle:"Fight fever effectively",
+      description:"Reliable fever relief medicines.",
+      offer:"25% OFF",
+      benefits:["Reduces fever","Quick recovery","Supports immunity"],
+      causes:["Virus","Bacteria","Infection"],
+      prevention:["Hydration","Rest","Hygiene"],
+      amount:"Starting ₹89",
+      image:"https://cdn-icons-png.flaticon.com/512/3209/3209265.png",
+      bg:"linear-gradient(135deg,#fc4a1a,#f7b733)"
+      },
+
+      {
+      title:"Women's Hygiene",
+      subtitle:"Daily wellness care",
+      description:"Complete feminine hygiene products.",
+      offer:"50% OFF",
+      benefits:["Freshness","Protection","Comfort"],
+      causes:["Poor hygiene","Infection","Hormonal changes"],
+      prevention:["Clean habits","Hydration","Proper care"],
+      amount:"Starting ₹199",
+      image:"https://cdn-icons-png.flaticon.com/512/4140/4140048.png",
+      bg:"linear-gradient(135deg,#ff758c,#ff7eb3)"
+      },
+
+      {
+      title:"Men's Health",
+      subtitle:"Complete men's care",
+      description:"Healthcare and wellness support.",
+      offer:"35% OFF",
+      benefits:["Energy support","Muscle health","Daily wellness"],
+      causes:["Stress","Poor diet","Lifestyle"],
+      prevention:["Exercise","Healthy food","Sleep"],
+      amount:"Starting ₹299",
+      image:"https://cdn-icons-png.flaticon.com/512/6997/6997662.png",
+      bg:"linear-gradient(135deg,#232526,#414345)"
+      },
+
+      {
+      title:"Brain Health",
+      subtitle:"Boost focus & memory",
+      description:"Mental wellness and brain nutrition.",
+      offer:"30% OFF",
+      benefits:["Improves focus","Memory support","Brain health"],
+      causes:["Stress","Poor sleep","Deficiency"],
+      prevention:["Sleep","Exercise","Healthy food"],
+      amount:"Starting ₹399",
+      image:"https://cdn-icons-png.flaticon.com/512/2785/2785819.png",
+      bg:"linear-gradient(135deg,#8e2de2,#4a00e0)"
+      },
+
+      {
+      title:"Cholesterol Care",
+      subtitle:"Healthy heart support",
+      description:"Maintain healthy cholesterol levels.",
+      offer:"Buy1Get1",
+      benefits:["Heart support","Controls cholesterol","Blood flow"],
+      causes:["Junk food","Obesity","Smoking"],
+      prevention:["Low-fat diet","Exercise","Avoid smoking"],
+      amount:"Starting ₹350",
+      image:"https://cdn-icons-png.flaticon.com/512/4320/4320371.png",
+      bg:"linear-gradient(135deg,#00b09b,#96c93d)"
+      },
+
+      {
+      title:"Anti-Allergy",
+      subtitle:"Relief from allergies",
+      description:"Fast allergy symptom support.",
+      offer:"20% OFF",
+      benefits:["Relieves sneezing","Controls symptoms","Fast relief"],
+      causes:["Dust","Pollen","Food allergy"],
+      prevention:["Avoid triggers","Clean environment","Mask"],
+      amount:"Starting ₹120",
+      image:"https://cdn-icons-png.flaticon.com/512/3209/3209265.png",
+      bg:"linear-gradient(135deg,#36d1dc,#5b86e5)"
+      },
+
+      {
+      title:"Eye Protection",
+      subtitle:"Protect your eyesight",
+      description:"Eye wellness and vitamin support.",
+      offer:"40% OFF",
+      benefits:["Vision support","Reduces strain","Eye nutrition"],
+      causes:["Screen usage","Vitamin deficiency","Age"],
+      prevention:["Eye exercises","Healthy diet","Eye checkups"],
+      amount:"Starting ₹199",
+      image:"https://cdn-icons-png.flaticon.com/512/2966/2966327.png",
+      bg:"linear-gradient(135deg,#56ab2f,#a8e063)"
+      },
+
+      {
+      title:"Stress Relief",
+      subtitle:"Relax your mind",
+      description:"Stress and anxiety support products.",
+      offer:"35% OFF",
+      benefits:["Calms mind","Improves mood","Relaxation"],
+      causes:["Work pressure","Anxiety","Poor sleep"],
+      prevention:["Meditation","Exercise","Rest"],
+      amount:"Starting ₹250",
+      image:"https://cdn-icons-png.flaticon.com/512/4140/4140037.png",
+      bg:"linear-gradient(135deg,#614385,#516395)"
+      },
+
+      {
+      title:"Fitness Essentials",
+      subtitle:"Stay fit everyday",
+      description:"Health and fitness support products.",
+      offer:"50% OFF",
+      benefits:["Improves strength","Boosts energy","Healthy lifestyle"],
+      causes:["Low activity","Poor diet","Stress"],
+      prevention:["Workout","Healthy food","Hydration"],
+      amount:"Starting ₹499",
+      image:"https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+      bg:"linear-gradient(135deg,#11998e,#38ef7d)"
+      },
+
+      {
+      title:"Energy Booster",
+      subtitle:"Power your day",
+      description:"Boost daily energy naturally.",
+      offer:"30% OFF",
+      benefits:["Instant energy","Less fatigue","Active lifestyle"],
+      causes:["Poor nutrition","Stress","Lack of sleep"],
+      prevention:["Balanced diet","Sleep","Exercise"],
+      amount:"Starting ₹179",
+      image:"https://cdn-icons-png.flaticon.com/512/3050/3050158.png",
+      bg:"linear-gradient(135deg,#ff9966,#ff5e62)"
+      },
+
+      {
+      title:"Cough Care",
+      subtitle:"Relief from cough",
+      description:"Effective cough relief products.",
+      offer:"20% OFF",
+      benefits:["Quick relief","Soothes throat","Reduces irritation"],
+      causes:["Cold","Virus","Allergy"],
+      prevention:["Drink warm water","Avoid smoke","Rest"],
+      amount:"Starting ₹99",
+      image:"https://cdn-icons-png.flaticon.com/512/3209/3209265.png",
+      bg:"linear-gradient(135deg,#3ca55c,#b5ac49)"
+      },
+
+      {
+      title:"Digestive Wellness",
+      subtitle:"Healthy digestion",
+      description:"Improve digestion naturally.",
+      offer:"25% OFF",
+      benefits:["Better digestion","Less acidity","Healthy gut"],
+      causes:["Junk food","Stress","Irregular eating"],
+      prevention:["Fiber food","Hydration","Exercise"],
+      amount:"Starting ₹129",
+      image:"https://cdn-icons-png.flaticon.com/512/1046/1046857.png",
+      bg:"linear-gradient(135deg,#11998e,#38ef7d)"
+      },
+
+      {
+      title:"First Aid",
+      subtitle:"Emergency essentials",
+      description:"First aid kits and emergency support.",
+      offer:"40% OFF",
+      benefits:["Quick treatment","Emergency support","Daily safety"],
+      causes:["Accidents","Cuts","Injuries"],
+      prevention:["Safety measures","Careful handling","Preparedness"],
+      amount:"Starting ₹249",
+      image:"https://cdn-icons-png.flaticon.com/512/4320/4320375.png",
+      bg:"linear-gradient(135deg,#ed213a,#93291e)"
+      },
+
+      {
+      title:"Immunity Kids",
+      subtitle:"Healthy growth for kids",
+      description:"Daily wellness and nutrition support.",
+      offer:"35% OFF",
+      benefits:["Strong immunity","Growth support","Energy boost"],
+      causes:["Poor nutrition","Low immunity","Weak health"],
+      prevention:["Healthy food","Sleep","Exercise"],
+      amount:"Starting ₹220",
+      image:"https://cdn-icons-png.flaticon.com/512/4140/4140047.png",
+      bg:"linear-gradient(135deg,#ff9a9e,#fecfef)"
+      },
+
+      {
+      title:"Migraine Relief",
+      subtitle:"Headache support care",
+      description:"Products for migraine support.",
+      offer:"30% OFF",
+      benefits:["Reduces discomfort","Relaxation support","Fast relief"],
+      causes:["Stress","Sleep changes","Triggers"],
+      prevention:["Rest","Hydration","Avoid triggers"],
+      amount:"Starting ₹150",
+      image:"https://cdn-icons-png.flaticon.com/512/2785/2785819.png",
+      bg:"linear-gradient(135deg,#396afc,#2948ff)"
+      },
+
+      {
+      title:"Sports Nutrition",
+      subtitle:"Performance support",
+      description:"Nutrition for active lifestyles.",
+      offer:"50% OFF",
+      benefits:["Muscle support","Energy boost","Recovery"],
+      causes:["Heavy activity","Low protein","Stress"],
+      prevention:["Protein intake","Exercise","Hydration"],
+      amount:"Starting ₹699",
+      image:"https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+      bg:"linear-gradient(135deg,#141e30,#243b55)"
+      },
+
+      {
+      title:"Healthy Snacks",
+      subtitle:"Nutritious daily snacks",
+      description:"Healthy snack options for wellness.",
+      offer:"Buy2Get1",
+      benefits:["Energy","Healthy nutrition","Less junk food"],
+      causes:["Poor eating habits","Stress eating","Busy schedules"],
+      prevention:["Healthy snacks","Meal planning","Hydration"],
+      amount:"Starting ₹99",
+      image:"https://cdn-icons-png.flaticon.com/512/3075/3075977.png",
+      bg:"linear-gradient(135deg,#f7971e,#ffd200)"
+      },
+
+      {
+      title:"Medical Devices",
+      subtitle:"Smart health monitoring",
+      description:"Essential medical monitoring devices.",
+      offer:"Up To 45% OFF",
+      benefits:["Health tracking","Easy monitoring","Accurate results"],
+      causes:["Health conditions","Monitoring needs","Lifestyle"],
+      prevention:["Regular checkups","Monitoring","Healthy habits"],
+      amount:"Starting ₹999",
+      image:"https://cdn-icons-png.flaticon.com/512/4320/4320375.png",
+      bg:"linear-gradient(135deg,#00c6ff,#0072ff)"
+      }
+
+
+      ];
 
   // // SPLIT PRODUCTS INTO ROWS OF 5
 
@@ -1890,92 +2537,286 @@ export default function Home() {
 
       {/* AD MODAL */}
 
-      {selectedAd && (
+      {/* AD MODAL */}
 
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+        {selectedAd && (
 
-          <div
+        <div className="
+        fixed
+        inset-0
+        z-50
+        bg-black/70
+        flex
+        items-center
+        justify-center
+        p-4
+        ">
 
-            className="w-[700px] rounded-[40px] p-10 text-white relative shadow-2xl"
+        <div
 
-            style={{
-              background:
-                selectedAd.bg
-            }}
+        className="
+        w-[950px]
+        max-h-[90vh]
+        overflow-y-auto
+        rounded-[35px]
+        p-8
+        text-white
+        relative
+        shadow-2xl
+        "
 
-          >
+        style={{
+        background:selectedAd.bg
+        }}
 
-            <button
+        >
 
-              onClick={() =>
-                setSelectedAd(null)
-              }
+        {/* CLOSE BUTTON */}
 
-              className="absolute top-5 right-5 bg-white text-black rounded-full w-10 h-10"
+        <button
 
-            >
+        onClick={()=>
+        setSelectedAd(null)
+        }
 
-              ✕
+        className="
+        absolute
+        top-4
+        right-4
+        w-12
+        h-12
+        rounded-full
+        bg-white
+        text-black
+        font-bold
+        text-xl
+        "
 
-            </button>
+        >
 
-            <div className="flex items-center justify-between">
+        ✕
 
-              <div className="max-w-[420px]">
+        </button>
 
-                <h1 className="text-5xl font-black">
 
-                  {selectedAd.title}
+        <div className="flex gap-10">
 
-                </h1>
+        {/* LEFT SIDE */}
 
-                <p className="mt-5 text-xl">
+        <div className="flex-1">
 
-                  {selectedAd.subtitle}
+        <h1 className="text-5xl font-black">
 
-                </p>
+        {selectedAd.title}
 
-                <p className="mt-5 text-lg leading-8 opacity-90">
+        </h1>
 
-                  {selectedAd.description}
+        <p className="mt-3 text-xl">
 
-                </p>
+        {selectedAd.subtitle}
 
-                <div className="mt-8">
+        </p>
 
-                  <span className="bg-white text-black px-6 py-3 rounded-full font-bold">
+        <p className="mt-6 leading-8 text-lg">
 
-                    {selectedAd.offer}
+        {selectedAd.description}
 
-                  </span>
+        </p>
 
-                </div>
 
-                <button className="mt-10 bg-black text-white px-8 py-4 rounded-2xl text-lg font-bold">
+        <div className="mt-6">
 
-                  Shop Now
+        <span className="
+        bg-white
+        text-black
+        px-6
+        py-3
+        rounded-full
+        font-bold
+        ">
 
-                </button>
+        {selectedAd.offer}
 
-              </div>
-
-              <img
-
-                src={selectedAd.image}
-
-                alt=""
-
-                className="w-56"
-
-              />
-
-            </div>
-
-          </div>
+        </span>
 
         </div>
 
-      )}
+
+        <div className="
+        mt-6
+        bg-white/20
+        backdrop-blur-md
+        p-4
+        rounded-2xl
+        ">
+
+        <h3 className="font-bold text-2xl">
+
+        💰 Amount
+
+        </h3>
+
+        <p className="mt-2">
+
+        {selectedAd.amount}
+
+        </p>
+
+        </div>
+
+
+        {/* BENEFITS */}
+
+        <div className="
+        mt-6
+        bg-white/20
+        p-4
+        rounded-2xl
+        ">
+
+        <h3 className="font-bold text-2xl">
+
+        ✅ Benefits
+
+        </h3>
+
+        <ul className="mt-3 space-y-2">
+
+        {selectedAd.benefits?.map(
+        (item,index)=>(
+
+        <li key={index}>
+
+        • {item}
+
+        </li>
+
+        ))
+        }
+
+        </ul>
+
+        </div>
+
+
+        {/* CAUSES */}
+
+        <div className="
+        mt-6
+        bg-white/20
+        p-4
+        rounded-2xl
+        ">
+
+        <h3 className="font-bold text-2xl">
+
+        ⚠ Causes
+
+        </h3>
+
+        <ul className="mt-3 space-y-2">
+
+        {selectedAd.causes?.map(
+        (item,index)=>(
+
+        <li key={index}>
+
+        • {item}
+
+        </li>
+
+        ))
+        }
+
+        </ul>
+
+        </div>
+
+
+        {/* PREVENTION */}
+
+        <div className="
+        mt-6
+        bg-white/20
+        p-4
+        rounded-2xl
+        ">
+
+        <h3 className="font-bold text-2xl">
+
+        🛡 Prevention
+
+        </h3>
+
+        <ul className="mt-3 space-y-2">
+
+        {selectedAd.prevention?.map(
+        (item,index)=>(
+
+        <li key={index}>
+
+        • {item}
+
+        </li>
+
+        ))
+        }
+
+        </ul>
+
+        </div>
+
+
+        <button className="
+        mt-8
+        bg-black
+        px-8
+        py-4
+        rounded-2xl
+        font-bold
+        text-lg
+        ">
+
+        Shop Now
+
+        </button>
+
+        </div>
+
+
+        {/* RIGHT SIDE */}
+
+        <div className="
+        w-[300px]
+        flex
+        items-center
+        justify-center
+        ">
+
+        <img
+
+        src={selectedAd.image}
+
+        alt=""
+
+        className="
+        w-[250px]
+        drop-shadow-2xl
+        hover:scale-110
+        duration-300
+        "
+
+        />
+
+        </div>
+
+        </div>
+
+        </div>
+
+        </div>
+
+        )}
 
     </div>
 
