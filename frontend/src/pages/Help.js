@@ -1,5 +1,5 @@
 import Profile from "./Profile";
-
+import MedicalChatBot from "../components/MedicalChatBot";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -351,6 +351,8 @@ export default function Help() {
         </div>
 
       </div>
+
+      <MedicalChatBot />
 
     </Profile>
 

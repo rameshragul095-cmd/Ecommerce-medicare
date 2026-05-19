@@ -98,6 +98,17 @@ export default function Membership() {
       earned: 63,
 
       redeemed: 0
+    },
+    {
+      id: 9,
+
+      title: "Store Medicine Purchase",
+
+      amount: 770,
+
+      earned: 77,
+
+      redeemed: 0
     }
 
 
