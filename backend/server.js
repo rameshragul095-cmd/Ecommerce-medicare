@@ -2,26 +2,26 @@ const express = require('express');
 
 const cors = require('cors');
 
-const sequelize = require("./config/db");
+// const sequelize = require("./config/db");
 
 const app = express();
 
 
 // DATABASE SYNC
 
-sequelize.sync({ alter:true })
+// sequelize.sync({ alter:true })
 
-.then(() => {
+// .then(() => {
 
-  console.log("✅ Database Synced");
+//   console.log("✅ Database Synced");
 
-})
+// })
 
-.catch((err) => {
+// .catch((err) => {
 
-  console.log(err);
+//   console.log(err);
 
-});
+// });
 
 
 // CORS

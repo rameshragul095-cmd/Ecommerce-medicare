@@ -43,7 +43,63 @@ export default function Membership() {
       earned: 50,
 
       redeemed: 0
+    },
+    {
+      id: 4,
+
+      title: "Store Medicine Purchase",
+
+      amount: 5000,
+
+      earned: 500,
+
+      redeemed: 100
+    },
+    {
+      id: 5,
+
+      title: "Store Medicine Purchase",
+
+      amount: 800,
+
+      earned: 80,
+
+      redeemed: 160
+    },
+    {
+      id: 6,
+
+      title: "Store Medicine Purchase",
+
+      amount: 1600,
+
+      earned: 160,
+
+      redeemed: 0
+    },
+    {
+      id: 7,
+
+      title: "Store Medicine Purchase",
+
+      amount: 1750,
+
+      earned: 170,
+
+      redeemed: 50
+    },
+    {
+      id: 8,
+
+      title: "Store Medicine Purchase",
+
+      amount: 630,
+
+      earned: 63,
+
+      redeemed: 0
     }
+
 
   ];
 
