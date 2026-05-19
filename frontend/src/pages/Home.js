@@ -2107,159 +2107,6 @@ export default function Home() {
 
       ];
 
-  // // SPLIT PRODUCTS INTO ROWS OF 5
-
-  // const rows = [];
-
-  // for (
-  //   let i = 0;
-  //   i < filteredProducts.length;
-  //   i += 4
-  // ) {
-
-  //   rows.push(
-  //     filteredProducts.slice(i, i + 4)
-  //   );
-
-  // }
-
-  {/* PRODUCTS */}
-
-<div className="px-4 md:px-8 lg:px-16 mt-14 pb-20">
-
-  <h2 className="text-4xl font-bold mb-10">
-    Top Medicines
-  </h2>
-
-  <div className="
-    grid
-    grid-cols-3
-    md:grid-cols-2
-    lg:grid-cols-3
-    xl:grid-cols-4
-    gap-4
-  ">
-
-    {filteredProducts.map((item,index)=>(
-
-      <div
-        key={item.id}
-        className="w-full min-w-0 relative"
-      >
-
-        <ProductCard item={item}/>
-
-        <label className="upload-overlay">
-
-          📷 Upload
-
-          <input
-            type="file"
-            accept="image/*"
-            hidden
-            onChange={(e)=>{
-
-              if(e.target.files[0]){
-
-                updateProductImage(
-                  item.id,
-                  e.target.files[0]
-                );
-
-              }
-
-            }}
-          />
-
-        </label>
-
-        {/* Ad after every 12 products */}
-        {(index+1)%12===0 && (
-
-          <div
-            className="col-span-full mt-8"
-          >
-
-            <div
-              className="ad-banner cursor-pointer"
-
-              style={{
-                background:
-                ads[
-                  Math.floor(index/12)
-                  %
-                  ads.length
-                ].bg
-              }}
-
-              onClick={()=>
-                setSelectedAd(
-                  ads[
-                    Math.floor(index/12)
-                    %
-                    ads.length
-                  ]
-                )
-              }
-            >
-
-              <div className="ad-content">
-
-                <div className="ad-left">
-
-                  <h1>
-                    {
-                      ads[
-                        Math.floor(index/12)
-                        %
-                        ads.length
-                      ].title
-                    }
-                  </h1>
-
-                  <p>
-                    {
-                      ads[
-                        Math.floor(index/12)
-                        %
-                        ads.length
-                      ].subtitle
-                    }
-                  </p>
-
-                </div>
-
-                <div className="ad-right">
-
-                  <img
-                    src={
-                      ads[
-                        Math.floor(index/12)
-                        %
-                        ads.length
-                      ].image
-                    }
-                    alt=""
-                  />
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        )}
-
-      </div>
-
-    ))}
-
-  </div>
-
-</div>
-
   return (
 
     <div className="bg-[#f5f7f7] min-h-screen">
@@ -2372,170 +2219,136 @@ export default function Home() {
 
       </div>
 
+      
       {/* PRODUCTS */}
 
-      <div className="px-16 mt-14 pb-20">
+          <div className="px-4 md:px-8 lg:px-16 mt-14 pb-20">
 
-        <h2 className="text-4xl font-bold mb-10">
-
+          <h2 className="text-4xl font-bold mb-10">
           Top Medicines
+          </h2>
 
-        </h2>
+          <div className="
+          grid
+          grid-cols-3
+          sm:grid-cols-3
+          md:grid-cols-2
+          lg:grid-cols-3
+          xl:grid-cols-4
+          gap-6
+          ">
 
-        {rows.map((row, rowIndex) => (
+          {filteredProducts.map((item,index)=>{
 
-          <div key={rowIndex}>
+          const adIndex=
+          Math.floor(index/8)%ads.length;
 
-            {/* PRODUCT ROW */}
+          return(
+          <>
+          <div
+          key={item.id}
+          className="relative"
+          >
 
-           <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
+          <ProductCard item={item}/>
 
-              {row.map((item) => (
+          <label className="upload-overlay">
 
-                <div
-                  key={item.id}
-                  className="product-upload-wrapper"
-                >
+          📷 Upload
 
-                  <ProductCard item={item} />
+          <input
+          type="file"
+          hidden
+          accept="image/*"
 
-                  {/* IMAGE UPLOAD */}
+          onChange={(e)=>{
 
-                  <label className="upload-overlay">
+          if(e.target.files[0]){
 
-                    📷 Upload
+          updateProductImage(
+          item.id,
+          e.target.files[0]
+          );
 
-                    <input
+          }
 
-                      type="file"
+          }}
+          />
 
-                      accept="image/*"
-
-                      hidden
-
-                      onChange={(e) => {
-
-                        if (
-                          e.target.files[0]
-                        ) {
-
-                          updateProductImage(
-                            item.id,
-                            e.target.files[0]
-                          );
-
-                        }
-
-                      }}
-
-                    />
-
-                  </label>
-
-                </div>
-
-              ))}
-
-            </div>
-
-            {/* ADS AFTER EVERY 3 ROWS */}
-
-            {(rowIndex + 1) % 3 === 0 && (
-
-              <div
-
-                className="ad-banner cursor-pointer mb-10"
-
-                style={{
-                  background:
-                    ads[
-                      Math.floor(
-                        rowIndex / 3
-                      ) % ads.length
-                    ].bg
-                }}
-
-                onClick={() =>
-                  setSelectedAd(
-
-                    ads[
-                    Math.floor(
-                      rowIndex / 3
-                    ) % ads.length
-                    ]
-
-                  )
-                }
-
-              >
-
-                <div className="ad-content">
-
-                  <div className="ad-left">
-
-                    <h1>
-
-                      {
-                        ads[
-                          Math.floor(
-                            rowIndex / 3
-                          ) % ads.length
-                        ].title
-                      }
-
-                    </h1>
-
-                    <p>
-
-                      {
-                        ads[
-                          Math.floor(
-                            rowIndex / 3
-                          ) % ads.length
-                        ].subtitle
-                      }
-
-                    </p>
-
-                    <button>
-
-                      Explore Now
-
-                    </button>
-
-                  </div>
-
-                  <div className="ad-right">
-
-                    <img
-
-                      src={
-                        ads[
-                          Math.floor(
-                            rowIndex / 3
-                          ) % ads.length
-                        ].image
-                      }
-
-                      alt=""
-
-                    />
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            )}
+          </label>
 
           </div>
 
-        ))}
+          {/* AD AFTER EVERY 8 PRODUCTS */}
 
-      </div>
+          {(index+1)%8===0 && (
 
-      {/* AD MODAL */}
+          <div
+          className="
+          col-span-full
+          cursor-pointer
+          mt-6
+          mb-6
+          "
+
+          onClick={()=>
+          setSelectedAd(
+          ads[adIndex]
+          )
+          }
+          >
+
+          <div
+          className="ad-banner"
+          style={{
+          background:
+          ads[adIndex].bg
+          }}
+          >
+
+          <div className="ad-content">
+
+          <div className="ad-left">
+
+          <h1>
+          {ads[adIndex].title}
+          </h1>
+
+          <p>
+          {ads[adIndex].subtitle}
+          </p>
+
+          <button>
+          Explore Now
+          </button>
+
+          </div>
+
+          <div className="ad-right">
+
+          <img
+          src={ads[adIndex].image}
+          alt=""
+          />
+
+          </div>
+
+          </div>
+
+          </div>
+
+          </div>
+
+          )}
+
+          </>
+          )
+
+          })}
+
+          </div>
+
+          </div>
 
       {/* AD MODAL */}
 
