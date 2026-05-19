@@ -3,46 +3,37 @@ import axios from "axios";
 
 export default function MedicalChatBot() {
 
-  const [open, setOpen] =
-    useState(false);
+  const [open, setOpen] = useState(false);
 
-  const [message, setMessage] =
-    useState("");
+  const [message, setMessage] = useState("");
 
-  const [loading, setLoading] =
-    useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const [chat, setChat] =
-    useState([
-      {
-        sender: "bot",
-        text:
-          "👋 Hello! I am MediCare AI Assistant. Ask me about medicines, orders, healthcare or payments."
-      }
-    ]);
+  const [chat, setChat] = useState([
+    {
+      sender: "bot",
+      text:
+        "👋 Hello! I am MediCare AI Assistant. Ask me about medicines, orders, healthcare or payments."
+    }
+  ]);
 
 
 
-  // GEMINI SEND MESSAGE
+  // SEND MESSAGE
 
   const sendMessage = async () => {
 
     if (!message.trim()) return;
 
-    const userMessage = {
-
-      sender: "user",
-
-      text: message
-
-    };
+    const userInput = message;
 
     setChat((prev) => [
       ...prev,
-      userMessage
+      {
+        sender: "user",
+        text: userInput
+      }
     ]);
-
-    const userInput = message;
 
     setMessage("");
 
@@ -52,62 +43,60 @@ export default function MedicalChatBot() {
 
       const response = await axios.post(
 
-  `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=AIzaSyDJ4G6YdtYN7EpcOqtsd9M4dSziZWdkOHo`,
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDJ4G6YdtYN7EpcOqtsd9M4dSziZWdkOHo",
 
-  {
-    contents: [
-      {
-        parts: [
-          {
-            text:
-              `You are a medical support AI for MediCare medical store app. User question: ${userInput}`
+        {
+          contents: [
+            {
+              parts: [
+                {
+                  text:
+                    `You are a medical AI assistant for MediCare medical store app.
+                    Answer clearly and shortly.
+                    User question: ${userInput}`
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          headers: {
+            "Content-Type": "application/json"
           }
-        ]
-      }
-    ]
-  },
+        }
 
-  {
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }
+      );
 
-);
-
-
+      console.log(response.data);
 
       const botReply =
         response.data.candidates[0]
-        .content.parts[0].text;
-
-
+          .content.parts[0]
+          .text;
 
       setChat((prev) => [
-
         ...prev,
-
         {
           sender: "bot",
           text: botReply
         }
-
       ]);
 
     } catch (error) {
 
-      console.log(error);
+      console.log(
+        "FULL ERROR:",
+        error.response?.data || error.message
+      );
 
       setChat((prev) => [
-
         ...prev,
-
         {
           sender: "bot",
           text:
-            "⚠️ AI server busy. Please try again."
+            "⚠️ Gemini AI failed. Please try again."
         }
-
       ]);
 
     }
@@ -127,11 +116,8 @@ export default function MedicalChatBot() {
       {!open && (
 
         <button
-
           onClick={() => setOpen(true)}
-
           className="fixed bottom-6 right-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-7 py-4 rounded-2xl shadow-2xl z-50 font-bold"
-
         >
 
           💬 Start Live Chat
@@ -169,11 +155,8 @@ export default function MedicalChatBot() {
             </div>
 
             <button
-
               onClick={() => setOpen(false)}
-
               className="text-white text-2xl"
-
             >
 
               ✕
@@ -236,27 +219,18 @@ export default function MedicalChatBot() {
           <div className="p-3 border-t bg-white flex gap-2">
 
             <input
-
               type="text"
-
               value={message}
-
               onChange={(e) =>
                 setMessage(e.target.value)
               }
-
               placeholder="Ask medical help..."
-
               className="flex-1 border border-gray-300 rounded-2xl px-4 py-3 outline-none"
-
             />
 
             <button
-
               onClick={sendMessage}
-
               className="bg-cyan-500 text-white px-5 rounded-2xl font-bold"
-
             >
 
               Send
