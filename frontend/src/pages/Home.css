@@ -990,10 +990,9 @@ body{
       #eefcff
     );
 
-  background-size:400% 400%;
+  background:#f5f7fb;
 
-  animation:
-    bodyGradient 12s ease infinite;
+  animation:none;
 
   font-family:
     "Poppins",
@@ -4625,18 +4624,12 @@ body::after{
 .water2,
 .water3{
 
-position:absolute;
+width:280px;
+height:280px;
 
-width:600px;
-height:600px;
+filter:blur(18px);
 
-border-radius:50%;
-
-will-change:transform;
-
-transform:translate3d(0,0,0);
-
-filter:blur(35px);
+opacity:.4;
 
 }
 
@@ -4768,10 +4761,16 @@ translateY(0);
 .crystal-flow{
 
 position:absolute;
-width:120%;
-height:120%;
-filter:blur(30px);
-opacity:.7;
+
+width:80%;
+height:80%;
+
+filter:blur(15px);
+
+opacity:.35;
+
+transform:translate3d(0,0,0);
+
 }
 
 /* Main mint crystal wave */
@@ -5072,13 +5071,20 @@ rotate(360deg);
 }
 
 .crystal-flow,
-.water-effect,
 .water1,
 .water2,
-.water3{
+.water3,
+.water-gel{
 
-pointer-events:none;   /* IMPORTANT */
-will-change: transform;
+pointer-events:none;
+
+will-change:transform;
+
+transform:translate3d(0,0,0);
+
 backface-visibility:hidden;
-transform:translateZ(0);
+
+contain:layout paint;
+
+z-index:0;
 }

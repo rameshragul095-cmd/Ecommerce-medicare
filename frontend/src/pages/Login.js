@@ -71,8 +71,18 @@ export default function Login() {
 
     {/* CENTER WRAPPER */}
 
-    <div className="relative z-10 min-h-screen flex items-center justify-center px-4">
-
+    <div
+      className="
+      relative
+      z-50
+      min-h-screen
+      flex
+      items-center
+      justify-center
+      px-4
+      isolate
+      "
+      >
       {/* MAIN CONTAINER */}
 
       <div className="relative w-full max-w-[720px] bg-white border border-green-100 rounded-[30px] shadow-lg px-8 py-10">
@@ -93,6 +103,7 @@ export default function Login() {
               <img
                 src="/logo.png"
                 alt="MediCare Logo"
+                loading="lazy"
                 className="w-10 h-10 object-contain"
               />
 
