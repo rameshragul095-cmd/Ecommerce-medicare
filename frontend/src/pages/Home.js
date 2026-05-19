@@ -1460,21 +1460,158 @@ export default function Home() {
 
   ];
 
-  // SPLIT PRODUCTS INTO ROWS OF 5
+  // // SPLIT PRODUCTS INTO ROWS OF 5
 
-  const rows = [];
+  // const rows = [];
 
-  for (
-    let i = 0;
-    i < filteredProducts.length;
-    i += 4
-  ) {
+  // for (
+  //   let i = 0;
+  //   i < filteredProducts.length;
+  //   i += 4
+  // ) {
 
-    rows.push(
-      filteredProducts.slice(i, i + 4)
-    );
+  //   rows.push(
+  //     filteredProducts.slice(i, i + 4)
+  //   );
 
-  }
+  // }
+
+  {/* PRODUCTS */}
+
+<div className="px-4 md:px-8 lg:px-16 mt-14 pb-20">
+
+  <h2 className="text-4xl font-bold mb-10">
+    Top Medicines
+  </h2>
+
+  <div className="
+    grid
+    grid-cols-3
+    md:grid-cols-2
+    lg:grid-cols-3
+    xl:grid-cols-4
+    gap-4
+  ">
+
+    {filteredProducts.map((item,index)=>(
+
+      <div
+        key={item.id}
+        className="w-full min-w-0 relative"
+      >
+
+        <ProductCard item={item}/>
+
+        <label className="upload-overlay">
+
+          📷 Upload
+
+          <input
+            type="file"
+            accept="image/*"
+            hidden
+            onChange={(e)=>{
+
+              if(e.target.files[0]){
+
+                updateProductImage(
+                  item.id,
+                  e.target.files[0]
+                );
+
+              }
+
+            }}
+          />
+
+        </label>
+
+        {/* Ad after every 12 products */}
+        {(index+1)%12===0 && (
+
+          <div
+            className="col-span-full mt-8"
+          >
+
+            <div
+              className="ad-banner cursor-pointer"
+
+              style={{
+                background:
+                ads[
+                  Math.floor(index/12)
+                  %
+                  ads.length
+                ].bg
+              }}
+
+              onClick={()=>
+                setSelectedAd(
+                  ads[
+                    Math.floor(index/12)
+                    %
+                    ads.length
+                  ]
+                )
+              }
+            >
+
+              <div className="ad-content">
+
+                <div className="ad-left">
+
+                  <h1>
+                    {
+                      ads[
+                        Math.floor(index/12)
+                        %
+                        ads.length
+                      ].title
+                    }
+                  </h1>
+
+                  <p>
+                    {
+                      ads[
+                        Math.floor(index/12)
+                        %
+                        ads.length
+                      ].subtitle
+                    }
+                  </p>
+
+                </div>
+
+                <div className="ad-right">
+
+                  <img
+                    src={
+                      ads[
+                        Math.floor(index/12)
+                        %
+                        ads.length
+                      ].image
+                    }
+                    alt=""
+                  />
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        )}
+
+      </div>
+
+    ))}
+
+  </div>
+
+</div>
 
   return (
 
