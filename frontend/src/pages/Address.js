@@ -2,10 +2,10 @@ import Profile from "./Profile";
 import { useState } from "react";
 
 import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  useMapEvents
+MapContainer,
+TileLayer,
+Marker,
+useMapEvents
 } from "react-leaflet";
 
 import L from "leaflet";
@@ -13,364 +13,484 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import {
-  FaPlus,
-  FaMapMarkerAlt,
-  FaHome,
-  FaBriefcase
-} from "react-icons/fa";
+FaPlus,
+FaHome,
+FaBriefcase,
+FaMapMarkerAlt
+}
+from "react-icons/fa";
+
 
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  iconUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  shadowUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+
+iconRetinaUrl:
+"https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+
+iconUrl:
+"https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+
+shadowUrl:
+"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
+
 });
 
+
 function LocationPicker({
-  setPosition,
-  setAddressData
-}) {
 
-  useMapEvents({
+setPosition,
+setAddressData
 
-    async click(e) {
+}){
 
-      const lat = e.latlng.lat;
-      const lng = e.latlng.lng;
+useMapEvents({
 
-      setPosition([lat, lng]);
+async click(e){
 
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
-      );
+const lat=e.latlng.lat;
 
-      const data = await response.json();
+const lng=e.latlng.lng;
 
-      setAddressData((prev) => ({
-        ...prev,
-        address:
-          data.display_name || "",
-      }));
+setPosition([lat,lng]);
 
-    }
+try{
 
-  });
+const response=
+await fetch(
+`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
+);
 
-  return null;
+const data=
+await response.json();
+
+setAddressData(prev=>({
+
+...prev,
+
+address:
+data.display_name || ""
+
+}));
+
+}
+catch(error){
+
+console.log(error);
+
 }
 
-export default function Address() {
+}
 
-  const [open, setOpen] =
-    useState(false);
+});
 
-  const [position, setPosition] =
-    useState([13.0827, 80.2707]);
+return null;
 
-  const [savedAddresses, setSavedAddresses] =
-    useState([]);
+}
 
-  const [addressData, setAddressData] =
-    useState({
-      name: "",
-      phone: "",
-      type: "Home",
-      address: "",
-    });
 
-  const saveAddress = () => {
 
-    if (
-      !addressData.name ||
-      !addressData.phone ||
-      !addressData.address
-    ) {
-      alert("Fill all details");
-      return;
-    }
+export default function Address(){
 
-    setSavedAddresses([
-      ...savedAddresses,
-      addressData
-    ]);
+const [open,setOpen]=
+useState(false);
 
-    setOpen(false);
+const [position,setPosition]=
+useState([
+13.0827,
+80.2707
+]);
 
-    setAddressData({
-      name: "",
-      phone: "",
-      type: "Home",
-      address: "",
-    });
+const [savedAddresses,
+setSavedAddresses]=
+useState([]);
 
-  };
+const [addressData,
+setAddressData]=
+useState({
 
-  return (
+name:"",
+phone:"",
+type:"Home",
+address:""
 
-    <Profile>
+});
 
-      <div className="min-h-screen p-8">
 
-        {/* TITLE */}
+const saveAddress=()=>{
 
-        <h1 className="text-5xl font-bold text-cyan-600 mb-10">
+if(
+!addressData.name ||
+!addressData.phone ||
+!addressData.address
+){
 
-          My Addresses
+alert(
+"Fill all details"
+);
 
-        </h1>
+return;
 
-        {/* SAVED ADDRESS */}
+}
 
-        <div className="grid md:grid-cols-2 gap-8">
+setSavedAddresses([
 
-          {savedAddresses.map((item, index) => (
+...savedAddresses,
+addressData
 
-            <div
-              key={index}
-              className="bg-white rounded-[30px] p-6 shadow-xl border border-gray-100"
-            >
+]);
 
-              <div className="flex items-center gap-3">
+setOpen(false);
 
-                {item.type === "Home" ? (
-                  <FaHome className="text-cyan-500 text-2xl" />
-                ) : (
-                  <FaBriefcase className="text-cyan-500 text-2xl" />
-                )}
+setAddressData({
 
-                <h2 className="text-2xl font-bold">
+name:"",
+phone:"",
+type:"Home",
+address:""
 
-                  {item.type}
+});
 
-                </h2>
+};
 
-              </div>
 
-              <p className="mt-4 text-gray-700">
+return(
 
-                {item.name}
+<Profile>
 
-              </p>
+<div className="min-h-screen p-10">
 
-              <p className="text-gray-700">
+<div className="w-full max-w-[1200px] mx-auto">
 
-                {item.phone}
 
-              </p>
+{/* TITLE */}
 
-              <p className="mt-2 text-gray-500">
+<h1 className="text-5xl font-bold text-cyan-600 mb-8">
 
-                {item.address}
+My Addresses
 
-              </p>
+</h1>
 
-            </div>
 
-          ))}
+{/* ADD BUTTON */}
 
-        </div>
+<button
 
-        {/* ADD BUTTON */}
+onClick={()=>setOpen(true)}
 
-        <button
+className="mb-10 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-2xl shadow-xl flex items-center gap-3 font-bold"
 
-          onClick={() => setOpen(true)}
+>
 
-          className="fixed bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 text-lg font-bold"
+<FaPlus/>
 
-        >
+Add Address
 
-          <FaPlus />
+</button>
 
-          Add Address
 
-        </button>
+{/* SAVED ADDRESS */}
 
-        {/* MODAL */}
+<div className="space-y-8">
 
-        {open && (
+{savedAddresses.map((item,index)=>(
 
-          <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+<div
+key={index}
+className="bg-white rounded-[30px] p-8 shadow-2xl w-full"
+>
 
-            <div className="bg-white w-[95%] max-w-7xl h-[85vh] rounded-[35px] overflow-hidden grid md:grid-cols-2">
+<div className="flex gap-3 items-center">
 
-              {/* MAP */}
+{
 
-              <div className="relative">
+item.type==="Home"
 
-                <MapContainer
-                  center={position}
-                  zoom={15}
-                  style={{
-                    height: "100%",
-                    width: "100%"
-                  }}
-                >
+?
 
-                  <TileLayer
-                    attribution="&copy; OpenStreetMap"
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
+<FaHome className="text-cyan-500 text-3xl"/>
 
-                  <Marker position={position} />
+:
 
-                  <LocationPicker
-                    setPosition={setPosition}
-                    setAddressData={setAddressData}
-                  />
+<FaBriefcase className="text-cyan-500 text-3xl"/>
 
-                </MapContainer>
+}
 
-                <div className="absolute top-5 left-5 bg-white px-5 py-3 rounded-2xl shadow-xl z-[1000] flex items-center gap-3">
+<h2 className="text-3xl font-bold">
 
-                  <FaMapMarkerAlt className="text-red-500" />
+{item.type}
 
-                  <p className="font-semibold">
+</h2>
 
-                    Select your delivery location
+</div>
 
-                  </p>
+<div className="mt-6">
 
-                </div>
+<p className="font-bold text-xl">
 
-              </div>
+{item.name}
 
-              {/* FORM */}
+</p>
 
-              <div className="p-10 overflow-y-auto">
+<p className="mt-2">
 
-                <div className="flex justify-between items-center">
+📞 {item.phone}
 
-                  <h1 className="text-4xl font-bold">
+</p>
 
-                    Add New Address
+<p className="mt-3 text-gray-600">
 
-                  </h1>
+📍 {item.address}
 
-                  <button
-                    onClick={() => setOpen(false)}
-                    className="text-3xl"
-                  >
+</p>
 
-                    ×
+</div>
 
-                  </button>
+</div>
 
-                </div>
+))}
 
-                <div className="mt-10 space-y-6">
+</div>
 
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    value={addressData.name}
-                    onChange={(e) =>
-                      setAddressData({
-                        ...addressData,
-                        name: e.target.value
-                      })
-                    }
-                    className="w-full border p-4 rounded-2xl outline-none"
-                  />
 
-                  <input
-                    type="text"
-                    placeholder="Mobile Number"
-                    value={addressData.phone}
-                    onChange={(e) =>
-                      setAddressData({
-                        ...addressData,
-                        phone: e.target.value
-                      })
-                    }
-                    className="w-full border p-4 rounded-2xl outline-none"
-                  />
+{/* MODAL */}
 
-                  <textarea
-                    rows="5"
-                    placeholder="Selected Address"
-                    value={addressData.address}
-                    onChange={(e) =>
-                      setAddressData({
-                        ...addressData,
-                        address: e.target.value
-                      })
-                    }
-                    className="w-full border p-4 rounded-2xl outline-none"
-                  />
+{open &&(
 
-                  {/* ADDRESS TYPE */}
+<div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
 
-                  <div className="flex gap-4">
+<div className="bg-white w-[95%] max-w-[1600px] h-[90vh] rounded-[35px] overflow-hidden shadow-2xl grid grid-cols-[1.2fr_1fr]">
 
-                    <button
-                      onClick={() =>
-                        setAddressData({
-                          ...addressData,
-                          type: "Home"
-                        })
-                      }
-                      className={`px-6 py-3 rounded-full ${
-                        addressData.type === "Home"
-                          ? "bg-cyan-500 text-white"
-                          : "bg-gray-100"
-                      }`}
-                    >
 
-                      Home
+{/* MAP */}
 
-                    </button>
+<div className="relative h-full">
 
-                    <button
-                      onClick={() =>
-                        setAddressData({
-                          ...addressData,
-                          type: "Work"
-                        })
-                      }
-                      className={`px-6 py-3 rounded-full ${
-                        addressData.type === "Work"
-                          ? "bg-cyan-500 text-white"
-                          : "bg-gray-100"
-                      }`}
-                    >
+<MapContainer
 
-                      Work
+center={position}
+zoom={15}
 
-                    </button>
+style={{
 
-                  </div>
+height:"100%",
+width:"100%"
 
-                  <button
+}}
 
-                    onClick={saveAddress}
+>
 
-                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 rounded-2xl text-xl font-bold shadow-xl"
+<TileLayer
 
-                  >
+url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
-                    Save Address
+/>
 
-                  </button>
+<Marker
+position={position}
+/>
 
-                </div>
+<LocationPicker
 
-              </div>
+setPosition={setPosition}
+setAddressData={setAddressData}
 
-            </div>
+/>
 
-          </div>
+</MapContainer>
 
-        )}
 
-      </div>
+<div className="absolute top-5 left-5 bg-white p-4 rounded-2xl shadow-xl z-[1000] flex gap-3 items-center">
 
-    </Profile>
+<FaMapMarkerAlt
+className="text-red-500 text-xl"
+/>
 
-  );
+<p className="font-bold">
+
+Select delivery location
+
+</p>
+
+</div>
+
+</div>
+
+
+{/* FORM */}
+
+<div className="p-10 overflow-y-auto">
+
+<div className="flex justify-between">
+
+<h1 className="text-5xl font-bold">
+
+Add New Address
+
+</h1>
+
+<button
+onClick={()=>setOpen(false)}
+className="text-3xl"
+>
+
+×
+
+</button>
+
+</div>
+
+
+<div className="mt-10 space-y-6">
+
+<input
+
+placeholder="Full Name"
+
+value={addressData.name}
+
+onChange={(e)=>
+
+setAddressData({
+
+...addressData,
+name:e.target.value
+
+})
+
+}
+
+className="w-full border p-5 rounded-2xl outline-none"
+
+/>
+
+
+<input
+
+placeholder="Mobile Number"
+
+value={addressData.phone}
+
+onChange={(e)=>
+
+setAddressData({
+
+...addressData,
+phone:e.target.value
+
+})
+
+}
+
+className="w-full border p-5 rounded-2xl outline-none"
+
+/>
+
+
+<textarea
+
+rows="6"
+
+placeholder="Selected Address"
+
+value={addressData.address}
+
+onChange={(e)=>
+
+setAddressData({
+
+...addressData,
+address:e.target.value
+
+})
+
+}
+
+className="w-full border p-5 rounded-2xl outline-none"
+
+/>
+
+
+<div className="flex gap-4">
+
+<button
+
+onClick={()=>setAddressData({
+
+...addressData,
+type:"Home"
+
+})}
+
+className={`px-8 py-3 rounded-full ${
+addressData.type==="Home"
+?
+"bg-cyan-500 text-white"
+:
+"bg-gray-100"
+}`}
+
+>
+
+Home
+
+</button>
+
+
+<button
+
+onClick={()=>setAddressData({
+
+...addressData,
+type:"Work"
+
+})}
+
+className={`px-8 py-3 rounded-full ${
+addressData.type==="Work"
+?
+"bg-cyan-500 text-white"
+:
+"bg-gray-100"
+}`}
+
+>
+
+Work
+
+</button>
+
+</div>
+
+
+<button
+
+onClick={saveAddress}
+
+className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl py-5 font-bold text-xl shadow-xl"
+
+>
+
+Save Address
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+)}
+
+</div>
+
+</div>
+
+</Profile>
+
+);
 
 }
